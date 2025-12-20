@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkBUD | Complete Driver's Guide to Budapest Airport</title>
+    <meta name="description" content="Everything drivers need to know about Budapest Airport - parking options, fuel stations, restaurants, shopping, and services near BUD Airport.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --midnight: #0a1628;
+            --navy: #1a2d4a;
+            --sky: #4a90d9;
+            --gold: #d4a853;
+            --cream: #f5f2eb;
+            --white: #ffffff;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--midnight);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 0.75rem 2rem;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--sky), var(--gold));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .logo-text span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--white);
+            transition: 0.3s;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: rgba(10, 22, 40, 0.98);
+            padding: 2rem;
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mobile-menu a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.75rem 0;
+            display: block;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-bg-plane {
+            position: absolute;
+            right: -200px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 800px;
+            opacity: 0.05;
+            font-size: 600px;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text h1 span {
+            color: var(--gold);
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            color: var(--cream);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .badge-icon {
+            font-size: 1.1rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--midnight);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 168, 83, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--white);
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Quick Navigation Cards */
+        .quick-nav {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+        }
+
+        .quick-nav-card {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .quick-nav-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .quick-nav-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .quick-nav-card h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1;
+        }
+
+        .stat-number span {
+            color: var(--gold);
+        }
+
+        .stat-label {
+            margin-top: 0.5rem;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-tag {
+            background: var(--navy);
+            color: var(--gold);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1.25rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            color: var(--midnight);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Parking Options Section */
+        .parking-section {
+            background: var(--cream);
+        }
+
+        .parking-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .parking-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .parking-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .parking-card.official {
+            border: 2px solid var(--sky);
+        }
+
+        .parking-card.offsite {
+            border: 2px solid var(--gold);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gold);
+            color: var(--midnight);
+            padding: 0.4rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .card-badge.official-badge {
+            background: var(--sky);
+            color: white;
+        }
+
+        .card-header-bar {
+            padding: 1.25rem 1.5rem;
+            background: linear-gradient(135deg, var(--navy), var(--midnight));
+            color: white;
+        }
+
+        .card-header-bar.offsite-header {
+            background: linear-gradient(135deg, #8B6914, #6B4F0F);
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-location {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .price-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .price-amount {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .price-period {
+            font-size: 0.8rem;
+            color: #888;
+            font-weight: 400;
+        }
+
+        .card-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .feature-tag {
+            background: #f0f4f8;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: var(--navy);
+        }
+
+        .feature-tag.highlight {
+            background: rgba(212, 168, 83, 0.15);
+            color: #8B6914;
+        }
+
+        .card-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .card-link {
+            display: block;
+            text-align: center;
+            padding: 0.875rem;
+            background: var(--navy);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .card-link:hover {
+            background: var(--midnight);
+        }
+
+        .card-link.offsite-link {
+            background: var(--gold);
+            color: var(--midnight);
+        }
+
+        .card-link.offsite-link:hover {
+            background: #c49a47;
+        }
+
+        /* Services Section */
+        .services-section {
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .services-section .section-header {
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-section .section-tag {
+            background: var(--gold);
+            color: var(--midnight);
+        }
+
+        .services-section .section-title {
+            color: var(--white);
+        }
+
+        .services-section .section-subtitle {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 1.75rem;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .service-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--gold), #e8c97a);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .service-card .service-type {
+            color: var(--gold);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .service-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .service-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+        }
+
+        .service-detail-icon {
+            color: var(--success);
+            font-size: 0.9rem;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .service-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Directions Section */
+        .directions-section {
+            background: var(--cream);
+        }
+
+        .directions-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .directions-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--midnight);
+            margin-bottom: 1.5rem;
+        }
+
+        .directions-content > p {
+            color: #666;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .directions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .direction-item {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+            background: var(--white);
+            padding: 1.25rem;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .direction-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: var(--navy);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .direction-text h4 {
+            font-size: 1.05rem;
+            color: var(--midnight);
+            margin-bottom: 0.25rem;
+        }
+
+        .direction-text p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .map-container {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            height: 100%;
+            min-height: 500px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            border: none;
+        }
+
+        /* Pricing Comparison Section */
+        .pricing-section {
+            background: var(--white);
+        }
+
+        .pricing-table-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .pricing-table thead {
+            background: var(--navy);
+        }
+
+        .pricing-table th {
+            padding: 1.25rem 1rem;
+            text-align: left;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .pricing-table th:first-child {
+            padding-left: 1.5rem;
+        }
+
+        .pricing-table tbody tr {
+            transition: background 0.3s ease;
+        }
+
+        .pricing-table tbody tr:hover {
+            background: #f8fafc;
+        }
+
+        .pricing-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eef2f7;
+            font-size: 0.9rem;
+        }
+
+        .pricing-table td:first-child {
+            padding-left: 1.5rem;
+            font-weight: 600;
+            color: var(--midnight);
+        }
+
+        .pricing-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-cell {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .best-value {
+            background: rgba(46, 204, 113, 0.1);
+            color: var(--success);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .parking-type-badge {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+            font-weight: 500;
+        }
+
+        .parking-type-badge.official {
+            background: rgba(74, 144, 217, 0.15);
+            color: var(--sky);
+        }
+
+        .parking-type-badge.offsite {
+            background: rgba(212, 168, 83, 0.15);
+            color: #8B6914;
+        }
+
+        .pricing-note {
+            text-align: center;
+            margin-top: 2rem;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Tips Section */
+        .tips-section {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+        }
+
+        .tips-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .tip-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            transition: all 0.4s ease;
+            border-left: 4px solid var(--gold);
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .tip-number {
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--midnight);
+            margin-bottom: 1.25rem;
+        }
+
+        .tip-card h3 {
+            font-size: 1.15rem;
+            color: var(--midnight);
+            margin-bottom: 0.75rem;
+        }
+
+        .tip-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--midnight);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+            max-width: 300px;
+            line-height: 1.6;
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--gold);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .parking-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .directions-container {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                min-height: 400px;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+
+            .quick-nav {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .parking-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .directions-content h2 {
+                font-size: 2rem;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .quick-nav {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .pricing-table {
+                font-size: 0.85rem;
+            }
+
+            .pricing-table th, .pricing-table td {
+                padding: 0.75rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="#" class="logo">
+                <div class="logo-icon">✈</div>
+                <div class="logo-text">Park<span>BUD</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#parking">Parking</a></li>
+                <li><a href="#services">Nearby Services</a></li>
+                <li><a href="#directions">Directions</a></li>
+                <li><a href="#pricing">Prices</a></li>
+                <li><a href="#tips">Tips</a></li>
+            </ul>
+            <div class="mobile-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#parking" onclick="toggleMobileMenu()">Parking Options</a></li>
+                <li><a href="#services" onclick="toggleMobileMenu()">Nearby Services</a></li>
+                <li><a href="#directions" onclick="toggleMobileMenu()">Directions</a></li>
+                <li><a href="#pricing" onclick="toggleMobileMenu()">Price Comparison</a></li>
+                <li><a href="#tips" onclick="toggleMobileMenu()">Tips & Advice</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-plane">✈</div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badges">
+                    <div class="badge"><span class="badge-icon">📍</span> Budapest Airport (BUD)</div>
+                    <div class="badge"><span class="badge-icon">🚗</span> Complete Driver's Guide</div>
+                </div>
+                <h1>Your Complete Guide to <span>Budapest Airport</span> by Car</h1>
+                <p>Everything you need to know before driving to BUD Airport – parking options, fuel stations, restaurants, shopping, and essential services all in one place.</p>
+                <div class="hero-buttons">
+                    <a href="#parking" class="btn btn-primary">View Parking Options →</a>
+                    <a href="#services" class="btn btn-secondary">Nearby Services</a>
+                </div>
+            </div>
+
+            <div class="quick-nav">
+                <a href="#parking" class="quick-nav-card">
+                    <div class="quick-nav-icon">🅿️</div>
+                    <h3>Parking</h3>
+                </a>
+                <a href="#services" class="quick-nav-card">
+                    <div class="quick-nav-icon">⛽</div>
+                    <h3>Fuel & Food</h3>
+                </a>
+                <a href="#directions" class="quick-nav-card">
+                    <div class="quick-nav-icon">🗺️</div>
+                    <h3>Directions</h3>
+                </a>
+                <a href="#pricing" class="quick-nav-card">
+                    <div class="quick-nav-icon">💰</div>
+                    <h3>Prices</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">15<span>+</span></div>
+                <div class="stat-label">Parking Locations</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5000<span>+</span></div>
+                <div class="stat-label">Parking Spaces</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24<span>/7</span></div>
+                <div class="stat-label">Services Available</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">16<span>km</span></div>
+                <div class="stat-label">From City Center</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Parking Section -->
+    <section class="section parking-section" id="parking">
+        <div class="section-header">
+            <span class="section-tag">Parking Options</span>
+            <h2 class="section-title">Where to Park at Budapest Airport</h2>
+            <p class="section-subtitle">Choose between official airport parking or budget-friendly off-site options with free shuttle service.</p>
+        </div>
+        
+        <div class="parking-grid">
+            <!-- Official: Premium Parking -->
+            <div class="parking-card official">
+                <span class="card-badge official-badge">Official</span>
+                <div class="card-header-bar">
+                    <h3 class="card-title">Premium Parking</h3>
+                    <p class="card-location">📍 Right at Terminal 2 • 1 min walk</p>
+                </div>
+                <div class="card-content">
+                    <div class="card-price-row">
+                        <span class="price-label">Starting from</span>
+                        <div class="price-amount">600 Ft <span class="price-period">/ 5 min</span></div>
+                    </div>
+                    <div class="card-features">
+                        <span class="feature-tag highlight">First 5 min FREE</span>
+                        <span class="feature-tag">70 Spaces</span>
+                        <span class="feature-tag">CCTV 24/7</span>
+                    </div>
+                    <p class="card-description">Closest parking to terminal. Perfect for quick drop-offs and pick-ups. License plate recognition for seamless entry.</p>
+                    <a href="https://parkolo.bud.hu/en/" target="_blank" class="card-link">View on Official Site →</a>
+                </div>
+            </div>
+
+            <!-- Official: Terminal Parking -->
+            <div class="parking-card official">
+                <span class="card-badge official-badge">Official</span>
+                <div class="card-header-bar">
+                    <h3 class="card-title">Terminal Parking</h3>
+                    <p class="card-location">📍 2-4 min walk to terminal</p>
+                </div>
+                <div class="card-content">
+                    <div class="card-price-row">
+                        <span class="price-label">Starting from</span>
+                        <div class="price-amount">450 Ft <span class="price-period">/ 5 min</span></div>
+                    </div>
+                    <div class="card-features">
+                        <span class="feature-tag">746 Spaces</span>
+                        <span class="feature-tag">⚡ EV Chargers</span>
+                        <span class="feature-tag">CCTV</span>
+                    </div>
+                    <p class="card-description">Great balance of convenience and price. Covered walkway to terminal. Ideal for business trips.</p>
+                    <a href="https://parkolo.bud.hu/en/" target="_blank" class="card-link">View on Official Site →</a>
+                </div>
+            </div>
+
+            <!-- Official: City Break -->
+            <div class="parking-card official">
+                <span class="card-badge official-badge">Official</span>
+                <div class="card-header-bar">
+                    <h3 class="card-title">City Break Parking</h3>
+                    <p class="card-location">📍 2-5 min walk, covered path</p>
+                </div>
+                <div class="card-content">
+                    <div class="card-price-row">
+                        <span class="price-label">Daily rate</span>
+                        <div class="price-amount">8,400 Ft <span class="price-period">/ day</span></div>
+                    </div>
+                    <div class="card-features">
+                        <span class="feature-tag highlight">Popular Choice</span>
+                        <span class="feature-tag">⚡ EV Chargers</span>
+                    </div>
+                    <p class="card-description">Perfect for weekend getaways. Covered walkway protects from weather. Good value for 2-5 day trips.</p>
+                    <a href="https://parkolo.bud.hu/en/" target="_blank" class="card-link">View on Official Site →</a>
+                </div>
+            </div>
+
+            <!-- Official: Holiday Parking -->
+            <div class="parking-card official">
+                <div class="card-header-bar">
+                    <h3 class="card-title">Holiday Parking</h3>
+                    <p class="card-location">📍 4-9 min walk, covered path</p>
+                </div>
+                <div class="card-content">
+                    <div class="card-price-row">
+                        <span class="price-label">Daily rate</span>
+                        <div class="price-amount">6,700 Ft <span class="price-period">/ day</span></div>
+                    </div>
+                    <div class="card-features">
+                        <span class="feature-tag highlight">Best for Long Stays</span>
+                        <span class="feature-tag">Budget-Friendly</span>
+                    </div>
+                    <p class="card-description">Most economical official option for holidays. Great for 1-2 week vacations with significant savings.</p>
+                    <a href="https://parkolo.bud.hu/en/" target="_blank" class="card-link">View on Official Site →</a>
+                </div>
+            </div>
+
+            <!-- Official: Smart Parking -->
+            <div class="parking-card official">
+                <div class="card-header-bar">
+                    <h3 class="card-title">Smart Parking</h3>
+                    <p class="card-location">📍 8-10 min walk, covered path</p>
+                </div>
+                <div class="card-content">
+                    <div class="card-price-row">
+                        <span class="price-label">Daily rate</span>
+                        <div class="price-amount">~5,500 Ft <span class="price-period">/ day</span></div>
+                    </div>
+                    <div class="card-features">
+                        <span class="feature-tag">1,440 Spaces</span>
+                        <span class="feature-tag highlight">Cheapest Official</span>
+                    </div>
+                    <p class="card-description">Newest and largest facility. Only for full-day bookings. Best rates for extended stays of a week or more.</p>
+                    <a href="https://parkolo.bud.hu/en/" target="_blank" class="card-link">View on Official Site →</a>
+                </div>
+            </div>
+
+            <!-- Off-site: Best Parking -->
+            <div class="parking-card offsite">
+                <span class="card-badge">Off-Site</span>
+                <div class="card-header-bar offsite-header">
+                    <h3 class="card-title">Best Parking Budapest</h3>
+                    <p class="card-location">📍 Vecsés • 5 min shuttle</p>
+                </div>
+                <div class="card-content">
+                    <div class="card-price-row">
+                        <span class="price-label">Starting from</span>
+                        <div class="price-amount">2,900 Ft <span class="price-period">/ day</span></div>
+                    </div>
+                    <div class="card-features">
+                        <span class="feature-tag highlight">Free Shuttle</span>
+                        <span class="feature-tag">800 Spaces</span>
+                        <span class="feature-tag">24/7 Security</span>
+                    </div>
+                    <p class="card-description">One of the largest private parking lots. Free shuttle, terrace café, washroom facilities. Child seats available.</p>
+                    <a href="https://www.bestparking.hu/en/" target="_blank" class="card-link offsite-link">Visit Website →</a>
+                </div>
+            </div>
+
+            <!-- Off-site: VIP Parking -->
+            <div class="parking-card offsite">
+                <span class="card-badge">Off-Site</span>
+                <div class="card-header-bar offsite-header">
+                    <h3 class="card-title">VIP Parking Budapest</h3>
+                    <p class="card-location">📍 Near Airport • 5-10 min transfer</p>
+                </div>
+                <div class="card-content">
+                    <div class="card-price-row">
+                        <span class="price-label">Starting from</span>
+                        <div class="price-amount">3,200 Ft <span class="price-period">/ day</span></div>
+                    </div>
+                    <div class="card-features">
+                        <span class="feature-tag">License Plate Recognition</span>
+                        <span class="feature-tag">Hotel Access</span>
+                    </div>
+                    <p class="card-description">Premium private parking with modern tech. Hotel partnership offers wellness access for longer stays.</p>
+                    <a href="https://www.parkvia.com/en-GB/airport-parking/budapest/vip-parkolo-budapest-airport" target="_blank" class="card-link offsite-link">Visit Website →</a>
+                </div>
+            </div>
+
+            <!-- Off-site: BUDCAR -->
+            <div class="parking-card offsite">
+                <span class="card-badge">Off-Site</span>
+                <div class="card-header-bar offsite-header">
+                    <h3 class="card-title">BUDCAR Parking</h3>
+                    <p class="card-location">📍 2 km from Airport</p>
+                </div>
+                <div class="card-content">
+                    <div class="card-price-row">
+                        <span class="price-label">Starting from</span>
+                        <div class="price-amount">2,500 Ft <span class="price-period">/ day</span></div>
+                    </div>
+                    <div class="card-features">
+                        <span class="feature-tag highlight">Free Shuttle</span>
+                        <span class="feature-tag">Indoor Garage</span>
+                        <span class="feature-tag">Car Wash</span>
+                    </div>
+                    <p class="card-description">Secure parking behind stone walls. Both outdoor and covered garage options. On-site car wash service.</p>
+                    <a href="https://en.budcarparking.hu/" target="_blank" class="card-link offsite-link">Visit Website →</a>
+                </div>
+            </div>
+
+            <!-- Off-site: Budget -->
+            <div class="parking-card offsite">
+                <span class="card-badge">Off-Site</span>
+                <div class="card-header-bar offsite-header">
+                    <h3 class="card-title">Reptér Parkoló</h3>
+                    <p class="card-location">📍 5-10 min from Airport</p>
+                </div>
+                <div class="card-content">
+                    <div class="card-price-row">
+                        <span class="price-label">Starting from</span>
+                        <div class="price-amount">2,200 Ft <span class="price-period">/ day</span></div>
+                    </div>
+                    <div class="card-features">
+                        <span class="feature-tag highlight">Best Value</span>
+                        <span class="feature-tag">Flight Tracking</span>
+                        <span class="feature-tag">Pay on Arrival</span>
+                    </div>
+                    <p class="card-description">Budget-friendly option with reliable shuttle. Technical assistance for battery/tire issues. Flight monitoring included.</p>
+                    <a href="https://www.budapestrepterparkolo.hu/en/" target="_blank" class="card-link offsite-link">Visit Website →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nearby Services Section -->
+    <section class="section services-section" id="services">
+        <div class="section-header">
+            <span class="section-tag">Nearby Services</span>
+            <h2 class="section-title">Services Near the Airport</h2>
+            <p class="section-subtitle">Fuel up, grab food, or do last-minute shopping before your flight. All within minutes of BUD Airport.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Fuel Stations -->
+            <div class="service-card">
+                <div class="service-icon">⛽</div>
+                <div class="service-type">Fuel Station</div>
+                <h3>MOL Gas Station</h3>
+                <p>Full-service fuel station on the way to airport. Petrol, diesel, and LPG available. Convenience store inside.</p>
+                <div class="service-details">
+                    <div class="service-detail"><span class="service-detail-icon">📍</span> Üllői út, before airport exit</div>
+                    <div class="service-detail"><span class="service-detail-icon">⏰</span> Open 24/7</div>
+                    <div class="service-detail"><span class="service-detail-icon">💳</span> Cards accepted</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⛽</div>
+                <div class="service-type">Fuel Station</div>
+                <h3>OMV Vecsés</h3>
+                <p>Modern station near airport area with premium fuel options. Clean facilities and quick service.</p>
+                <div class="service-details">
+                    <div class="service-detail"><span class="service-detail-icon">📍</span> Vecsés, near M0</div>
+                    <div class="service-detail"><span class="service-detail-icon">⏰</span> Open 24/7</div>
+                    <div class="service-detail"><span class="service-detail-icon">🔌</span> EV charging available</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⛽</div>
+                <div class="service-type">Fuel Station</div>
+                <h3>Shell Ferihegy</h3>
+                <p>Shell station with V-Power fuels and full convenience store. Car wash facilities on site.</p>
+                <div class="service-details">
+                    <div class="service-detail"><span class="service-detail-icon">📍</span> Route 4 (Ferihegyi út)</div>
+                    <div class="service-detail"><span class="service-detail-icon">⏰</span> Open 24/7</div>
+                    <div class="service-detail"><span class="service-detail-icon">🚿</span> Car wash available</div>
+                </div>
+            </div>
+
+            <!-- Food - Drive Through -->
+            <div class="service-card">
+                <div class="service-icon">🍔</div>
+                <div class="service-type">Drive-Through</div>
+                <h3>McDonald's Vecsés</h3>
+                <p>Convenient drive-through on the way to airport. Full menu available with quick service.</p>
+                <div class="service-details">
+                    <div class="service-detail"><span class="service-detail-icon">📍</span> Vecsés, Fő út</div>
+                    <div class="service-detail"><span class="service-detail-icon">⏰</span> 6:00 - 24:00</div>
+                    <div class="service-detail"><span class="service-detail-icon">🚗</span> Drive-through open</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🍗</div>
+                <div class="service-type">Drive-Through</div>
+                <h3>KFC Vecsés</h3>
+                <p>Quick chicken meals perfect for the road. Drive-through for fast service before your flight.</p>
+                <div class="service-details">
+                    <div class="service-detail"><span class="service-detail-icon">📍</span> Vecsés, near Market Central</div>
+                    <div class="service-detail"><span class="service-detail-icon">⏰</span> 10:00 - 22:00</div>
+                    <div class="service-detail"><span class="service-detail-icon">🚗</span> Drive-through available</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🌮</div>
+                <div class="service-type">Drive-Through</div>
+                <h3>Burger King</h3>
+                <p>Flame-grilled burgers to go. Quick stop for families heading to the airport.</p>
+                <div class="service-details">
+                    <div class="service-detail"><span class="service-detail-icon">📍</span> Market Central area</div>
+                    <div class="service-detail"><span class="service-detail-icon">⏰</span> 9:00 - 22:00</div>
+                    <div class="service-detail"><span class="service-detail-icon">🚗</span> Drive-through available</div>
+                </div>
+            </div>
+
+            <!-- Coffee -->
+            <div class="service-card">
+                <div class="service-icon">☕</div>
+                <div class="service-type">Coffee</div>
+                <h3>Starbucks</h3>
+                <p>Get your coffee fix inside Terminal 2. Pastries and snacks also available for your journey.</p>
+                <div class="service-details">
+                    <div class="service-detail"><span class="service-detail-icon">📍</span> BUD Airport Terminal 2</div>
+                    <div class="service-detail"><span class="service-detail-icon">⏰</span> 5:00 - 21:00</div>
+                    <div class="service-detail"><span class="service-detail-icon">📶</span> Free WiFi</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">☕</div>
+                <div class="service-type">Coffee</div>
+                <h3>Costa Coffee</h3>
+                <p>Premium coffee in the terminal. Perfect for a pre-flight caffeine boost.</p>
+                <div class="service-details">
+                    <div class="service-detail"><span class="service-detail-icon">📍</span> BUD Airport Terminal 2</div>
+                    <div class="service-detail"><span class="service-detail-icon">⏰</span> 5:30 - 20:30</div>
+                    <div class="service-detail"><span class="service-detail-icon">🥐</span> Pastries available</div>
+                </div>
+            </div>
+
+            <!-- Shopping -->
+            <div class="service-card">
+                <div class="service-icon">🛒</div>
+                <div class="service-type">Shopping Mall</div>
+                <h3>Market Central Ferihegy</h3>
+                <p>Large shopping center just 5 minutes from airport. Supermarket, shops, restaurants, and services all in one place.</p>
+                <div class="service-details">
+                    <div class="service-detail"><span class="service-detail-icon">📍</span> Vecsés, Fő út 246</div>
+                    <div class="service-detail"><span class="service-detail-icon">⏰</span> 10:00 - 20:00</div>
+                    <div class="service-detail"><span class="service-detail-icon">🅿️</span> Free parking</div>
+                </div>
+                <a href="https://marketcentral.hu" target="_blank" class="service-link">Visit Website →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏪</div>
+                <div class="service-type">Supermarket</div>
+                <h3>Lidl Vecsés</h3>
+                <p>Budget-friendly supermarket for last-minute supplies. Snacks, drinks, and travel essentials.</p>
+                <div class="service-details">
+                    <div class="service-detail"><span class="service-detail-icon">📍</span> Vecsés</div>
+                    <div class="service-detail"><span class="service-detail-icon">⏰</span> 7:00 - 21:00</div>
+                    <div class="service-detail"><span class="service-detail-icon">💰</span> Budget-friendly</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏪</div>
+                <div class="service-type">Supermarket</div>
+                <h3>Tesco Extra</h3>
+                <p>Large hypermarket with everything you need. Groceries, electronics, travel items, and pharmacy.</p>
+                <div class="service-details">
+                    <div class="service-detail"><span class="service-detail-icon">📍</span> Üllő / Gyál area</div>
+                    <div class="service-detail"><span class="service-detail-icon">⏰</span> 6:00 - 22:00</div>
+                    <div class="service-detail"><span class="service-detail-icon">💊</span> Pharmacy inside</div>
+                </div>
+            </div>
+
+            <!-- Other Services -->
+            <div class="service-card">
+                <div class="service-icon">🚿</div>
+                <div class="service-type">Car Service</div>
+                <h3>Car Wash Stations</h3>
+                <p>Clean your car before parking or after your trip. Several automatic wash stations in the area.</p>
+                <div class="service-details">
+                    <div class="service-detail"><span class="service-detail-icon">📍</span> Shell & MOL stations</div>
+                    <div class="service-detail"><span class="service-detail-icon">⏰</span> Most open 24/7</div>
+                    <div class="service-detail"><span class="service-detail-icon">💧</span> Self-service & automatic</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💊</div>
+                <div class="service-type">Pharmacy</div>
+                <h3>Pharmacy at Terminal</h3>
+                <p>In-terminal pharmacy for last-minute medical supplies, travel medications, and health products.</p>
+                <div class="service-details">
+                    <div class="service-detail"><span class="service-detail-icon">📍</span> Terminal 2 Arrivals</div>
+                    <div class="service-detail"><span class="service-detail-icon">⏰</span> 6:00 - 22:00</div>
+                    <div class="service-detail"><span class="service-detail-icon">💉</span> Travel vaccines info</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏧</div>
+                <div class="service-type">Banking</div>
+                <h3>ATMs & Currency Exchange</h3>
+                <p>Multiple ATMs in terminal. Currency exchange offices available in arrivals and departures.</p>
+                <div class="service-details">
+                    <div class="service-detail"><span class="service-detail-icon">📍</span> Terminal 2</div>
+                    <div class="service-detail"><span class="service-detail-icon">⏰</span> 24/7 ATM access</div>
+                    <div class="service-detail"><span class="service-detail-icon">💱</span> Multiple currencies</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏨</div>
+                <div class="service-type">Accommodation</div>
+                <h3>ibis Budapest Airport</h3>
+                <p>Convenient hotel next to the airport. Perfect for early flights or long layovers. Free shuttle to terminal.</p>
+                <div class="service-details">
+                    <div class="service-detail"><span class="service-detail-icon">📍</span> Lőrinci út 39, Vecsés</div>
+                    <div class="service-detail"><span class="service-detail-icon">🚐</span> Free airport shuttle</div>
+                    <div class="service-detail"><span class="service-detail-icon">🅿️</span> Parking available</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚕</div>
+                <div class="service-type">Transport</div>
+                <h3>Főtaxi Stand</h3>
+                <p>Official taxi service at the airport. Fixed rates to Budapest city center. Order in advance or on arrival.</p>
+                <div class="service-details">
+                    <div class="service-detail"><span class="service-detail-icon">📍</span> Terminal 2 Arrivals</div>
+                    <div class="service-detail"><span class="service-detail-icon">⏰</span> 24/7 service</div>
+                    <div class="service-detail"><span class="service-detail-icon">💰</span> Fixed city rates</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Directions Section -->
+    <section class="section directions-section" id="directions">
+        <div class="directions-container">
+            <div class="directions-content">
+                <h2>How to Get to Budapest Airport</h2>
+                <p>Budapest Ferenc Liszt International Airport (BUD) is located approximately 16 km southeast of the city center. Well-signposted from all major roads.</p>
+                
+                <div class="directions-list">
+                    <div class="direction-item">
+                        <div class="direction-icon">🚗</div>
+                        <div class="direction-text">
+                            <h4>From Budapest City Center</h4>
+                            <p>Take Üllői út or the M3 motorway towards the airport. Follow signs to "Liszt Ferenc Airport" and Terminal 2. Journey takes 25-35 minutes depending on traffic.</p>
+                        </div>
+                    </div>
+                    <div class="direction-item">
+                        <div class="direction-icon">🛣️</div>
+                        <div class="direction-text">
+                            <h4>From M0 Ring Road</h4>
+                            <p>Exit at junction 57 onto Route 4 (Ferihegyi út) towards the airport. Terminal parking is clearly signed. Off-site parking facilities are located along Route 4.</p>
+                        </div>
+                    </div>
+                    <div class="direction-item">
+                        <div class="direction-icon">🧭</div>
+                        <div class="direction-text">
+                            <h4>GPS Coordinates</h4>
+                            <p><strong>Terminal 2:</strong> 47.4369° N, 19.2556° E<br>For off-site parking, use coordinates provided by each operator.</p>
+                        </div>
+                    </div>
+                    <div class="direction-item">
+                        <div class="direction-icon">⏰</div>
+                        <div class="direction-text">
+                            <h4>Recommended Arrival Time</h4>
+                            <p><strong>Terminal parking:</strong> 2 hours before departure<br><strong>Off-site parking:</strong> 2.5-3 hours before departure (for shuttle transfer)</p>
+                        </div>
+                    </div>
+                    <div class="direction-item">
+                        <div class="direction-icon">⚠️</div>
+                        <div class="direction-text">
+                            <h4>Traffic Tips</h4>
+                            <p>Avoid rush hours (7-9 AM, 4-7 PM). Weekday mornings can be busy on Üllői út. Consider using M0 ring road to bypass city traffic.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2698.893912456!2d19.252!3d47.437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c1a5e0c8a9d7%3A0x8c0c0c0c0c0c0c0c!2sBudapest%20Ferenc%20Liszt%20International%20Airport!5e0!3m2!1sen!2shu!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section pricing-section" id="pricing">
+        <div class="section-header">
+            <span class="section-tag">Compare Prices</span>
+            <h2 class="section-title">Parking Price Comparison</h2>
+            <p class="section-subtitle">Find the best value for your trip duration. Prices in Hungarian Forint (HUF).</p>
+        </div>
+
+        <div class="pricing-table-container">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Parking Location</th>
+                        <th>1 Day</th>
+                        <th>3 Days</th>
+                        <th>7 Days</th>
+                        <th>14 Days</th>
+                        <th>Best For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Premium Parking <span class="parking-type-badge official">Official</span></td>
+                        <td class="price-cell">45,000 Ft</td>
+                        <td class="price-cell">135,000 Ft</td>
+                        <td class="price-cell">315,000 Ft</td>
+                        <td class="price-cell">630,000 Ft</td>
+                        <td>Quick drop-off only</td>
+                    </tr>
+                    <tr>
+                        <td>Terminal Parking <span class="parking-type-badge official">Official</span></td>
+                        <td class="price-cell">8,000 Ft</td>
+                        <td class="price-cell">24,000 Ft</td>
+                        <td class="price-cell">56,000 Ft</td>
+                        <td class="price-cell">112,000 Ft</td>
+                        <td>Business trips</td>
+                    </tr>
+                    <tr>
+                        <td>City Break <span class="parking-type-badge official">Official</span></td>
+                        <td class="price-cell">8,400 Ft</td>
+                        <td class="price-cell">13,900 Ft</td>
+                        <td class="price-cell">23,700 Ft</td>
+                        <td class="price-cell">39,400 Ft</td>
+                        <td>Weekend getaways</td>
+                    </tr>
+                    <tr>
+                        <td>Holiday Parking <span class="parking-type-badge official">Official</span></td>
+                        <td class="price-cell">6,700 Ft</td>
+                        <td class="price-cell">11,500 Ft</td>
+                        <td class="price-cell">20,700 Ft</td>
+                        <td class="price-cell">32,800 Ft</td>
+                        <td>Week-long holidays</td>
+                    </tr>
+                    <tr>
+                        <td>Smart Parking <span class="parking-type-badge official">Official</span></td>
+                        <td class="price-cell">5,500 Ft</td>
+                        <td class="price-cell">10,000 Ft</td>
+                        <td class="price-cell">18,000 Ft</td>
+                        <td class="price-cell">30,000 Ft</td>
+                        <td>Extended vacations</td>
+                    </tr>
+                    <tr>
+                        <td>Best Parking <span class="parking-type-badge offsite">Off-Site</span></td>
+                        <td class="price-cell">2,900 Ft</td>
+                        <td class="price-cell">7,500 Ft</td>
+                        <td class="price-cell">15,000 Ft</td>
+                        <td class="price-cell">25,000 Ft</td>
+                        <td>Budget-conscious</td>
+                    </tr>
+                    <tr>
+                        <td>Reptér Parkoló <span class="parking-type-badge offsite">Off-Site</span> <span class="best-value">Best Value</span></td>
+                        <td class="price-cell">2,200 Ft</td>
+                        <td class="price-cell">5,500 Ft</td>
+                        <td class="price-cell">12,000 Ft</td>
+                        <td class="price-cell">20,000 Ft</td>
+                        <td>Maximum savings</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="pricing-note">* Prices are approximate and may vary. Check official websites for current rates. Off-site prices include free shuttle service.</p>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="section tips-section" id="tips">
+        <div class="section-header">
+            <span class="section-tag">Pro Tips</span>
+            <h2 class="section-title">Essential Tips for Drivers</h2>
+            <p class="section-subtitle">Make your airport experience smooth with these practical tips.</p>
+        </div>
+
+        <div class="tips-grid">
+            <div class="tip-card">
+                <div class="tip-number">1</div>
+                <h3>Arrive Early</h3>
+                <p>For terminal parking, arrive 2 hours before your flight. For off-site parking with shuttle service, add 30-45 extra minutes to account for transfer time and check-in.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-number">2</div>
+                <h3>Book in Advance</h3>
+                <p>Official airport parking can be booked online at least 6 hours ahead. Pre-booking often secures better rates and guarantees your spot during peak travel periods.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-number">3</div>
+                <h3>Fuel Up Before Parking</h3>
+                <p>Fill your tank before heading to the airport – fuel stations near the airport are convenient. This way your car is ready when you return from your trip.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-number">4</div>
+                <h3>Save Your Parking Location</h3>
+                <p>Take a photo of your parking spot number and row. Large car parks can be confusing after a long trip. Some parking apps let you save your location.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-number">5</div>
+                <h3>Check for Discounts</h3>
+                <p>Many off-site parking operators offer early booking discounts, loyalty programs, or promo codes. Check their websites or sign up for newsletters for deals.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-number">6</div>
+                <h3>Know the Shuttle Schedule</h3>
+                <p>Off-site parking shuttles usually run 24/7 and track your flight. Call them when you land – they'll pick you up within 5-10 minutes at the designated meeting point.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <div class="logo-icon">✈</div>
+                    <div class="logo-text">Park<span>BUD</span></div>
+                </a>
+                <p>Your complete driver's guide to Budapest Ferenc Liszt International Airport. Parking, services, directions – everything in one place.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#parking">Parking Options</a></li>
+                    <li><a href="#services">Nearby Services</a></li>
+                    <li><a href="#directions">Directions</a></li>
+                    <li><a href="#pricing">Price Comparison</a></li>
+                    <li><a href="#tips">Tips & Advice</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Official Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.bud.hu/en" target="_blank">Budapest Airport (BUD)</a></li>
+                    <li><a href="https://parkolo.bud.hu/en/" target="_blank">Official Parking Booking</a></li>
+                    <li><a href="https://www.bud.hu/en/passengers/flight_information" target="_blank">Flight Information</a></li>
+                    <li><a href="https://bkk.hu/en/" target="_blank">Budapest Transport (BKK)</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Information</h4>
+                <ul class="footer-links">
+                    <li><a href="#">About This Guide</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Suggest an Update</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 ParkBUD Guide. Independent information resource. Not affiliated with Budapest Airport.</p>
+            <p>Last updated: December 2025 | <a href="#">Report incorrect information</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
