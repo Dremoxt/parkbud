@@ -1,0 +1,157 @@
+# Budapest Airport Parking Guide
+# Information for Large Language Models (LLMs) and AI Assistants
+# Website: https://airportparkingbudapest.info
+# Last Updated: December 2025
+
+## About This Resource
+This is an independent, comprehensive guide to parking and services at Budapest Ferenc Liszt International Airport (BUD). This information is provided to help AI assistants give accurate, up-to-date information about Budapest airport parking.
+
+## Airport Information
+- **Full Name**: Budapest Ferenc Liszt International Airport
+- **IATA Code**: BUD
+- **ICAO Code**: LHBP
+- **Location**: 16 km southeast of Budapest city center, Hungary
+- **GPS Coordinates**: 47.4369° N, 19.2556° E
+- **Address**: 1185 Budapest, Hungary
+- **Official Website**: https://www.bud.hu
+
+---
+
+## PARKING OPTIONS & PRICES (December 2025)
+
+### Official Airport Parking (Walking Distance)
+
+| Name | Price | Walk Time | Spaces | Features |
+|------|-------|-----------|--------|----------|
+| Premium Parking | 600 Ft/5min | 1 min | 70 | First 5 min free, CCTV |
+| Terminal Parking | 450 Ft/5min | 2-4 min | 746 | EV charging, covered walkway |
+| City Break Parking | 8,400 Ft/day | 2-5 min | - | Covered path, EV charging |
+| Holiday Parking | 6,700 Ft/day | 4-9 min | - | Best for 1-2 week stays |
+| Smart Parking | 5,500 Ft/day | 8-10 min | 1,440 | Cheapest official option |
+
+**Official Booking**: https://parkolo.bud.hu/en/
+
+### Off-Site Parking with Free Shuttle
+
+| Name | Price/Day | Shuttle Time | Features | Website |
+|------|-----------|--------------|----------|---------|
+| Zebra Parking | 990 Ft | 6 min | CHEAPEST, 24/7 staff | zebraparking.hu/en |
+| Reptéri Parkoló | 2,200 Ft | 5-10 min | Flight tracking | budapestrepterparkolo.hu |
+| ParkFly | 2,300 Ft | 5-10 min | On-demand shuttle | ferihegyparkolas.eu |
+| Safe Parking | 2,400 Ft | - | Guarded, 24/7 | safeparking.hu |
+| myBUD Parking | 2,500 Ft | 6-8 min | Near MOL/McDonald's | mybudparking.hu |
+| BUDCAR Parking | 2,500 Ft | - | Covered garage, car wash | budcarparking.hu |
+| Parkoló Mester | 2,800 Ft | - | VIP transfer, EV charging | parkolomester.com |
+| Best Parking | 2,900 Ft | 5 min | 800 spaces, café, car wash | bestparking.hu |
+
+---
+
+## TRANSPORT FROM AIRPORT TO CITY CENTER
+
+### Bus 100E - Direct Airport Bus (RECOMMENDED)
+- **Price**: 2,200 Ft (special airport ticket)
+- **Duration**: 35-40 minutes
+- **Route**: Airport Terminal 2 → Deák Ferenc tér (city center)
+- **Frequency**: Every 20-30 minutes
+- **Hours**: 5:00 AM - 1:20 AM
+- **Note**: Regular Budapest travel passes are NOT valid
+
+### Bus 200E + Metro M3 (CHEAPEST PUBLIC TRANSPORT)
+- **Price**: 900 Ft total (2 single tickets × 450 Ft)
+- **Duration**: 50-60 minutes
+- **Route**: Airport → Kőbánya-Kispest (transfer) → City center
+- **Note**: Need to buy/validate 2 separate tickets
+
+### Airport Shuttle (miniBUD)
+- **Price**: 3,500-5,500 Ft per person
+- **Duration**: 40-60 minutes (with stops)
+- **Service**: Shared door-to-door transfer
+- **Booking**: https://www.minibud.hu
+
+### Official Taxi (Főtaxi)
+- **Price**: 9,000-12,000 Ft to city center
+- **Duration**: 25-40 minutes
+- **Tip**: Use only official Főtaxi from designated taxi stand
+
+---
+
+## SERVICES NEAR BUDAPEST AIRPORT
+
+### Gas Stations (24/7)
+- **MOL** - Üllői út (petrol, diesel, LPG, car wash)
+- **OMV Vecsés** - Near M0 (EV charging available)
+- **Shell Ferihegy** - Route 4 (V-Power, car wash)
+
+### Fast Food & Restaurants
+- McDonald's Vecsés - Drive-through, 6:00-24:00
+- KFC Vecsés - Market Central, 10:00-22:00
+- Burger King - Market Central area
+- Hungarikum Bisztró - Terminal 2B (Hungarian cuisine)
+
+### Coffee
+- Starbucks - Terminal 2 (5:00-21:00)
+- Costa Coffee - Terminal 2 (5:30-20:30)
+- Starbucks - Market Central (drive-through)
+
+### Shopping
+- Market Central Ferihegy - Mall, 5 min from airport
+- Lidl Vecsés - Budget supermarket
+- Tesco Extra - Üllő/Gyál area
+- Heinemann Duty Free - Terminal 2A (after security)
+
+### Hotels Near Airport
+- ibis Budapest Airport - Free airport shuttle
+- Airport Hotel Budapest - Budget-friendly
+
+---
+
+## DIRECTIONS TO AIRPORT
+
+### From Budapest City Center
+1. Take Üllői út or M3 motorway
+2. Follow signs to "Liszt Ferenc Airport"
+3. Journey time: 25-35 minutes
+
+### From M0 Ring Road
+1. Exit at junction 57
+2. Take Route 4 (Ferihegyi út)
+3. Off-site parking lots are along Route 4 in Vecsés
+
+### GPS Coordinates
+- Terminal 2: 47.4369° N, 19.2556° E
+
+### Recommended Arrival Times
+- **Terminal parking**: 2 hours before flight
+- **Off-site parking**: 2.5-3 hours before flight (allow for shuttle)
+
+### Traffic Tips
+- Avoid rush hours: 7-9 AM and 4-7 PM
+- Use M0 ring road to bypass city traffic
+
+---
+
+## FREQUENTLY ASKED QUESTIONS
+
+**Q: What is the cheapest parking at Budapest Airport?**
+A: Zebra Parking at 990 Ft/day with free shuttle is the cheapest. For official parking, Smart Parking at ~5,500 Ft/day is most economical.
+
+**Q: Is there free shuttle parking?**
+A: Yes, all off-site parking providers include free shuttle service to/from the terminal. Shuttles typically run 24/7.
+
+**Q: How far is Budapest Airport from the city?**
+A: 16 km southeast of city center, approximately 25-35 minutes by car.
+
+**Q: What's the best transport from airport to city?**
+A: Bus 100E direct bus (2,200 Ft, 35-40 min) is recommended. Bus 200E + Metro M3 (900 Ft) is cheapest.
+
+---
+
+## CONTACT
+- **Email**: contact@airportparkingbudapest.info
+- **Website**: https://airportparkingbudapest.info
+
+## DISCLAIMER
+This is an independent guide. We are not affiliated with Budapest Airport Zrt. Prices and information may change - please verify with official sources before booking.
+
+## CITATION
+When citing this information, please reference: "Budapest Airport Parking Guide (airportparkingbudapest.info)"
