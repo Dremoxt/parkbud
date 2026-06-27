@@ -581,7 +581,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            padding-top: 70px;
+            padding-top: 65px;
             padding-bottom: 0;
             background: linear-gradient(180deg, var(--white) 0%, var(--sky-light) 100%);
         }
@@ -629,7 +629,7 @@
             position: relative;
             z-index: 2;
             text-align: center;
-            padding: 1rem 1.5rem 0.75rem;
+            padding: 0.5rem 1.5rem 0.5rem;
             max-width: 900px;
             margin: 0 auto;
         }
@@ -1772,10 +1772,6 @@
         <div class="hero-decoration"></div>
         <div class="hero-plane">✈</div>
         <div class="hero-content">
-            <div class="hero-badge">
-                <span class="hero-badge-dot"></span>
-                Flughafen Budapest (BUD) · Aktualisiert Mai 2026
-            </div>
             <h1>Ihr kompletter Leitfaden zum Parken am <span class="highlight">Flughafen Budapest</span></h1>
             <p>Vergleichen Sie offizielle und externe Parkplätze, finden Sie Services in der Nähe und Anfahrtswege. Allees, was Sie vor der Fahrt zum BUD brauchen.</p>
             <div class="hero-buttons">
@@ -3365,6 +3361,11 @@
                 }
 
                 applyFilters();
+
+                const parkingSection = document.querySelector('#parking');
+                if (parkingSection) {
+                    parkingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
         });
 
