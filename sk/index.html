@@ -960,7 +960,7 @@
         /* Parkovanie Grid */
         .parking-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
             gap: 1.5rem;
             max-width: 1400px;
             margin: 0 auto;
@@ -1159,7 +1159,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
             gap: 1.25rem;
             max-width: 1400px;
             margin: 0 auto;
@@ -1400,7 +1400,7 @@
 
         .transport-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
             gap: 1.5rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -1489,7 +1489,7 @@
 
         .tips-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
             gap: 1.5rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -1688,6 +1688,12 @@
         /* Phone header: the language picker gets its own row so the menu
            button stays on screen. --header-h is kept in sync by script. */
         @media (max-width: 768px) {
+            /* Fallback for the wrapped two-row header when script has not run;
+               syncHeaderHeight() replaces it with the measured value. */
+            :root {
+                --header-h: 105px;
+            }
+
             nav {
                 flex-wrap: wrap;
                 row-gap: 0.5rem;
