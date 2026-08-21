@@ -55,27 +55,47 @@ def split_cards(grid: str, css_class: str) -> list[tuple[str, str]]:
 
 
 def parse_parking(src: str) -> list[dict]:
-    grid = section(src, 'id="parkingGrid"', 'id="showAllContainer"')
-    cards = split_cards(grid, "parking-card")
+    """Read the lot rows the redesign renders.
+
+    Price, distance and type live on data-* attributes now, so the numbers here
+    are the same ones the page sorts by rather than a re-parse of display text.
+    """
+    grid = section(src, 'id="parkingGrid"', 'id="noResults"')
     out = []
-    for attrs, body in cards:
+    for chunk in grid.split('<article class="lot"')[1:]:
+        attrs, _, body = chunk.partition(">")
         data = dict(re.findall(r'data-(\w+)="([^"]*)"', attrs))
-        name = re.search(r'class="card-title">(.*?)</h3>', body, re.S)
-        loc = re.search(r'class="card-location">(.*?)</div>', body, re.S)
-        price = re.search(r'class="price-value">(.*?)</div>', body, re.S)
+
+        name = re.search(r'class="lot-name">(.*?)</h3>', body, re.S)
+        meta = re.search(r'class="lot-meta">(.*?)</p>', body, re.S)
         link = re.search(r'href="(https?://[^"]+)"[^>]*class="card-link"', body)
-        tags = [strip_tags(t) for t in re.findall(r'class="feature-tag[^"]*">(.*?)</span>', body, re.S)]
         desc = re.search(r'class="card-description">(.*?)</p>', body, re.S)
+        tags = [strip_tags(t) for t in
+                re.findall(r'class="feature-tag[^"]*">(.*?)</span>', body, re.S)]
+
+        amount = int(data.get("amount") or 0)
+        unit = data.get("unit", "day")
+        approx = "~" if data.get("approx") == "1" else ""
+        price = "%s%s Ft%s" % (approx, format(amount, ",d"),
+                               " / day" if unit == "day" else " / 5 min")
+
+        location = strip_tags(meta.group(1)) if meta else ""
+        # the "est." chip is rendered inside the meta line; it is not the place
+        for marker in ("est.", "becsült", "ca.", "aprox.", "pribl.", "cca"):
+            if location.endswith(marker):
+                location = location[: -len(marker)].strip()
+
         out.append({
             "name": strip_tags(name.group(1)) if name else "",
-            "location": strip_tags(loc.group(1)).lstrip("📍 ").strip() if loc else "",
-            "price": strip_tags(price.group(1)) if price else "",
+            "location": location,
+            "price": price,
             "features": [t for t in tags if t],
             "description": strip_tags(desc.group(1)) if desc else "",
             "url": link.group(1) if link else "",
             "type": data.get("type", ""),
             "access": data.get("access", ""),
             "flags": [f for f in data.get("features", "").split(",") if f],
+            "km": float(data.get("km") or 999),
         })
     return out
 
@@ -109,7 +129,7 @@ def cell(text: str) -> str:
 
 def daily_rate(price: str) -> int | None:
     """Sort key for the per-day prices, ignoring the per-5-minute tariffs."""
-    if "day" not in price:
+    if "/ day" not in price:
         return None
     digits = re.sub(r"[^\d]", "", price.split("/")[0])
     return int(digits) if digits else None

@@ -26,8 +26,8 @@ Prices are the operators' published rates as last checked and are marked "~" whe
 
 | Name | Price | Distance / Walk | Notes |
 |------|-------|-----------------|-------|
-| Premium Parking | 600 Ft / 5min | 0 km · at Terminal 2 (1 min walk) | ✨ First 5 min FREE, 70 Spaces, 🔒 CCTV 24/7 |
-| Terminal Parking | 450 Ft / 5min | 0 km · at terminal (2-4 min walk) | 746 Spaces, ⚡ EV Chargers, 🔒 CCTV |
+| Premium Parking | 600 Ft / 5 min | 0 km · at Terminal 2 (1 min walk) | ✨ First 5 min FREE, 70 Spaces, 🔒 CCTV 24/7 |
+| Terminal Parking | 450 Ft / 5 min | 0 km · at terminal (2-4 min walk) | 746 Spaces, ⚡ EV Chargers, 🔒 CCTV |
 | City Break Parking | 8,400 Ft / day | 0.2 km · covered path (2-5 min walk) | ⭐ Popular Choice, ⚡ EV Chargers, 🏠 Covered Path |
 | Holiday Parking | 6,700 Ft / day | 0.5 km · covered path (4-9 min walk) | 🗓️ Best for Long Stays, ⚡ EV Chargers, 🏠 Covered Path |
 | Smart Parking | ~5,500 Ft / day | 0.8 km · covered path (8-10 min walk) | 1,440 Spaces, 💰 Cheapest Official, 🏠 Covered Path |
