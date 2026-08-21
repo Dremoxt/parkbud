@@ -10,23 +10,22 @@
  * translated ones at runtime.
  */
 const { chromium } = require('playwright');
-const { BASE_URL, LAUNCH, PAGES, isolate, reporter } = require('./lib/harness');
+const { LAUNCH, PAGES, run } = require('./lib/harness');
 
-(async () => {
-  const r = reporter();
+run('BEHAVIOUR', async r => {
   const browser = await chromium.launch(LAUNCH);
 
   for (const [tag, path] of PAGES) {
     console.log(`\n=== ${tag} ===`);
     const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
-    await isolate(context);
+    await r.isolate(context);
     const page = await context.newPage();
 
     const errors = [];
     page.on('pageerror', e => errors.push(String(e)));
     page.on('console', m => { if (m.type() === 'error') errors.push('console: ' + m.text()); });
 
-    await page.goto(BASE_URL + path, { waitUntil: 'domcontentloaded' });
+    await page.goto(r.baseUrl + path, { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(400);
 
     // Blocked external assets surface as network errors; they are not page bugs.
@@ -161,5 +160,4 @@ const { BASE_URL, LAUNCH, PAGES, isolate, reporter } = require('./lib/harness');
   }
 
   await browser.close();
-  r.finish('BEHAVIOUR');
-})();
+});

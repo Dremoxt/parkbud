@@ -19,22 +19,20 @@ fails the build — that drift is how the two fell out of sync before.
 ## Running locally
 
 ```sh
+python3 tests/static_checks.py      # no browser needed
+
 cd tests
 npm ci
 npx playwright install chromium     # once
-
-# serve the site from the repository root
-(cd .. && python3 -m http.server 8099) &
-
-python3 static_checks.py
 npm test                            # behaviour + consent
 ```
 
-Both browser suites read `BASE_URL` (default `http://localhost:8099`) and
-`CHROMIUM_PATH` if you need to point at a Chromium that Playwright did not
-install itself.
+Each browser suite serves the repository itself on an ephemeral port, so
+there is nothing to start first and no port to collide with. Set `BASE_URL`
+to run against something already serving the files instead, and
+`CHROMIUM_PATH` to point at a Chromium that Playwright did not install.
 
-They also block every request that does not go to `BASE_URL`. That keeps runs
+They also block every request that does not go to the local server. That keeps runs
 fast and offline-safe, and it means no assertion depends on Google or
 Contentsquare being reachable — requests still fire their events, so "nothing
 was requested before consent" stays a real check.

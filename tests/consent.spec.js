@@ -9,7 +9,7 @@
  * claim and the one that matters.
  */
 const { chromium } = require('playwright');
-const { BASE_URL, LAUNCH, PAGES, TRACKER, isolate, reporter } = require('./lib/harness');
+const { LAUNCH, PAGES, TRACKER, run } = require('./lib/harness');
 
 const STORAGE_KEY = 'parkbud:consent';
 
@@ -22,8 +22,7 @@ const injectedTrackers = () => document.querySelectorAll(
 
 const consentCalls = () => (window.dataLayer || []).map(a => Array.from(a));
 
-(async () => {
-  const r = reporter();
+run('CONSENT GATE', async r => {
   const browser = await chromium.launch(LAUNCH);
 
   for (const [tag, path] of PAGES) {
@@ -31,12 +30,12 @@ const consentCalls = () => (window.dataLayer || []).map(a => Array.from(a));
 
     // ---------- 1. Fresh visit, no decision made ----------
     let context = await browser.newContext();
-    await isolate(context);
+    await r.isolate(context);
     let page = await context.newPage();
     const hits = [];
     trackerWatcher(page, hits);
 
-    await page.goto(BASE_URL + path, { waitUntil: 'domcontentloaded' });
+    await page.goto(r.baseUrl + path, { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(900);
 
     r.check(tag, 'no tracker request before consent', hits.length === 0, hits.join(', '));
@@ -79,7 +78,7 @@ const consentCalls = () => (window.dataLayer || []).map(a => Array.from(a));
     const revisitHits = [];
     const revisit = await context.newPage();
     trackerWatcher(revisit, revisitHits);
-    await revisit.goto(BASE_URL + path, { waitUntil: 'domcontentloaded' });
+    await revisit.goto(r.baseUrl + path, { waitUntil: 'domcontentloaded' });
     await revisit.waitForTimeout(900);
     r.check(tag, 'decline survives to the next page view',
       revisitHits.length === 0, revisitHits.join(', '));
@@ -89,12 +88,12 @@ const consentCalls = () => (window.dataLayer || []).map(a => Array.from(a));
 
     // ---------- 3. Accept ----------
     context = await browser.newContext();
-    await isolate(context);
+    await r.isolate(context);
     page = await context.newPage();
     const acceptHits = [];
     trackerWatcher(page, acceptHits);
 
-    await page.goto(BASE_URL + path, { waitUntil: 'domcontentloaded' });
+    await page.goto(r.baseUrl + path, { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(500);
     await page.locator('#cookieConsent .cookie-actions button').first().click();
     await page.waitForTimeout(900);
@@ -128,14 +127,14 @@ const consentCalls = () => (window.dataLayer || []).map(a => Array.from(a));
   // ---------- The policy page itself ----------
   console.log('\n=== /privacy/ ===');
   const context = await browser.newContext();
-  await isolate(context);
+  await r.isolate(context);
   const page = await context.newPage();
   const hits = [];
   const errors = [];
   trackerWatcher(page, hits);
   page.on('pageerror', e => errors.push(String(e)));
 
-  await page.goto(BASE_URL + '/privacy/', { waitUntil: 'domcontentloaded' });
+  await page.goto(r.baseUrl + '/privacy/', { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(700);
 
   r.check('privacy', 'page loads without JS errors', errors.length === 0, errors.join(' | '));
@@ -155,5 +154,4 @@ const consentCalls = () => (window.dataLayer || []).map(a => Array.from(a));
 
   await context.close();
   await browser.close();
-  r.finish('CONSENT GATE');
-})();
+});

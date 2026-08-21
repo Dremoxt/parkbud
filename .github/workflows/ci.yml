@@ -18,6 +18,7 @@ jobs:
   static:
     name: Static checks
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
 
@@ -36,12 +37,13 @@ jobs:
   browser:
     name: Browser checks
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: npm
           cache-dependency-path: tests/package-lock.json
 
@@ -60,19 +62,8 @@ jobs:
         working-directory: tests
         run: npx playwright install --with-deps chromium
 
-      - name: Serve the site
-        run: |
-          python3 -m http.server 8099 --directory . &
-          for _ in $(seq 1 30); do
-            if curl -sf -o /dev/null http://localhost:8099/; then
-              echo "server up"
-              exit 0
-            fi
-            sleep 1
-          done
-          echo "server did not come up" >&2
-          exit 1
-
+      # Each suite serves the repository itself on an ephemeral port, so there
+      # is no server step to sequence against and no port to collide with.
       - name: Filters, navigation and responsive layout
         working-directory: tests
         run: node behaviour.spec.js
