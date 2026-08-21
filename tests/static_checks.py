@@ -138,6 +138,59 @@ def check_analytics_gated(rel: str, src: str) -> None:
         ok("%s: no analytics tag bypasses the consent gate" % rel)
 
 
+def check_no_derived_totals(rel: str, src: str) -> None:
+    """Daily rates must not be multiplied out into trip totals.
+
+    Several operators price in tiers and the site does not hold those tiers,
+    so any multi-day total computed here would be a guess presented as a fact.
+    """
+    if 'id="tripNights"' in src or "state.nights" in src:
+        fail("%s: a trip-length calculation is back" % rel)
+    else:
+        ok("%s: prices are shown as published, not multiplied out" % rel)
+
+
+def check_results_ui(rel: str, src: str) -> None:
+    """The controls the redesign depends on."""
+    needed = {
+        'id="lotSearch"': "search field",
+        'data-sort="price"': "price sort",
+        'data-sort="distance"': "distance sort",
+        'id="filterSheet"': "filter sheet",
+        'id="filterApply"': "apply button",
+        'class="lot-toggle"': "row expander",
+    }
+    missing = [label for token, label in needed.items() if token not in src]
+    if missing:
+        fail("%s: results UI missing %s" % (rel, ", ".join(missing)))
+    else:
+        ok("%s: search, both sorts and filter sheet present" % rel)
+
+
+def check_lot_data(rel: str, src: str) -> None:
+    """Every lot needs the attributes the sorting reads."""
+    lots = re.findall(r'<article class="lot"([^>]*)>', src)
+    bad = [a for a in lots if not (re.search(r'data-amount="\d+"', a)
+                                   and re.search(r'data-km="[\d.]+"', a)
+                                   and re.search(r'data-unit="(day|5min)"', a))]
+    if bad:
+        fail("%s: %d lot(s) missing sort data" % (rel, len(bad)))
+    else:
+        ok("%s: all %d lots carry price and distance data" % (rel, len(lots)))
+
+
+def check_content_preserved(rel: str, src: str) -> None:
+    """The expandable body must still carry what the old card showed."""
+    lots = len(re.findall(r'class="lot"[ >]', src))
+    links = src.count('class="card-link"')
+    descs = src.count('class="card-description"')
+    if links < lots or descs < lots:
+        fail("%s: %d lots but %d booking links and %d descriptions"
+             % (rel, lots, links, descs))
+    else:
+        ok("%s: every lot kept its description and booking link" % rel)
+
+
 def check_consent_wiring(rel: str, src: str) -> None:
     needed = {
         'id="cookieConsent"': "consent banner",
@@ -169,9 +222,9 @@ def check_accessibility_basics(rel: str, src: str) -> None:
 def check_counts_match_cards(rel: str, src: str) -> None:
     """The static counters are what crawlers and no-JS visitors read."""
     for card_class, counter_id, label in (
-            ("parking-card", "resultCount", "parking"),
+            ("lot", "resultCount", "parking"),
             ("service-card", "serviceResultCount", "services")):
-        actual = src.count('class="%s"' % card_class)
+        actual = len(re.findall(r'class="%s"[ >]' % card_class, src))
         m = re.search(r'id="%s">(\d+)' % counter_id, src)
         if not m:
             fail("%s: no %s counter found" % (rel, label))
@@ -277,6 +330,10 @@ def main() -> int:
 
         if rel in LANG_PAGES:
             check_consent_wiring(rel, src)
+            check_results_ui(rel, src)
+            check_no_derived_totals(rel, src)
+            check_lot_data(rel, src)
+            check_content_preserved(rel, src)
             check_accessibility_basics(rel, src)
             check_counts_match_cards(rel, src)
             check_hreflang(rel, src)

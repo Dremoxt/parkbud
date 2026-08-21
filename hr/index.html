@@ -342,7 +342,7 @@
     <!-- Preconnect and Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- ========== YOUR ORIGINAL CSS STYLES ========== -->
     <style>
@@ -351,32 +351,32 @@
             --header-h: 73px;
 
             /* Bright, fresh colors */
-            --white: #ffffff;
-            --snow: #f8fafc;
-            --cloud: #f1f5f9;
-            --mist: #e2e8f0;
-            --slate: #94a3b8;
-            --gray: #64748b;
-            --dark: #1e293b;
-            --midnight: #0f172a;
+            --white: #FFFFFF;
+            --snow: #F7F9FC;
+            --cloud: #EDF1F5;
+            --mist: #DDE3EA;
+            --slate: #8A97A6;
+            --gray: #5B6B7C;
+            --dark: #33414F;
+            --midnight: #0B1F33;
             
             /* Accent colors */
-            --sky: #0ea5e9;
-            --sky-light: #e0f2fe;
-            --sky-dark: #0284c7;
-            --gold: #f59e0b;
-            --gold-light: #fef3c7;
-            --gold-dark: #d97706;
-            --emerald: #10b981;
-            --emerald-light: #d1fae5;
-            --rose: #f43f5e;
-            --violet: #8b5cf6;
-            --violet-light: #ede9fe;
+            --sky: #0B5FCE;
+            --sky-light: #E8F0FB;
+            --sky-dark: #094BA3;
+            --gold: #A8641A;
+            --gold-light: #F6EEE2;
+            --gold-dark: #8A5214;
+            --emerald: #0E7C5A;
+            --emerald-light: #E3F3EC;
+            --rose: #C0392B;
+            --violet: #0B5FCE;
+            --violet-light: #E8F0FB;
             
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 24px;
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 10px;
+            --radius-xl: 12px;
             
             --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
             --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
@@ -395,7 +395,7 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Archivo', system-ui, sans-serif;
             background: var(--snow);
             color: var(--dark);
             line-height: 1.6;
@@ -439,7 +439,7 @@
         .logo-icon {
             width: 44px;
             height: 44px;
-            background: linear-gradient(135deg, var(--sky), var(--violet));
+            background: var(--midnight);
             border-radius: var(--radius-md);
             display: flex;
             align-items: center;
@@ -452,7 +452,6 @@
         }
 
         .logo-text {
-            font-family: 'Fraunces', serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--midnight);
@@ -764,7 +763,6 @@
         }
 
         .hero h1 {
-            font-family: 'Fraunces', serif;
             font-size: clamp(1.75rem, 4vw, 2.5rem);
             font-weight: 700;
             color: var(--midnight);
@@ -773,7 +771,7 @@
         }
 
         .hero h1 .highlight {
-            background: linear-gradient(135deg, var(--sky), var(--violet));
+            background: var(--midnight);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -850,7 +848,6 @@
         }
 
         .stat-value {
-            font-family: 'Fraunces', serif;
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--midnight);
@@ -891,7 +888,6 @@
         }
 
         .section-title {
-            font-family: 'Fraunces', serif;
             font-size: 2.25rem;
             color: var(--midnight);
             margin-bottom: 0.75rem;
@@ -939,7 +935,7 @@
         }
 
         .filter-count {
-            background: linear-gradient(135deg, var(--sky), var(--violet));
+            background: var(--midnight);
             color: var(--white);
             font-size: 0.8rem;
             font-weight: 700;
@@ -1051,52 +1047,15 @@
         }
 
         /* Parkiranje Grid */
-        .parking-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
-            gap: 1.5rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
 
-        .parking-card {
-            background: var(--white);
-            border: 1px solid var(--mist);
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            box-shadow: var(--shadow-sm);
-        }
 
-        .parking-card:hover {
-            border-color: var(--sky);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-        }
 
-        .parking-card.hidden {
-            display: none;
-        }
 
         .service-card.hidden {
             display: none;
         }
 
-        .card-header {
-            padding: 1.25rem 1.5rem;
-            background: linear-gradient(135deg, var(--snow) 0%, var(--white) 100%);
-            border-bottom: 1px solid var(--mist);
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 1rem;
-        }
 
-        .card-title-group {
-            flex: 1;
-        }
 
         .card-type-badge {
             display: inline-flex;
@@ -1121,48 +1080,11 @@
             color: var(--gold-dark);
         }
 
-        .card-title {
-            font-family: 'Fraunces', serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--midnight);
-            margin-bottom: 0.35rem;
-        }
 
-        .card-location {
-            font-size: 0.9rem;
-            color: var(--gray);
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
 
-        .card-price {
-            text-align: right;
-            background: var(--white);
-            padding: 0.75rem 1rem;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--mist);
-        }
 
-        .price-from {
-            font-size: 0.7rem;
-            color: var(--slate);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
 
-        .price-value {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--sky-dark);
-        }
 
-        .price-period {
-            font-size: 0.8rem;
-            color: var(--gray);
-            font-weight: 500;
-        }
 
         .card-body {
             padding: 1.5rem;
@@ -1338,7 +1260,6 @@
         }
 
         .directions-content h2 {
-            font-family: 'Fraunces', serif;
             font-size: 2rem;
             color: var(--midnight);
             margin-bottom: 1rem;
@@ -1752,9 +1673,6 @@
                 width: 100%;
             }
 
-            .parking-grid {
-                grid-template-columns: 1fr;
-            }
 
             .footer-grid {
                 grid-template-columns: 1fr;
@@ -1932,6 +1850,370 @@
             .cookie-consent { padding: 1.25rem; }
             .cookie-consent a { margin-left: 0; }
         }
+
+        /* ============ RESULTS: toolbar, list, filter sheet ============ */
+        .results-toolbar {
+            position: sticky;
+            top: var(--header-h);
+            z-index: 90;
+            background: var(--white);
+            border-bottom: 1px solid var(--mist);
+            padding: 0.75rem 1.5rem 0.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .trip-row { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+
+        .trip-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--slate);
+        }
+
+        .trip-select {
+            font: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--midnight);
+            background: var(--white);
+            border: 1.5px solid var(--mist);
+            border-radius: var(--radius-sm);
+            padding: 0.4rem 0.6rem;
+            min-height: 44px;
+            cursor: pointer;
+        }
+
+        .trip-unit { font-size: 0.9rem; color: var(--gray); font-weight: 500; }
+
+        .search-row { display: flex; gap: 0.5rem; align-items: center; }
+
+        .search-field {
+            flex: 1 1 auto;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            height: 46px;
+            padding: 0 0.8rem;
+            border: 1.5px solid var(--mist);
+            border-radius: var(--radius-sm);
+            background: var(--white);
+        }
+
+        .search-field:focus-within { border-color: var(--sky); }
+
+        .search-field input {
+            flex: 1 1 auto;
+            min-width: 0;
+            border: none;
+            outline: none;
+            font: inherit;
+            font-size: 0.95rem;
+            color: var(--midnight);
+            background: transparent;
+        }
+
+        .filter-open {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            height: 46px;
+            padding: 0 0.9rem;
+            border: 1.5px solid var(--mist);
+            border-radius: var(--radius-sm);
+            background: var(--white);
+            font: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--midnight);
+            cursor: pointer;
+        }
+
+        .filter-open[data-active="true"] { border-color: var(--sky); background: var(--sky-light); color: var(--sky); }
+
+        .filter-open .filter-count {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 20px;
+            height: 20px;
+            padding: 0 5px;
+            border-radius: 10px;
+            background: var(--sky);
+            color: var(--white);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .sort-seg { display: flex; gap: 3px; padding: 3px; background: var(--cloud); border-radius: var(--radius-sm); }
+
+        .sort-btn {
+            flex: 1 1 0;
+            min-height: 40px;
+            border: none;
+            background: transparent;
+            border-radius: 5px;
+            font: inherit;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gray);
+            cursor: pointer;
+        }
+
+        .sort-btn[aria-pressed="true"] {
+            background: var(--white);
+            color: var(--midnight);
+            box-shadow: 0 1px 2px rgba(11, 31, 51, 0.10);
+        }
+
+        .active-chips { display: flex; gap: 0.4rem; overflow-x: auto; scrollbar-width: none; }
+        .active-chips::-webkit-scrollbar { display: none; }
+        .active-chips:empty { display: none; }
+
+        .active-chips button {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            height: 34px;
+            padding: 0 0.6rem;
+            border: none;
+            border-radius: var(--radius-sm);
+            background: var(--sky-light);
+            color: var(--sky);
+            font: inherit;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .results-summary {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 0.6rem;
+            font-size: 0.8rem;
+        }
+
+        .results-summary .count { font-weight: 600; color: var(--midnight); }
+        .results-summary .checked { color: var(--slate); font-size: 0.72rem; }
+
+        /* One surface with hairline dividers reads better than many cards. */
+        .results-list {
+            max-width: 900px;
+            margin: 1.25rem auto 0;
+            background: var(--white);
+            border: 1px solid var(--mist);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .lot { border-bottom: 1px solid var(--cloud); }
+        .lot:last-child { border-bottom: none; }
+        .lot.hidden { display: none; }
+        .lot[data-cheapest="true"] { background: #F3F8F5; box-shadow: inset 3px 0 0 var(--emerald); }
+
+        .lot-row { display: flex; align-items: center; gap: 0.5rem; padding: 0.65rem 0.5rem 0.65rem 1rem; }
+
+        .lot-main { flex: 1 1 auto; min-width: 0; }
+
+        .lot-tag {
+            display: inline-block;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-bottom: 3px;
+        }
+
+        .lot-tag.official { color: var(--sky); background: var(--sky-light); }
+        .lot-tag.cheapest { color: var(--emerald); background: var(--emerald-light); }
+
+        .lot-name {
+            font-size: 0.97rem;
+            font-weight: 600;
+            color: var(--midnight);
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .lot-meta {
+            margin: 3px 0 0;
+            font-size: 0.75rem;
+            color: var(--gray);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .lot-est {
+            display: inline-block;
+            font-size: 0.62rem;
+            font-weight: 600;
+            color: var(--gray);
+            border: 1px solid var(--mist);
+            padding: 0 4px;
+            border-radius: 3px;
+            margin-left: 0.35rem;
+        }
+
+        /* Fixed width so prices form a column the eye can run down. Wide
+           enough for a three-week total, and clipped rather than allowed to
+           overflow back over the lot name. */
+        .lot-price { flex: 0 0 100px; min-width: 0; text-align: right; overflow: hidden; }
+        .lot-total { font-size: 0.98rem; font-weight: 700; color: var(--sky); letter-spacing: -0.01em; white-space: nowrap; }
+        .lot-day { font-size: 0.68rem; color: var(--slate); font-weight: 500; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        .lot-toggle {
+            flex: 0 0 auto;
+            width: 44px;
+            height: 44px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--slate);
+        }
+
+        .lot-toggle svg { transition: transform 0.2s ease; }
+        .lot-toggle[aria-expanded="true"] svg { transform: rotate(90deg); }
+        .lot-body { padding: 0 1rem 1rem; }
+        .lot-body[hidden] { display: none; }
+
+        /* ---- filter sheet ---- */
+        .sheet-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(11, 31, 51, 0.45);
+            z-index: 1500;
+        }
+
+        .sheet-backdrop[hidden], .sheet[hidden] { display: none; }
+
+        .sheet {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            max-height: 88vh;
+            z-index: 1600;
+            background: var(--white);
+            border-radius: 14px 14px 0 0;
+            box-shadow: 0 -8px 24px rgba(11, 31, 51, 0.16);
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 720px) {
+            .sheet { left: 50%; right: auto; bottom: 5vh; width: 460px; transform: translateX(-50%); border-radius: 14px; }
+        }
+
+        .sheet-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.9rem 0.5rem 0.8rem 1.25rem;
+            border-bottom: 1px solid var(--mist);
+        }
+
+        .sheet-head h2 { font-size: 1.05rem; font-weight: 700; color: var(--midnight); }
+
+        .sheet-clear {
+            min-height: 44px;
+            padding: 0 0.75rem;
+            border: none;
+            background: none;
+            font: inherit;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--sky);
+            cursor: pointer;
+        }
+
+        .sheet-body { flex: 1 1 auto; overflow-y: auto; padding: 0 1.25rem 0.5rem; }
+
+        .sheet-group { padding-top: 1rem; }
+
+        .sheet-group h3 {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--slate);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Whole row is the target, never just the box. */
+        .sheet-opt {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            min-height: 48px;
+            border-bottom: 1px solid var(--cloud);
+            cursor: pointer;
+        }
+
+        .sheet-opt:last-child { border-bottom: none; }
+        .sheet-opt input { position: absolute; opacity: 0; pointer-events: none; }
+
+        .sheet-opt .box {
+            flex: 0 0 auto;
+            width: 22px;
+            height: 22px;
+            border: 1.5px solid var(--slate);
+            border-radius: 5px;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: transparent;
+        }
+
+        .sheet-opt input:checked + .box { border-color: var(--sky); background: var(--sky); color: var(--white); }
+        .sheet-opt input:focus-visible + .box { outline: 3px solid var(--sky-dark); outline-offset: 2px; }
+        .sheet-opt .label { flex: 1 1 auto; font-size: 0.92rem; color: var(--midnight); font-weight: 500; }
+        .sheet-opt .n { flex: 0 0 auto; font-size: 0.8rem; color: var(--slate); font-weight: 600; }
+        .sheet-opt[data-empty="true"] .label { color: var(--slate); }
+        .sheet-opt[data-empty="true"] .box { border-color: var(--mist); background: var(--snow); }
+
+        .sheet-foot { flex: 0 0 auto; padding: 0.8rem 1.25rem 1.25rem; border-top: 1px solid var(--mist); }
+
+        .sheet-apply {
+            width: 100%;
+            min-height: 52px;
+            border: none;
+            border-radius: var(--radius-sm);
+            background: var(--midnight);
+            color: var(--white);
+            font: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* German and Hungarian compounds ("Flughafennähe") are longer than a
+           320px column; without this they paint straight past the viewport. */
+        h1, h2, h3, h4, p, .section-title, .section-subtitle { overflow-wrap: break-word; }
+
+        /* Long localized labels overflowed this header on a 320px screen. */
+        .filter-bar-header { flex-wrap: wrap; gap: 0.5rem; }
+        .filter-reset { white-space: normal; text-align: left; }
+
+        @media (max-width: 768px) {
+            .results-toolbar { padding: 0.7rem 1rem 0.55rem; }
+            .results-list { border-radius: 0; border-left: none; border-right: none; margin: 1rem 0 0; }
+        }
     </style>
 </head>
 
@@ -1941,7 +2223,7 @@
     <header>
         <nav>
             <a href="#" class="logo">
-                <div class="logo-icon">✈</div>
+                <div class="logo-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.2l7.4 15.9-7.4-3.9-7.4 3.9z"/></svg></div>
                 <div class="logo-text">Park<span>BUD</span></div>
             </a>
             <ul class="nav-links">
@@ -2062,70 +2344,61 @@
     </div>
 
     <!-- Parkiranje Section -->
-    <section class="section parking-section" id="parking">
+        <section class="section results-section" id="parking">
         <div class="section-header">
             <span class="section-tag">Opcije parkiranja</span>
             <h2 class="section-title">Sva parkirališta Zračne luke Budimpešta</h2>
             <p class="section-subtitle">Filtrirajte po vrsti, pristupu i uslugama kako biste pronašli savršeno mjesto.</p>
         </div>
-
-        <!-- Filter Bar -->
-        <div class="filter-bar container">
-            <div class="filter-bar-header">
-                <div class="filter-bar-title">
-                    <span> Filtriraj opcije parkiranja</span>
-                    <span class="filter-count" id="resultCount">33</span>
+        <div class="results-toolbar container">
+            <div class="search-row">
+                <div class="search-field">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="color: var(--slate); flex: 0 0 auto;"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+                    <input type="search" id="lotSearch" autocomplete="off" placeholder="Pretraži parkiralište ili uslugu" aria-label="Pretraži parkiralište ili uslugu">
                 </div>
-                <button class="filter-reset" type="button" onclick="resetFilters()"> Resetiraj sve</button>
+                <button class="filter-open" id="filterOpen" type="button" aria-expanded="false" aria-controls="filterSheet">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+                    <span>Filtri</span>
+                    <span class="filter-count" id="filterCount" hidden>0</span>
+                </button>
             </div>
-            <div class="filter-groups">
-                <div class="filter-group">
-                    <div class="filter-group-label">Vrsta</div>
-                    <div class="filter-options">
-                        <button class="filter-btn active" data-filter="type" data-value="all">Sve</button>
-                        <button class="filter-btn" data-filter="type" data-value="official">✈️ Službeno</button>
-                        <button class="filter-btn gold" data-filter="type" data-value="offsite">🅿️ Izvan zračne luke</button>
-                    </div>
-                </div>
-                <div class="filter-group">
-                    <div class="filter-group-label">Pristup</div>
-                    <div class="filter-options">
-                        <button class="filter-btn active" data-filter="access" data-value="all">Sve</button>
-                        <button class="filter-btn" data-filter="access" data-value="walking"> Pješice</button>
-                        <button class="filter-btn" data-filter="access" data-value="shuttle"> Prijevoz</button>
-                    </div>
-                </div>
-                <div class="filter-group">
-                    <div class="filter-group-label">Značajke</div>
-                    <div class="filter-options">
-                        <button class="filter-btn" data-filter="feature" data-value="24h"><span class="icon"></span> 24/7</button>
-                        <button class="filter-btn" data-filter="feature" data-value="ev"><span class="icon"></span> Punjenje EV</button>
-                        <button class="filter-btn" data-filter="feature" data-value="carwash"><span class="icon"></span> Autopraonica</button>
-                        <button class="filter-btn" data-filter="feature" data-value="covered"><span class="icon"></span> Natkriveno</button>
-                    </div>
-                </div>
+
+            <div class="sort-seg" role="group" aria-label="Cijena / Udaljenost">
+                <button class="sort-btn" type="button" data-sort="price" aria-pressed="true">Cijena</button>
+                <button class="sort-btn" type="button" data-sort="distance" aria-pressed="false">Udaljenost</button>
+            </div>
+
+            <div class="active-chips" id="activeChips"></div>
+
+            <div class="results-summary">
+                <span class="count" id="resultSummary"><span id="resultCount">33</span></span>
+                <span class="checked">Cijene provjerene 21. kol 2026.</span>
             </div>
         </div>
 
-        <!-- Parkiranje Grid -->
-        <div class="parking-grid container" id="parkingGrid">
+        <div class="results-list" id="parkingGrid">
             
             <!-- OFFICIAL PARKING OPTIONS -->
             
             <!-- Premium Parking -->
-            <div class="parking-card" data-type="official" data-access="walking" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge official">✈️ Službeno</span>
-                        <h3 class="card-title">Premium Parking</h3>
-                        <div class="card-location">📍 0 km · at Terminal 2 (1 min walk)</div>
+            
+            <article class="lot" data-type="official" data-access="walking" data-features="24h" data-amount="600" data-unit="5min" data-approx="0" data-km="0"
+                     data-search="premium parking 0 km · at terminal 2 (1 min walk) ✨ prvih 5 min besplatno 70 mjesta 🔒 cctv 24/7 najbliže parkiranje terminalu. idealno za brzo ostavljanje i preuzimanje. prepoznavanje tablica za jednostavan ulazak. rezerviraj na službenoj stranici →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        <span class="lot-tag official">Službeno</span>
+                        <h3 class="lot-name">Premium Parking</h3>
+                        <p class="lot-meta">0 km · at Terminal 2 (1 min walk)</p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">600 Ft <span class="price-period">/ 5min</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-1" aria-label="Detalji: Premium Parking">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-1" hidden>
                     <div class="card-features">
                         <span class="feature-tag highlight">✨ Prvih 5 min BESPLATNO</span>
                         <span class="feature-tag">70 mjesta</span>
@@ -2134,22 +2407,24 @@
                     <p class="card-description">Najbliže parkiranje terminalu. Idealno za brzo ostavljanje i preuzimanje. Prepoznavanje tablica za jednostavan ulazak.</p>
                     <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj na službenoj stranici →</a>
                 </div>
-            </div>
-
-            <!-- Terminal Parking -->
-            <div class="parking-card" data-type="official" data-access="walking" data-features="24h,ev">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge official">✈️ Službeno</span>
-                        <h3 class="card-title">Terminal Parking</h3>
-                        <div class="card-location">📍 0 km · at terminal (2-4 min walk)</div>
+            </article>
+            <article class="lot" data-type="official" data-access="walking" data-features="24h,ev" data-amount="450" data-unit="5min" data-approx="0" data-km="0"
+                     data-search="terminal parking 0 km · at terminal (2-4 min walk) 746 mjesta ⚡ punjači ev 🔒 cctv izvrsna ravnoteža udobnosti i cijene. natkrivena staza do terminala. idealno za poslovna putovanja. rezerviraj na službenoj stranici →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        <span class="lot-tag official">Službeno</span>
+                        <h3 class="lot-name">Terminal Parking</h3>
+                        <p class="lot-meta">0 km · at terminal (2-4 min walk)</p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">450 Ft <span class="price-period">/ 5min</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-2" aria-label="Detalji: Terminal Parking">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-2" hidden>
                     <div class="card-features">
                         <span class="feature-tag">746 mjesta</span>
                         <span class="feature-tag">⚡ Punjači EV</span>
@@ -2158,22 +2433,24 @@
                     <p class="card-description">Izvrsna ravnoteža udobnosti i cijene. Natkrivena staza do terminala. Idealno za poslovna putovanja.</p>
                     <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj na službenoj stranici →</a>
                 </div>
-            </div>
-
-            <!-- City Break Parking -->
-            <div class="parking-card" data-type="official" data-access="walking" data-features="24h,ev,covered">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge official">✈️ Službeno</span>
-                        <h3 class="card-title">City Break Parking</h3>
-                        <div class="card-location">📍 0.2 km · covered path (2-5 min walk)</div>
+            </article>
+            <article class="lot" data-type="official" data-access="walking" data-features="24h,ev,covered" data-amount="8400" data-unit="day" data-approx="0" data-km="0.2"
+                     data-search="city break parking 0.2 km · covered path (2-5 min walk) ⭐ popularan izbor ⚡ punjači ev 🏠 natkrivena staza savršeno za vikend putovanja. natkrivena staza štiti od vremena. dobra vrijednost za putovanja od 2-5 dana. rezerviraj na službenoj stranici →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        <span class="lot-tag official">Službeno</span>
+                        <h3 class="lot-name">City Break Parking</h3>
+                        <p class="lot-meta">0.2 km · covered path (2-5 min walk)</p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Dnevno</div>
-                        <div class="price-value">8,400 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-3" aria-label="Detalji: City Break Parking">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-3" hidden>
                     <div class="card-features">
                         <span class="feature-tag highlight">⭐ Popularan izbor</span>
                         <span class="feature-tag">⚡ Punjači EV</span>
@@ -2182,22 +2459,24 @@
                     <p class="card-description">Savršeno za vikend putovanja. Natkrivena staza štiti od vremena. Dobra vrijednost za putovanja od 2-5 dana.</p>
                     <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj na službenoj stranici →</a>
                 </div>
-            </div>
-
-            <!-- Holiday Parking -->
-            <div class="parking-card" data-type="official" data-access="walking" data-features="24h,ev,covered">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge official">✈️ Službeno</span>
-                        <h3 class="card-title">Holiday Parking</h3>
-                        <div class="card-location">📍 0.5 km · covered path (4-9 min walk)</div>
+            </article>
+            <article class="lot" data-type="official" data-access="walking" data-features="24h,ev,covered" data-amount="6700" data-unit="day" data-approx="0" data-km="0.5"
+                     data-search="holiday parking 0.5 km · covered path (4-9 min walk) ⭐ za duže boravke ⚡ punjači ev 🏠 natkrivena staza najekonomičnija službena opcija za odmor. odlična za odmore od 1-2 tjedna uz značajnu uštedu. rezerviraj na službenoj stranici →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        <span class="lot-tag official">Službeno</span>
+                        <h3 class="lot-name">Holiday Parking</h3>
+                        <p class="lot-meta">0.5 km · covered path (4-9 min walk)</p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Dnevno</div>
-                        <div class="price-value">6,700 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-4" aria-label="Detalji: Holiday Parking">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-4" hidden>
                     <div class="card-features">
                         <span class="feature-tag highlight">⭐ Za duže boravke</span>
                         <span class="feature-tag">⚡ Punjači EV</span>
@@ -2206,22 +2485,24 @@
                     <p class="card-description">Najekonomičnija službena opcija za odmor. Odlična za odmore od 1-2 tjedna uz značajnu uštedu.</p>
                     <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj na službenoj stranici →</a>
                 </div>
-            </div>
-
-            <!-- Smart Parking -->
-            <div class="parking-card" data-type="official" data-access="walking" data-features="24h,covered">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge official">✈️ Službeno</span>
-                        <h3 class="card-title">Smart Parking</h3>
-                        <div class="card-location">📍 0.8 km · covered path (8-10 min walk)</div>
+            </article>
+            <article class="lot" data-type="official" data-access="walking" data-features="24h,covered" data-amount="5500" data-unit="day" data-approx="1" data-km="0.8"
+                     data-search="smart parking 0.8 km · covered path (8-10 min walk) 1.440 mjesta 💰 najjeftinije službeno 🏠 natkrivena staza najnovija i najveća službena garaža. samo za cjelodnevne rezervacije. najbolje cijene za boravke od tjedan dana i više. rezerviraj na službenoj stranici →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        <span class="lot-tag official">Službeno</span>
+                        <h3 class="lot-name">Smart Parking</h3>
+                        <p class="lot-meta">0.8 km · covered path (8-10 min walk)<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Dnevno</div>
-                        <div class="price-value">~5,500 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-5" aria-label="Detalji: Smart Parking">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-5" hidden>
                     <div class="card-features">
                         <span class="feature-tag">1.440 mjesta</span>
                         <span class="feature-tag highlight">💰 Najjeftinije službeno</span>
@@ -2230,24 +2511,24 @@
                     <p class="card-description">Najnovija i najveća službena garaža. Samo za cjelodnevne rezervacije. Najbolje cijene za boravke od tjedan dana i više.</p>
                     <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj na službenoj stranici →</a>
                 </div>
-            </div>
-
-            <!-- OFF-SITE PARKING OPTIONS -->
-
-            <!-- Best Parking -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h,carwash">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Best Parking Budapest</h3>
-                        <div class="card-location">📍 3 km from airport · Vecsés, Széchenyi u.</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h,carwash" data-amount="2900" data-unit="day" data-approx="0" data-km="3"
+                     data-search="best parking budapest 3 km from airport · vecsés, széchenyi u. 🚐 besplatni prijevoz 800 mjesta 🕐 osoblje 24/7 🚿 autopraonica jedno od najvećih privatnih parkirališta. besplatni prijevoz, kafić s terasom, sanitarije. dječje sjedalice na zahtjev. posjeti stranicu →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Best Parking Budapest</h3>
+                        <p class="lot-meta">3 km from airport · Vecsés, Széchenyi u.</p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">2,900 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-6" aria-label="Detalji: Best Parking Budapest">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-6" hidden>
                     <div class="card-features">
                         <span class="feature-tag highlight">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">800 mjesta</span>
@@ -2257,22 +2538,24 @@
                     <p class="card-description">Jedno od najvećih privatnih parkirališta. Besplatni prijevoz, kafić s terasom, sanitarije. Dječje sjedalice na zahtjev.</p>
                     <a href="https://www.bestparking.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Posjeti stranicu →</a>
                 </div>
-            </div>
-
-            <!-- myBUD Parkiranje -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">myBUD Parkiranje</h3>
-                        <div class="card-location">📍 3 km from airport · Vecsés</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="2500" data-unit="day" data-approx="0" data-km="3"
+                     data-search="mybud parkiranje 3 km from airport · vecsés 🚐 besplatni prijevoz 🔒 ograđeno i cctv 🕐 24/7 pored benzinske mol i mcdonald&#x27;sa. ograđen prostor pod video nadzorom. pogodna lokacija blizu autoceste. posjeti stranicu →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">myBUD Parkiranje</h3>
+                        <p class="lot-meta">3 km from airport · Vecsés</p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">2,500 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-7" aria-label="Detalji: myBUD Parkiranje">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-7" hidden>
                     <div class="card-features">
                         <span class="feature-tag highlight">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 Ograđeno i CCTV</span>
@@ -2281,22 +2564,24 @@
                     <p class="card-description">Pored benzinske MOL i McDonald'sa. Ograđen prostor pod video nadzorom. Pogodna lokacija blizu autoceste.</p>
                     <a href="https://en.mybudparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Posjeti stranicu →</a>
                 </div>
-            </div>
-
-            <!-- BUDCAR Parking -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h,carwash,covered">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">BUDCAR Parking</h3>
-                        <div class="card-location">📍 2 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h,carwash,covered" data-amount="8000" data-unit="day" data-approx="0" data-km="2"
+                     data-search="budcar parking 2 km from airport 🚐 besplatni prijevoz 🏠 natkrivena garaža 🚿 autopraonica siguran parking iza kamenih zidova. vanjske i natkrivene garaže. autopraonica na licu mjesta. posjeti stranicu →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">BUDCAR Parking</h3>
+                        <p class="lot-meta">2 km from airport</p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">8,000 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-8" aria-label="Detalji: BUDCAR Parking">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-8" hidden>
                     <div class="card-features">
                         <span class="feature-tag highlight">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🏠 Natkrivena garaža</span>
@@ -2305,22 +2590,24 @@
                     <p class="card-description">Siguran parking iza kamenih zidova. Vanjske i natkrivene garaže. Autopraonica na licu mjesta.</p>
                     <a href="https://en.budcarparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Posjeti stranicu →</a>
                 </div>
-            </div>
-
-            <!-- Reptér Parkoló -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h,carwash">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Reptér Parkoló</h3>
-                        <div class="card-location">📍 5 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h,carwash" data-amount="2200" data-unit="day" data-approx="0" data-km="5"
+                     data-search="reptér parkoló 5 km from airport 🏆 najbolja vrijednost ✈️ praćenje leta 💳 plaćanje pri dolasku 🚿 autopraonica pristupačno s pouzdanim prijevozom. tehnička pomoć za akumulator/gume. praćenje leta uključeno. posjeti stranicu →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Reptér Parkoló</h3>
+                        <p class="lot-meta">5 km from airport</p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">2,200 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-9" aria-label="Detalji: Reptér Parkoló">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-9" hidden>
                     <div class="card-features">
                         <span class="feature-tag highlight">🏆 Najbolja vrijednost</span>
                         <span class="feature-tag">✈️ Praćenje leta</span>
@@ -2330,22 +2617,24 @@
                     <p class="card-description">Pristupačno s pouzdanim prijevozom. Tehnička pomoć za akumulator/gume. Praćenje leta uključeno.</p>
                     <a href="https://www.budapestrepterparkolo.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Posjeti stranicu →</a>
                 </div>
-            </div>
-
-            <!-- Safe Parking -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Safe Parking</h3>
-                        <div class="card-location">📍 3 km from airport · Vecsés, Széchenyi u.</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="2400" data-unit="day" data-approx="0" data-km="3"
+                     data-search="safe parking 3 km from airport · vecsés, széchenyi u. 🚐 besplatni prijevoz 🔒 pod zaštitom 🕐 24/7 privatni prijevoz između parkinga i terminala. kratkoročne i dugoročne opcije. plaćanje pri dolasku ili odlasku. posjeti stranicu →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Safe Parking</h3>
+                        <p class="lot-meta">3 km from airport · Vecsés, Széchenyi u.</p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">2,400 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-10" aria-label="Detalji: Safe Parking">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-10" hidden>
                     <div class="card-features">
                         <span class="feature-tag highlight">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 Pod zaštitom</span>
@@ -2354,22 +2643,24 @@
                     <p class="card-description">Privatni prijevoz između parkinga i terminala. Kratkoročne i dugoročne opcije. Plaćanje pri dolasku ili odlasku.</p>
                     <a href="https://safeparking.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Posjeti stranicu →</a>
                 </div>
-            </div>
-
-            <!-- Parkoló Mester -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h,ev">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Parkoló Mester</h3>
-                        <div class="card-location">📍 4 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h,ev" data-amount="2800" data-unit="day" data-approx="0" data-km="4"
+                     data-search="parkoló mester 4 km from airport 🚗 vip transfer ⚡ punjenje ev 🕐 zaštita 24/7 dostupni premium vip prijevozi (maserati, mercedes v-class). punjenje ev na licu mjesta. betonirana oblast s električnom ogradom. posjeti stranicu →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Parkoló Mester</h3>
+                        <p class="lot-meta">4 km from airport</p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">2,800 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-11" aria-label="Detalji: Parkoló Mester">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-11" hidden>
                     <div class="card-features">
                         <span class="feature-tag highlight">🚗 VIP Transfer</span>
                         <span class="feature-tag">⚡ Punjenje EV</span>
@@ -2378,22 +2669,24 @@
                     <p class="card-description">Dostupni premium VIP prijevozi (Maserati, Mercedes V-Class). Punjenje EV na licu mjesta. Betonirana oblast s električnom ogradom.</p>
                     <a href="http://www.en.parkolomester.com/" target="_blank" rel="noopener noreferrer" class="card-link">Posjeti stranicu →</a>
                 </div>
-            </div>
-
-            <!-- ParkFly -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">ParkFly</h3>
-                        <div class="card-location">📍 3 km from airport · Vecsés, Üllői út</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="2300" data-unit="day" data-approx="0" data-km="3"
+                     data-search="parkfly 3 km from airport · vecsés, üllői út 🚐 besplatni prijevoz 🕐 24/7 na zahtjev 🔒 pod zaštitom prijevoz radi na zahtjev 24/7, bez fiksnog rasporeda. transfer 5-10 min. preuzimanje za 10-20 min po slijetanju. posjeti stranicu →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">ParkFly</h3>
+                        <p class="lot-meta">3 km from airport · Vecsés, Üllői út</p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">2,300 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-12" aria-label="Detalji: ParkFly">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-12" hidden>
                     <div class="card-features">
                         <span class="feature-tag highlight">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🕐 24/7 na zahtjev</span>
@@ -2402,22 +2695,24 @@
                     <p class="card-description">Prijevoz radi na zahtjev 24/7, bez fiksnog rasporeda. Transfer 5-10 min. Preuzimanje za 10-20 min po slijetanju.</p>
                     <a href="https://ferihegyparkolas.eu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Posjeti stranicu →</a>
                 </div>
-            </div>
-
-            <!-- Reptéri Parkoló Centrum -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Reptéri Parkoló Centrum</h3>
-                        <div class="card-location">📍 3 km from airport · Vecsés, Almáskert út</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="2200" data-unit="day" data-approx="0" data-km="3"
+                     data-search="reptéri parkoló centrum 3 km from airport · vecsés, almáskert út 🚐 besplatni prijevoz 🔒 pod zaštitom 🕐 24/7 čuvani parking samo nekoliko minuta od zračne luke. pouzdan prijevoz do svih terminala. posjeti stranicu →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Reptéri Parkoló Centrum</h3>
+                        <p class="lot-meta">3 km from airport · Vecsés, Almáskert út</p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">2,200 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-13" aria-label="Detalji: Reptéri Parkoló Centrum">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-13" hidden>
                     <div class="card-features">
                         <span class="feature-tag highlight">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 Pod zaštitom</span>
@@ -2426,26 +2721,24 @@
                     <p class="card-description">Čuvani parking samo nekoliko minuta od zračne luke. Pouzdan prijevoz do svih terminala.</p>
                     <a href="https://repteriparkolocentrum.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Posjeti stranicu →</a>
                 </div>
-            </div>
-
-        
-
-        
-        
-            <!-- Zoka Reptéri Parkoló -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Zoka Reptéri Parkoló</h3>
-                        <div class="card-location">📍 5 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="1800" data-unit="day" data-approx="1" data-km="5"
+                     data-search="zoka reptéri parkoló 5 km from airport 🚐 besplatni prijevoz 🔒 osigurano osigurani parking s besplatnim prijevozom do terminala zračne luke. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Zoka Reptéri Parkoló</h3>
+                        <p class="lot-meta">5 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~1,800 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-14" aria-label="Detalji: Zoka Reptéri Parkoló">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-14" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 Osigurano</span>
@@ -2453,22 +2746,24 @@
                     <p class="card-description">Osigurani parking s besplatnim prijevozom do terminala zračne luke.</p>
                     <a href="https://zokarepteriparkolo.hu" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- Repteres Parkoló -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Repteres Parkoló</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="1900" data-unit="day" data-approx="1" data-km="3"
+                     data-search="repteres parkoló ~3 km from airport 🚐 besplatni prijevoz 🔒 24/7 cctv pristupačan parking s besplatnim prijevozom. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Repteres Parkoló</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~1,900 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-15" aria-label="Detalji: Repteres Parkoló">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-15" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 24/7 CCTV</span>
@@ -2476,22 +2771,24 @@
                     <p class="card-description">Pristupačan parking s besplatnim prijevozom.</p>
                     <a href="https://repteresparkolo.hu" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- PK Reptér Parkoló -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">PK Reptér Parkoló</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="2100" data-unit="day" data-approx="1" data-km="3"
+                     data-search="pk reptér parkoló ~3 km from airport 🚐 besplatni prijevoz 🔒 osigurano brzo ostavljanje s besplatnim prijevozom do terminala. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">PK Reptér Parkoló</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~2,100 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-16" aria-label="Detalji: PK Reptér Parkoló">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-16" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 Osigurano</span>
@@ -2499,22 +2796,24 @@
                     <p class="card-description">Brzo ostavljanje s besplatnim prijevozom do terminala.</p>
                     <a href="https://pkrepterparkolo.com/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- NOA Parking -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">NOA Parking</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="1900" data-unit="day" data-approx="1" data-km="3"
+                     data-search="noa parking ~3 km from airport 🚐 besplatni prijevoz 🔒 nadzirano pogodan parking s besplatnim prijevozom. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">NOA Parking</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~1,900 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-17" aria-label="Detalji: NOA Parking">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-17" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 Nadzirano</span>
@@ -2522,22 +2821,24 @@
                     <p class="card-description">Pogodan parking s besplatnim prijevozom.</p>
                     <a href="https://noaparking.hu" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- Reptér Parkoló (repterparkolo.hu) -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h,covered">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Ferihegy Airport Parking</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="2000" data-unit="day" data-approx="1" data-km="3"
+                     data-search="ferihegy airport parking ~3 km from airport 🚐 besplatni prijevoz ☂️ natkriveno 🔒 24/7 vodeća parking usluga od 2008. zajamčen natkriven parking. besplatne izmjene i otkazivanja. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Ferihegy Airport Parking</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~2,000 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-18" aria-label="Detalji: Ferihegy Airport Parking">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-18" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">☂️ Natkriveno</span>
@@ -2546,22 +2847,24 @@
                     <p class="card-description">Vodeća parking usluga od 2008. Zajamčen natkriven parking. Besplatne izmjene i otkazivanja.</p>
                     <a href="https://www.repterparkolo.hu" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- Budapest Airport Parking -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Budapest Airport Parking</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="1800" data-unit="day" data-approx="1" data-km="3"
+                     data-search="budapest airport parking ~3 km from airport 🚐 besplatni prijevoz 🔒 osigurano pristupačan parking blizu zračne luke s prijevozom. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Budapest Airport Parking</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~1,800 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-19" aria-label="Detalji: Budapest Airport Parking">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-19" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 Osigurano</span>
@@ -2569,22 +2872,24 @@
                     <p class="card-description">Pristupačan parking blizu zračne luke s prijevozom.</p>
                     <a href="https://budapestairportparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- VIP Parking -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h,covered">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">VIP Parking</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="2800" data-unit="day" data-approx="1" data-km="3"
+                     data-search="vip parking ~3 km from airport 🚐 vip transfer ☂️ natkriveno ⭐ premium vip parking iskustvo s premium prijevozom. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">VIP Parking</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~2,800 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-20" aria-label="Detalji: VIP Parking">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-20" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 VIP transfer</span>
                         <span class="feature-tag">☂️ Natkriveno</span>
@@ -2593,22 +2898,24 @@
                     <p class="card-description">VIP parking iskustvo s premium prijevozom.</p>
                     <a href="https://www.vip-parking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- Sky Parking -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Sky Parking</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="1800" data-unit="day" data-approx="1" data-km="3"
+                     data-search="sky parking ~3 km from airport 🚐 besplatni prijevoz 🔒 osigurano pristupačan parking s prijevozom do terminala. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Sky Parking</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~1,800 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-21" aria-label="Detalji: Sky Parking">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-21" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 Osigurano</span>
@@ -2616,22 +2923,24 @@
                     <p class="card-description">Pristupačan parking s prijevozom do terminala.</p>
                     <a href="https://skyparking.hu/hu/fooldal" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- Reptéri Parkolás -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Reptéri Parkolás</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="1700" data-unit="day" data-approx="1" data-km="3"
+                     data-search="reptéri parkolás ~3 km from airport 🚐 besplatni prijevoz 🔒 24/7 pristupačna parking opcija s prijevozom. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Reptéri Parkolás</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~1,700 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-22" aria-label="Detalji: Reptéri Parkolás">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-22" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 24/7</span>
@@ -2639,22 +2948,24 @@
                     <p class="card-description">Pristupačna parking opcija s prijevozom.</p>
                     <a href="https://repteriparkolas.com/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- ABC Drivers -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">ABC Parking</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="1990" data-unit="day" data-approx="1" data-km="3"
+                     data-search="abc parking ~3 km from airport 🚐 besplatni prijevoz 📶 besplatni wifi 🔒 osigurano konkurentne cijene s besplatnim wifi i prijevozom. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">ABC Parking</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~1,990 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-23" aria-label="Detalji: ABC Parking">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-23" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">📶 Besplatni WiFi</span>
@@ -2663,22 +2974,24 @@
                     <p class="card-description">Konkurentne cijene s besplatnim WiFi i prijevozom.</p>
                     <a href="https://abcparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- Park Central Airport -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Park Central Airport</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="1900" data-unit="day" data-approx="1" data-km="3"
+                     data-search="park central airport ~3 km from airport 🚐 besplatni prijevoz 🔒 24/7 centralno smješten parking s prijevozom. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Park Central Airport</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~1,900 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-24" aria-label="Detalji: Park Central Airport">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-24" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 24/7</span>
@@ -2686,22 +2999,24 @@
                     <p class="card-description">Centralno smješten parking s prijevozom.</p>
                     <a href="https://parkcentralairport.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- Dobro Car Parking -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Dobro Car Parking</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="1700" data-unit="day" data-approx="1" data-km="3"
+                     data-search="dobro car parking ~3 km from airport 🚐 besplatni prijevoz 🔒 24/7 pristupačan parking s besplatnim prijevozom. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Dobro Car Parking</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~1,700 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-25" aria-label="Detalji: Dobro Car Parking">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-25" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 24/7</span>
@@ -2709,22 +3024,24 @@
                     <p class="card-description">Pristupačan parking s besplatnim prijevozom.</p>
                     <a href="http://dobrocarparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- FAP -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h,covered">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">FAP</h3>
-                        <div class="card-location">📍 6 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="2200" data-unit="day" data-approx="1" data-km="6"
+                     data-search="fap 6 km from airport 🚐 besplatni prijevoz ☂️ natkriveno 🔒 osigurano natkrivena parking opcija s prijevozom. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">FAP</h3>
+                        <p class="lot-meta">6 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~2,200 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-26" aria-label="Detalji: FAP">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-26" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">☂️ Natkriveno</span>
@@ -2733,22 +3050,24 @@
                     <p class="card-description">Natkrivena parking opcija s prijevozom.</p>
                     <a href="https://fedettrepterparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- Repteri Parkolas -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Repteri Parkolas</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="1600" data-unit="day" data-approx="1" data-km="3"
+                     data-search="repteri parkolas ~3 km from airport 🚐 besplatni prijevoz 🔒 24/7 pristupačan parking blizu zračne luke. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Repteri Parkolas</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~1,600 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-27" aria-label="Detalji: Repteri Parkolas">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-27" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 24/7</span>
@@ -2756,22 +3075,24 @@
                     <p class="card-description">Pristupačan parking blizu zračne luke.</p>
                     <a href="http://repteri-parkolas.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- Hungaria Parkoló -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Hungária Parkoló</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="1800" data-unit="day" data-approx="1" data-km="3"
+                     data-search="hungária parkoló ~3 km from airport 🚐 besplatni prijevoz 🔒 osigurano pouzdan parking s prijevozom. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Hungária Parkoló</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~1,800 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-28" aria-label="Detalji: Hungária Parkoló">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-28" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 Osigurano</span>
@@ -2779,22 +3100,24 @@
                     <p class="card-description">Pouzdan parking s prijevozom.</p>
                     <a href="http://hungariaparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- Nemzeti Parkoló -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Nemzeti Parkoló</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="1750" data-unit="day" data-approx="1" data-km="3"
+                     data-search="nemzeti parkoló ~3 km from airport 🚐 besplatni prijevoz 🔒 24/7 nacionalna parking usluga s prijevozom. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Nemzeti Parkoló</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~1,750 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-29" aria-label="Detalji: Nemzeti Parkoló">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-29" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 24/7</span>
@@ -2802,22 +3125,24 @@
                     <p class="card-description">Nacionalna parking usluga s prijevozom.</p>
                     <a href="https://nemzetiparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- Őrzött Reptéri Parkoló -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Őrzött Reptéri Parkoló</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="1900" data-unit="day" data-approx="1" data-km="3"
+                     data-search="őrzött reptéri parkoló ~3 km from airport 🚐 besplatni prijevoz 👮 pod zaštitom 🔒 24/7 čuvani parking sa zaštitom 24/7. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Őrzött Reptéri Parkoló</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~1,900 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-30" aria-label="Detalji: Őrzött Reptéri Parkoló">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-30" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">👮 Pod zaštitom</span>
@@ -2826,22 +3151,24 @@
                     <p class="card-description">Čuvani parking sa zaštitom 24/7.</p>
                     <a href="https://orzottrepteriparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- Európa Parkoló -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Európa Parkoló</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="1850" data-unit="day" data-approx="1" data-km="3"
+                     data-search="európa parkoló ~3 km from airport 🚐 besplatni prijevoz 🔒 osigurano parkiranje po europskim standardima s prijevozom. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Európa Parkoló</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~1,850 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-31" aria-label="Detalji: Európa Parkoló">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-31" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 Osigurano</span>
@@ -2849,22 +3176,24 @@
                     <p class="card-description">Parkiranje po europskim standardima s prijevozom.</p>
                     <a href="http://www.europaparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- Comfort Parkoló -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Comfort Parkoló</h3>
-                        <div class="card-location">📍 2 km from airport · Vecsés, Lőrinci u.</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="2000" data-unit="day" data-approx="1" data-km="2"
+                     data-search="comfort parkoló 2 km from airport · vecsés, lőrinci u. 🚐 besplatni prijevoz 🔒 24/7 udobno parking iskustvo s prijevozom. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Comfort Parkoló</h3>
+                        <p class="lot-meta">2 km from airport · Vecsés, Lőrinci u.<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~2,000 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-32" aria-label="Detalji: Comfort Parkoló">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-32" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">🔒 24/7</span>
@@ -2872,22 +3201,24 @@
                     <p class="card-description">Udobno parking iskustvo s prijevozom.</p>
                     <a href="https://ferihegyfedettparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-            <!-- Reptéri Parkoló.com -->
-            <div class="parking-card" data-type="offsite" data-access="shuttle" data-features="24h">
-                <div class="card-header">
-                    <div class="card-title-group">
-                        <span class="card-type-badge offsite">🅿️ Izvan zračne luke</span>
-                        <h3 class="card-title">Reptéri Parkoló.com</h3>
-                        <div class="card-location">📍 ~3 km from airport</div>
+            </article>
+            <article class="lot" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="1800" data-unit="day" data-approx="1" data-km="3"
+                     data-search="reptéri parkoló.com ~3 km from airport 🚐 besplatni prijevoz 💻 online rezervacija 🔒 osigurano jednostavna online rezervacija s prijevozom. rezerviraj sada →">
+                <div class="lot-row">
+                    <div class="lot-main">
+                        
+                        <h3 class="lot-name">Reptéri Parkoló.com</h3>
+                        <p class="lot-meta">~3 km from airport<span class="lot-est">pribl.</span></p>
                     </div>
-                    <div class="card-price">
-                        <div class="price-from">Od</div>
-                        <div class="price-value">~1,800 Ft <span class="price-period">/ day</span></div>
+                    <div class="lot-price">
+                        <div class="lot-total" data-total></div>
+                        <div class="lot-day" data-rate></div>
                     </div>
+                    <button class="lot-toggle" type="button" aria-expanded="false" aria-controls="lot-body-33" aria-label="Detalji: Reptéri Parkoló.com">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
                 </div>
-                <div class="card-body">
+                <div class="lot-body card-body" id="lot-body-33" hidden>
                     <div class="card-features">
                         <span class="feature-tag">🚐 Besplatni prijevoz</span>
                         <span class="feature-tag">💻 Online rezervacija</span>
@@ -2896,31 +3227,15 @@
                     <p class="card-description">Jednostavna online rezervacija s prijevozom.</p>
                     <a href="https://www.repteriparkolo.com/" target="_blank" rel="noopener noreferrer" class="card-link">Rezerviraj sada →</a>
                 </div>
-            </div>
-
-        </div>
-        <!-- Show Sve Button -->
-        <div class="show-all-container container" id="showAllContainer" style="text-align: center; margin-top: 2rem;">
-            <button class="show-all-btn" onclick="showAllParking()" style="
-                background: linear-gradient(135deg, var(--sky), var(--sky-dark));
-                color: white;
-                border: none;
-                padding: 1rem 2.5rem;
-                border-radius: 50px;
-                font-size: 1.1rem;
-                font-weight: 600;
-                cursor: pointer;
-                box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4);
-                transition: all 0.3s ease;
-            ">Prikaži sva parkirališta →</button>
+            </article>
         </div>
 
-        <!-- No Results Message -->
         <div class="no-results container" id="noResults">
             <div class="no-results-icon">🔍</div>
             <h3>Nijedna opcija ne odgovara filtrima</h3>
             <p>Promijenite filtre za više rezultata.</p>
         </div>
+
     </section>
 
     <!-- Usluge Section -->
@@ -3537,13 +3852,82 @@
     </section>
 
     <!-- Footer -->
+    <div class="sheet-backdrop" id="filterBackdrop" hidden></div>
+    <div class="sheet" id="filterSheet" role="dialog" aria-modal="true" aria-labelledby="filterSheetTitle" hidden>
+        <div class="sheet-head">
+            <h2 id="filterSheetTitle">Filtri</h2>
+            <button class="sheet-clear" id="filterClear" type="button">Resetiraj sve</button>
+        </div>
+        <div class="sheet-body">
+            <div class="sheet-group">
+                <h3>Vrsta</h3>
+                    <label class="sheet-opt" data-kind="type" data-value="official">
+                        <input type="checkbox" data-kind="type" data-value="official">
+                        <span class="box" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>
+                        <span class="label">Službeno</span>
+                        <span class="n" data-count>0</span>
+                    </label>
+                    <label class="sheet-opt" data-kind="type" data-value="offsite">
+                        <input type="checkbox" data-kind="type" data-value="offsite">
+                        <span class="box" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>
+                        <span class="label">Izvan zračne luke</span>
+                        <span class="n" data-count>0</span>
+                    </label>
+            </div>
+            <div class="sheet-group">
+                <h3>Pristup</h3>
+                    <label class="sheet-opt" data-kind="access" data-value="walking">
+                        <input type="checkbox" data-kind="access" data-value="walking">
+                        <span class="box" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>
+                        <span class="label">Pješice</span>
+                        <span class="n" data-count>0</span>
+                    </label>
+                    <label class="sheet-opt" data-kind="access" data-value="shuttle">
+                        <input type="checkbox" data-kind="access" data-value="shuttle">
+                        <span class="box" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>
+                        <span class="label">Prijevoz</span>
+                        <span class="n" data-count>0</span>
+                    </label>
+            </div>
+            <div class="sheet-group">
+                <h3>Značajke</h3>
+                    <label class="sheet-opt" data-kind="feature" data-value="24h">
+                        <input type="checkbox" data-kind="feature" data-value="24h">
+                        <span class="box" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>
+                        <span class="label">24/7</span>
+                        <span class="n" data-count>0</span>
+                    </label>
+                    <label class="sheet-opt" data-kind="feature" data-value="ev">
+                        <input type="checkbox" data-kind="feature" data-value="ev">
+                        <span class="box" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>
+                        <span class="label">Punjenje EV</span>
+                        <span class="n" data-count>0</span>
+                    </label>
+                    <label class="sheet-opt" data-kind="feature" data-value="carwash">
+                        <input type="checkbox" data-kind="feature" data-value="carwash">
+                        <span class="box" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>
+                        <span class="label">Autopraonica</span>
+                        <span class="n" data-count>0</span>
+                    </label>
+                    <label class="sheet-opt" data-kind="feature" data-value="covered">
+                        <input type="checkbox" data-kind="feature" data-value="covered">
+                        <span class="box" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span>
+                        <span class="label">Natkriveno</span>
+                        <span class="n" data-count>0</span>
+                    </label>
+            </div>
+        </div>
+        <div class="sheet-foot">
+            <button class="sheet-apply" id="filterApply" type="button">Prikaži <span id="applyCount">0</span> parkirališta</button>
+        </div>
+    </div>
     </main>
 
     <footer>
         <div class="footer-grid container">
             <div class="footer-brand">
                 <a href="#" class="logo">
-                    <div class="logo-icon">✈</div>
+                    <div class="logo-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.2l7.4 15.9-7.4-3.9-7.4 3.9z"/></svg></div>
                     <div class="logo-text">Park<span>BUD</span></div>
                 </a>
                 <p>Cjeloviti vodič za vozače u Zračnoj luci Budimpešta. Parkiranje, usluge, upute – sve na jednom mjestu.</p>
@@ -3589,206 +3973,319 @@
     </footer>
 
     <script>
-    (function () {
+    (function (w, d) {
         'use strict';
 
-        /* The only strings JS writes at runtime. Everything else lives in the markup. */
-        var I18N = {
-            transportShow: 'Prikaži opcije',
-            transportHide: 'Sakrij opcije',
-            showAllParking: function (total, more) { return 'Prikaži svih ' + total + ' parkirališta (' + more + ' više) →'; },
-            showAllServices: function (total, more) { return 'Prikaži svih ' + total + ' usluga (' + more + ' više) →'; }
-        };
+        var T = {"perDay": "/ dan", "shortStay": "tarifa za kratak boravak", "byPrice": "{n} parkirališta · najjeftinija prva", "byDistance": "{n} parkirališta · najbliža prva", "one": "1 parkiralište", "transportShow": "Prikaži opcije", "transportHide": "Sakrij opcije"};
+        var SEP = ',';
+        var CARD_LIMIT_REMOVED = true;
 
-        /* Cards shown before the "show all" button appears. */
-        var CARD_LIMIT = 6;
+        function byId(id) { return d.getElementById(id); }
+        function fmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, SEP); }
+        function fill(tpl, n) { return tpl.replace('{n}', fmt(n)); }
 
-        function byId(id) { return document.getElementById(id); }
+        /* ============ HEADER HEIGHT ============ */
+        var header = d.querySelector('header');
+        function syncHeaderHeight() {
+            if (!header) return;
+            d.documentElement.style.setProperty(
+                '--header-h', Math.round(header.getBoundingClientRect().height) + 'px');
+        }
+        syncHeaderHeight();
+        w.addEventListener('resize', syncHeaderHeight);
+        if (w.ResizeObserver && header) new ResizeObserver(syncHeaderHeight).observe(header);
+
+        /* ============ MOBILE MENU ============ */
+        var mobileMenu = byId('mobileMenu');
+        var mobileToggle = d.querySelector('.mobile-toggle');
+        function setMobileMenu(open) {
+            if (!mobileMenu) return;
+            mobileMenu.classList.toggle('active', open);
+            if (mobileToggle) mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+        function toggleMobileMenu() {
+            setMobileMenu(!(mobileMenu && mobileMenu.classList.contains('active')));
+        }
+
+        /* ============ RESULTS ============ */
+        var lots = Array.prototype.slice.call(d.querySelectorAll('.lot'));
+        var list = byId('parkingGrid');
+        var searchInput = byId('lotSearch');
+        var summary = byId('resultSummary');
+        var noResults = byId('noResults');
+
+        var state = { sort: 'price', q: '', type: [], access: [], feature: [] };
+
+        /* The daily rate as the operator publishes it. Multiplying it out over
+           a trip would be a guess: several operators price in tiers, and this
+           site does not hold those tiers. Lots on a per-5-minute drop-off
+           tariff have no daily rate to compare at all. */
+        function dailyRate(lot) {
+            if (lot.dataset.unit !== 'day') return null;
+            return parseInt(lot.dataset.amount, 10) || 0;
+        }
+
+        function matchesFacets(lot, skipKind) {
+            var kinds = ['type', 'access', 'feature'];
+            for (var i = 0; i < kinds.length; i++) {
+                var k = kinds[i];
+                if (k === skipKind) continue;
+                var picked = state[k];
+                if (!picked.length) continue;
+                if (k === 'feature') {
+                    var have = (lot.dataset.features || '').split(',');
+                    for (var j = 0; j < picked.length; j++) {
+                        if (have.indexOf(picked[j]) === -1) return false;
+                    }
+                } else if (picked.indexOf(lot.dataset[k]) === -1) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function matchesQuery(lot) {
+            return !state.q || (lot.dataset.search || '').indexOf(state.q) !== -1;
+        }
+
+        function visibleLots() {
+            return lots.filter(function (lot) { return matchesFacets(lot) && matchesQuery(lot); });
+        }
+
+        function renderPrices() {
+            lots.forEach(function (lot) {
+                var main = lot.querySelector('[data-total]');
+                var unit = lot.querySelector('[data-rate]');
+                var amount = parseInt(lot.dataset.amount, 10) || 0;
+                var approx = lot.dataset.approx === '1' ? '~' : '';
+                main.textContent = approx + fmt(amount) + ' Ft';
+                unit.textContent = lot.dataset.unit === 'day' ? T.perDay : T.shortStay;
+            });
+        }
+
+        /* Not `parseFloat(x) || 999` — a lot at 0 km is falsy and would sort
+           as if it were the furthest away. */
+        function km(lot) {
+            var v = parseFloat(lot.dataset.km);
+            return isNaN(v) ? 999 : v;
+        }
+
+        function sortLots() {
+            /* Sort the array in place, not a copy: everything downstream
+               (which lot is cheapest, chip counts) reads this order. */
+            lots.sort(function (a, b) {
+                if (state.sort === 'distance') {
+                    return km(a) - km(b);
+                }
+                var ta = dailyRate(a), tb = dailyRate(b);
+                /* Short-stay tariffs have no daily rate: keep them last. */
+                if (ta === null && tb === null) return 0;
+                if (ta === null) return 1;
+                if (tb === null) return -1;
+                return ta - tb;
+            });
+            lots.forEach(function (lot) { list.appendChild(lot); });
+        }
+
+        function renderChips() {
+            var wrap = byId('activeChips');
+            if (!wrap) return;
+            wrap.textContent = '';
+            ['type', 'access', 'feature'].forEach(function (kind) {
+                state[kind].forEach(function (value) {
+                    var input = d.querySelector('.sheet-opt input[data-kind="' + kind + '"][data-value="' + value + '"]');
+                    var label = input ? input.parentNode.querySelector('.label').textContent : value;
+                    var b = d.createElement('button');
+                    b.type = 'button';
+                    b.textContent = label;
+                    b.setAttribute('aria-label', label);
+                    var x = d.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                    x.setAttribute('width', '12'); x.setAttribute('height', '12');
+                    x.setAttribute('viewBox', '0 0 24 24'); x.setAttribute('fill', 'none');
+                    x.setAttribute('stroke', 'currentColor'); x.setAttribute('stroke-width', '2.6');
+                    x.setAttribute('aria-hidden', 'true');
+                    var p = d.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    p.setAttribute('d', 'M6 6l12 12M18 6L6 18');
+                    p.setAttribute('stroke-linecap', 'round');
+                    x.appendChild(p); b.appendChild(x);
+                    b.addEventListener('click', function () { toggleFacet(kind, value, false); });
+                    wrap.appendChild(b);
+                });
+            });
+        }
+
+        /* Counts show what a tap would leave, so no option is a dead end. */
+        function renderCounts() {
+            d.querySelectorAll('.sheet-opt').forEach(function (opt) {
+                var kind = opt.dataset.kind, value = opt.dataset.value;
+                var n = lots.filter(function (lot) {
+                    if (!matchesFacets(lot, kind) || !matchesQuery(lot)) return false;
+                    if (kind === 'feature') return (lot.dataset.features || '').split(',').indexOf(value) !== -1;
+                    return lot.dataset[kind] === value;
+                }).length;
+                var cell = opt.querySelector('[data-count]');
+                if (cell) cell.textContent = n;
+                opt.setAttribute('data-empty', n === 0 ? 'true' : 'false');
+            });
+        }
+
+        function apply() {
+            renderPrices();
+            sortLots();
+
+            var shown = visibleLots();
+            lots.forEach(function (lot) {
+                lot.classList.toggle('hidden', shown.indexOf(lot) === -1);
+                lot.removeAttribute('data-cheapest');
+            });
+
+            if (state.sort === 'price') {
+                for (var i = 0; i < shown.length; i++) {
+                    if (dailyRate(shown[i]) !== null) { shown[i].setAttribute('data-cheapest', 'true'); break; }
+                }
+            }
+
+            var tpl = state.sort === 'distance' ? T.byDistance : T.byPrice;
+            if (summary) summary.textContent = shown.length === 1 ? T.one : fill(tpl, shown.length);
+            var legacy = byId('resultCount');
+            if (legacy) legacy.textContent = shown.length;
+            if (noResults) noResults.classList.toggle('visible', shown.length === 0);
+
+            var n = state.type.length + state.access.length + state.feature.length;
+            var badge = byId('filterCount'), open = byId('filterOpen');
+            if (badge) { badge.textContent = n; badge.hidden = n === 0; }
+            if (open) open.setAttribute('data-active', n > 0 ? 'true' : 'false');
+            var applyCount = byId('applyCount');
+            if (applyCount) applyCount.textContent = fmt(shown.length);
+
+            renderCounts();
+            renderChips();
+        }
+
+        function toggleFacet(kind, value, on) {
+            var arr = state[kind];
+            var at = arr.indexOf(value);
+            if (on && at === -1) arr.push(value);
+            if (!on && at !== -1) arr.splice(at, 1);
+            var input = d.querySelector('.sheet-opt input[data-kind="' + kind + '"][data-value="' + value + '"]');
+            if (input) input.checked = on;
+            apply();
+        }
+
+        d.querySelectorAll('.sheet-opt input').forEach(function (input) {
+            input.addEventListener('change', function () {
+                toggleFacet(this.dataset.kind, this.dataset.value, this.checked);
+            });
+        });
+
+        d.querySelectorAll('.sort-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                d.querySelectorAll('.sort-btn').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+                this.setAttribute('aria-pressed', 'true');
+                state.sort = this.dataset.sort;
+                apply();
+            });
+        });
+
+        if (searchInput) {
+            searchInput.addEventListener('input', function () {
+                state.q = this.value.trim().toLowerCase();
+                apply();
+            });
+        }
+
+        d.querySelectorAll('.lot-toggle').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var body = byId(this.getAttribute('aria-controls'));
+                var open = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', open ? 'false' : 'true');
+                if (body) body.hidden = open;
+            });
+        });
+
+        /* ---- sheet ---- */
+        var sheet = byId('filterSheet'), backdrop = byId('filterBackdrop'), opener = byId('filterOpen');
+        function setSheet(open) {
+            if (!sheet) return;
+            sheet.hidden = !open;
+            if (backdrop) backdrop.hidden = !open;
+            if (opener) opener.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if (open) { var f = sheet.querySelector('input'); if (f) f.focus(); }
+            else if (opener) opener.focus();
+        }
+        if (opener) opener.addEventListener('click', function () { setSheet(sheet.hidden); });
+        if (backdrop) backdrop.addEventListener('click', function () { setSheet(false); });
+        var applyBtn = byId('filterApply');
+        if (applyBtn) applyBtn.addEventListener('click', function () { setSheet(false); });
+        var clearBtn = byId('filterClear');
+        if (clearBtn) {
+            clearBtn.addEventListener('click', function () {
+                state.type = []; state.access = []; state.feature = [];
+                d.querySelectorAll('.sheet-opt input').forEach(function (i) { i.checked = false; });
+                apply();
+            });
+        }
+
+        d.addEventListener('keydown', function (e) {
+            if (e.key !== 'Escape') return;
+            setMobileMenu(false);
+            if (sheet && !sheet.hidden) setSheet(false);
+        });
+
+        /* ============ SERVICES ============ */
+        var serviceCards = d.querySelectorAll('.service-card');
+        var serviceCategoryButtons = d.querySelectorAll('.service-filter-btn:not(.service-location-btn)');
+        var serviceLocationButtons = d.querySelectorAll('.service-location-btn');
+        var activeServiceCategory = 'all', activeServiceLocation = 'all';
 
         function setPressed(btn, pressed) {
             btn.classList.toggle('active', pressed);
             btn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
         }
 
-        /* A shared "show all" button: visible only while the list is capped. */
-        function updateShowAllButton(container, capped, matching, label) {
-            if (!container) return;
-            var visible = capped && matching > CARD_LIMIT;
-            container.style.display = visible ? 'block' : 'none';
-            if (visible) {
-                var button = container.querySelector('button');
-                if (button) button.textContent = label(matching, matching - CARD_LIMIT);
-            }
-        }
+        /* Services keep their card layout and their 6-item cap; this redesign
+           is scoped to the parking results. */
+        function showAllServicesLabel(total, more) { return 'Prikaži svih ' + total + ' usluga (' + more + ' više) →'; }
 
-        /* ============ HEADER HEIGHT ============ */
-        /* The header is fixed and its height changes when the nav wraps, so
-           publish the real value for the offsets that sit below it. */
-        var header = document.querySelector('header');
-
-        function syncHeaderHeight() {
-            if (!header) return;
-            document.documentElement.style.setProperty(
-                '--header-h', Math.round(header.getBoundingClientRect().height) + 'px');
-        }
-
-        syncHeaderHeight();
-        window.addEventListener('resize', syncHeaderHeight);
-        if (window.ResizeObserver && header) {
-            new ResizeObserver(syncHeaderHeight).observe(header);
-        }
-
-        /* ============ MOBILE MENU ============ */
-        var mobileMenu = byId('mobileMenu');
-        var mobileToggle = document.querySelector('.mobile-toggle');
-
-        function setMobileMenu(open) {
-            if (!mobileMenu) return;
-            mobileMenu.classList.toggle('active', open);
-            if (mobileToggle) mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        }
-
-        function toggleMobileMenu() {
-            setMobileMenu(!(mobileMenu && mobileMenu.classList.contains('active')));
-        }
-
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') setMobileMenu(false);
-        });
-
-        /* ============ PARKING FILTERS ============ */
-        var filters = { type: 'all', access: 'all', features: [] };
-        var showAllParkingEnabled = false;
-
-        var parkingCards = document.querySelectorAll('.parking-card');
-        var parkingFilterButtons = document.querySelectorAll('.filter-btn');
-
-        function parkingCardMatches(card) {
-            if (filters.type !== 'all' && card.dataset.type !== filters.type) return false;
-            if (filters.access !== 'all' && card.dataset.access !== filters.access) return false;
-            if (!filters.features.length) return true;
-            var cardFeatures = card.dataset.features ? card.dataset.features.split(',') : [];
-            return filters.features.every(function (f) { return cardFeatures.indexOf(f) !== -1; });
-        }
-
-        function applyFilters() {
-            var capped = !showAllParkingEnabled;
-            var shown = 0;
-            var matching = 0;
-
-            parkingCards.forEach(function (card) {
-                if (!parkingCardMatches(card)) {
-                    card.classList.add('hidden');
-                    return;
-                }
-                matching++;
-                if (capped && shown >= CARD_LIMIT) {
-                    card.classList.add('hidden');
-                } else {
-                    card.classList.remove('hidden');
-                    shown++;
-                }
-            });
-
-            byId('resultCount').textContent = matching;
-            byId('noResults').classList.toggle('visible', matching === 0);
-            updateShowAllButton(byId('showAllContainer'), capped, matching, I18N.showAllParking);
-        }
-
-        parkingFilterButtons.forEach(function (btn) {
-            setPressed(btn, btn.classList.contains('active'));
-
-            btn.addEventListener('click', function () {
-                var filterType = this.dataset.filter;
-                var value = this.dataset.value;
-
-                if (filterType === 'feature') {
-                    var nowActive = !this.classList.contains('active');
-                    setPressed(this, nowActive);
-                    if (nowActive) {
-                        filters.features.push(value);
-                    } else {
-                        filters.features = filters.features.filter(function (f) { return f !== value; });
-                    }
-                } else {
-                    document.querySelectorAll('[data-filter="' + filterType + '"]').forEach(function (b) {
-                        setPressed(b, false);
-                    });
-                    setPressed(this, true);
-                    filters[filterType] = value;
-                }
-
-                /* A new selection collapses the list back to the first page of cards. */
-                showAllParkingEnabled = false;
-                applyFilters();
-
-                var parkingSection = document.querySelector('#parking');
-                if (parkingSection) parkingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-
-        function showAllParking() {
-            showAllParkingEnabled = true;
-            applyFilters();
-        }
-
-        function resetFilters() {
-            filters.type = 'all';
-            filters.access = 'all';
-            filters.features = [];
-            showAllParkingEnabled = false;
-
-            parkingFilterButtons.forEach(function (btn) { setPressed(btn, false); });
-            document.querySelectorAll('[data-filter="type"][data-value="all"], [data-filter="access"][data-value="all"]')
-                .forEach(function (btn) { setPressed(btn, true); });
-
-            applyFilters();
-        }
-
-        /* ============ SERVICES FILTERS ============ */
-        var activeServiceCategory = 'all';
-        var activeServiceLocation = 'all';
+        var SERVICE_LIMIT = 6;
         var showAllServicesEnabled = false;
-
-        var serviceCards = document.querySelectorAll('.service-card');
-        var serviceCategoryButtons = document.querySelectorAll('.service-filter-btn:not(.service-location-btn)');
-        var serviceLocationButtons = document.querySelectorAll('.service-location-btn');
-
-        function setServiceCardVisible(card, visible) {
-            card.classList.toggle('hidden', !visible);
-            card.style.display = visible ? '' : 'none';
-        }
 
         function applyServiceFilters() {
             var capped = !showAllServicesEnabled;
-            var shown = 0;
-            var matching = 0;
+            var shown = 0, matching = 0;
 
             serviceCards.forEach(function (card) {
-                var categoryMatch = activeServiceCategory === 'all' || card.dataset.category === activeServiceCategory;
-                var locationMatch = activeServiceLocation === 'all' || (card.dataset.location || 'nearby') === activeServiceLocation;
-
-                if (!categoryMatch || !locationMatch) {
-                    setServiceCardVisible(card, false);
-                    return;
+                var okCat = activeServiceCategory === 'all' || card.dataset.category === activeServiceCategory;
+                var okLoc = activeServiceLocation === 'all' || (card.dataset.location || 'nearby') === activeServiceLocation;
+                var visible = false;
+                if (okCat && okLoc) {
+                    matching++;
+                    visible = !(capped && shown >= SERVICE_LIMIT);
+                    if (visible) shown++;
                 }
-                matching++;
-                if (capped && shown >= CARD_LIMIT) {
-                    setServiceCardVisible(card, false);
-                } else {
-                    setServiceCardVisible(card, true);
-                    shown++;
-                }
+                card.classList.toggle('hidden', !visible);
+                card.style.display = visible ? '' : 'none';
             });
 
             byId('serviceResultCount').textContent = matching;
             byId('noServiceResults').classList.toggle('visible', matching === 0);
-            updateShowAllButton(byId('showAllServicesContainer'), capped, matching, I18N.showAllServices);
+
+            var c = byId('showAllServicesContainer');
+            if (c) {
+                var offer = capped && matching > SERVICE_LIMIT;
+                c.style.display = offer ? 'block' : 'none';
+                var btn = c.querySelector('button');
+                if (offer && btn) btn.textContent = showAllServicesLabel(matching, matching - SERVICE_LIMIT);
+            }
+        }
+
+        function showAllServices() {
+            showAllServicesEnabled = true;
+            applyServiceFilters();
         }
 
         serviceCategoryButtons.forEach(function (btn) {
             setPressed(btn, btn.classList.contains('active'));
-
             btn.addEventListener('click', function () {
                 serviceCategoryButtons.forEach(function (b) { setPressed(b, false); });
                 setPressed(this, true);
@@ -3800,7 +4297,6 @@
 
         serviceLocationButtons.forEach(function (btn) {
             setPressed(btn, btn.classList.contains('active'));
-
             btn.addEventListener('click', function (e) {
                 e.stopPropagation();
                 serviceLocationButtons.forEach(function (b) { setPressed(b, false); });
@@ -3811,80 +4307,57 @@
             });
         });
 
-        function showAllServices() {
-            showAllServicesEnabled = true;
-            applyServiceFilters();
-        }
-
         function resetServiceFilters() {
-            activeServiceCategory = 'all';
-            activeServiceLocation = 'all';
-            showAllServicesEnabled = false;
-
-            serviceCategoryButtons.forEach(function (btn) { setPressed(btn, false); });
-            serviceLocationButtons.forEach(function (btn) { setPressed(btn, false); });
-
-            var allCategory = document.querySelector('.service-filter-btn[data-category="all"]');
-            var allLocation = document.querySelector('.service-location-btn[data-location="all"]');
-            if (allCategory) setPressed(allCategory, true);
-            if (allLocation) setPressed(allLocation, true);
-
+            activeServiceCategory = 'all'; activeServiceLocation = 'all'; showAllServicesEnabled = false;
+            serviceCategoryButtons.forEach(function (b) { setPressed(b, false); });
+            serviceLocationButtons.forEach(function (b) { setPressed(b, false); });
+            var ac = d.querySelector('.service-filter-btn[data-category="all"]');
+            var al = d.querySelector('.service-location-btn[data-location="all"]');
+            if (ac) setPressed(ac, true);
+            if (al) setPressed(al, true);
             applyServiceFilters();
         }
 
-        /* ============ TRANSPORT QUICK BAR ============ */
+        /* ============ TRANSPORT BAR ============ */
         var transportBarContent = byId('transportBarContent');
-        var transportToggleButton = document.querySelector('.transport-toggle');
-
+        var transportToggleButton = d.querySelector('.transport-toggle');
         function toggleTransportBar() {
             if (!transportBarContent) return;
             var open = transportBarContent.style.display === 'none';
             transportBarContent.style.display = open ? 'block' : 'none';
-
-            var text = byId('transportToggleText');
-            var icon = byId('transportToggleIcon');
-            if (text) text.textContent = open ? I18N.transportHide : I18N.transportShow;
+            var text = byId('transportToggleText'), icon = byId('transportToggleIcon');
+            if (text) text.textContent = open ? T.transportHide : T.transportShow;
             if (icon) icon.classList.toggle('rotated', open);
             if (transportToggleButton) transportToggleButton.setAttribute('aria-expanded', open ? 'true' : 'false');
         }
 
         /* ============ IN-PAGE NAVIGATION ============ */
-        document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        d.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
             anchor.addEventListener('click', function (e) {
                 var href = this.getAttribute('href');
                 setMobileMenu(false);
-
-                /* The logo links point at "#": send the reader to the top rather than nowhere. */
                 if (!href || href === '#') {
                     e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    w.scrollTo({ top: 0, behavior: 'smooth' });
                     return;
                 }
-
-                var target = document.querySelector(href);
+                var target = d.querySelector(href);
                 if (!target) return;
-
                 e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                /* Keep keyboard focus with the reader, and keep the URL shareable. */
                 if (target.hasAttribute('tabindex')) target.focus({ preventScroll: true });
-                if (window.history && window.history.replaceState) {
-                    window.history.replaceState(null, '', href);
-                }
+                if (w.history && w.history.replaceState) w.history.replaceState(null, '', href);
             });
         });
 
-        /* Handlers referenced from onclick attributes in the markup. */
-        window.toggleMobileMenu = toggleMobileMenu;
-        window.toggleTransportBar = toggleTransportBar;
-        window.resetFilters = resetFilters;
-        window.resetServiceFilters = resetServiceFilters;
-        window.showAllParking = showAllParking;
-        window.showAllServices = showAllServices;
+        w.toggleMobileMenu = toggleMobileMenu;
+        w.toggleTransportBar = toggleTransportBar;
+        w.resetServiceFilters = resetServiceFilters;
+        w.showAllServices = showAllServices;
 
-        applyFilters();
+        apply();
         applyServiceFilters();
-    })();
+    })(window, document);
     </script>
 
     <!-- Shown only until the reader answers; see the consent script in <head>. -->
