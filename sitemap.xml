@@ -107,4 +107,11 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://airportparkingbudapest.info/"/>
     </url>
 
+    <url>
+        <loc>https://airportparkingbudapest.info/privacy/</loc>
+        <lastmod>2026-08-21</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
 </urlset>

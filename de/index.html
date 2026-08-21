@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>Flughafen Budapest Parken 2026 | Vergleichen Sie 35+ BUD-Optionen</title>
-    <meta name="title" content="Flughafen Budapest Parken 2026 | Vergleichen Sie 35+ BUD-Optionen">
+    <title>Flughafen Budapest Parken 2026 | Vergleichen Sie 30+ BUD-Optionen</title>
+    <meta name="title" content="Flughafen Budapest Parken 2026 | Vergleichen Sie 30+ BUD-Optionen">
     <meta name="description" content="Vollständiger Leitfaden zum Parken am Flughafen Budapest (BUD). Vergleichen Sie offizielle Terminal-Parkplätze mit externen Parkplätzen mit kostenlosem Shuttle. Beste Preise ab 1.600 Ft/Tag. 24/7-Service, E-Auto-Laden, Autowäsche.">
     <meta name="keywords" content="Budapest airport parking, BUD parking, Liszt Ferenc airport parking, Ferihegy parking, airport parking Budapest, cheap airport parking Hungary, Budapest airport shuttle parking, Terminal 2 parking Budapest">
     <meta name="author" content="ParkBUD">
@@ -30,7 +30,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://airportparkingbudapest.info/de/">
-    <meta property="og:title" content="Flughafen Budapest Parken 2026 | Vergleichen Sie 35+ BUD-Optionen">
+    <meta property="og:title" content="Flughafen Budapest Parken 2026 | Vergleichen Sie 30+ BUD-Optionen">
     <meta property="og:description" content="Finden Sie das beste Parken am Flughafen Budapest. Vergleichen Sie offizielle und externe Optionen, Preise ab 1.600 Ft/Tag, kostenlose Shuttles, E-Auto-Laden und 24/7-Service.">
     <meta property="og:image" content="https://airportparkingbudapest.info/og-image.jpg">
     <meta property="og:image:width" content="1200">
@@ -42,7 +42,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://airportparkingbudapest.info/de/">
-    <meta property="twitter:title" content="Flughafen Budapest Parken 2026 | 35+ Optionen">
+    <meta property="twitter:title" content="Flughafen Budapest Parken 2026 | 30+ Optionen">
     <meta property="twitter:description" content="Finden Sie das beste Parken am Flughafen Budapest. Vergleichen Sie offizielle und externe Optionen, Preise ab 1.600 Ft/Tag, kostenlose Shuttles und 24/7-Service.">
     <meta property="twitter:image" content="https://airportparkingbudapest.info/og-image.jpg">
     
@@ -63,7 +63,7 @@
         "name": "ParkBUD - Budapest Airport Parking Guide",
         "alternateName": "Budapest Airport Parking Guide",
         "url": "https://airportparkingbudapest.info/",
-        "description": "Complete guide to parking at Budapest Ferenc Liszt International Airport (BUD). Compare 35+ parking options, find best rates, and book online.",
+        "description": "Complete guide to parking at Budapest Ferenc Liszt International Airport (BUD). Compare 30+ parking options, find best rates, and book online.",
         "publisher": {
             "@type": "Organization",
             "name": "ParkBUD",
@@ -160,7 +160,7 @@
         "@context": "https://schema.org",
         "@type": "TouristInformationCenter",
         "name": "Budapest Airport Parking Guide",
-        "description": "Comprehensive parking guide for Budapest Ferenc Liszt International Airport (BUD) featuring 35+ parking options with prices, shuttle services, and amenities.",
+        "description": "Comprehensive parking guide for Budapest Ferenc Liszt International Airport (BUD) featuring 30+ parking options with prices, shuttle services, and amenities.",
         "url": "https://airportparkingbudapest.info/",
         "address": {
             "@type": "PostalAddress",
@@ -234,16 +234,109 @@
     <meta name="coverage" content="Hungary">
     <meta name="distribution" content="global">
 
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="dns-prefetch" href="https://t.contentsquare.net">
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RD5NGYD43E"></script>
-    <script async src="https://t.contentsquare.net/uxa/50da9bdd68c59.js"></script>
+    <!-- Analytics, loaded only after consent (see /privacy/) -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-RD5NGYD43E');
+    (function (w, d) {
+        'use strict';
+
+        var STORAGE_KEY = 'parkbud:consent';
+        var GA_ID = 'G-RD5NGYD43E';
+        var CS_TAG = 'https://t.contentsquare.net/uxa/50da9bdd68c59.js';
+
+        w.dataLayer = w.dataLayer || [];
+        function gtag() { w.dataLayer.push(arguments); }
+        w.gtag = gtag;
+
+        /* Deny by default, so nothing is measured until the reader opts in. */
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            functionality_storage: 'denied',
+            personalization_storage: 'denied',
+            security_storage: 'granted'
+        });
+
+        function read() {
+            try { return w.localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+        }
+
+        function write(value) {
+            try { w.localStorage.setItem(STORAGE_KEY, value); } catch (e) { /* private mode */ }
+        }
+
+        var loaded = false;
+
+        function loadTags() {
+            if (loaded) return;
+            loaded = true;
+
+            gtag('consent', 'update', { analytics_storage: 'granted' });
+
+            var ga = d.createElement('script');
+            ga.async = true;
+            ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+            d.head.appendChild(ga);
+
+            gtag('js', new Date());
+            gtag('config', GA_ID, { anonymize_ip: true });
+
+            var cs = d.createElement('script');
+            cs.async = true;
+            cs.src = CS_TAG;
+            d.head.appendChild(cs);
+        }
+
+        /* Best effort: stop the cookies already dropped from being sent again. */
+        function clearAnalyticsCookies() {
+            var host = d.location.hostname;
+            var domains = ['', host, '.' + host];
+            var parts = host.split('.');
+            if (parts.length > 2) domains.push('.' + parts.slice(-2).join('.'));
+
+            d.cookie.split(';').forEach(function (entry) {
+                var name = entry.split('=')[0].trim();
+                if (!/^(_ga|_gid|_gat|_cs|_uetsid)/.test(name)) return;
+                domains.forEach(function (domain) {
+                    d.cookie = name + '=; Max-Age=0; path=/' +
+                        (domain ? '; domain=' + domain : '');
+                });
+            });
+        }
+
+        var banner = null;
+
+        function showBanner(show) {
+            if (!banner) banner = d.getElementById('cookieConsent');
+            if (banner) banner.hidden = !show;
+        }
+
+        w.ParkBUDConsent = {
+            accept: function () {
+                write('granted');
+                showBanner(false);
+                loadTags();
+            },
+            reject: function () {
+                write('denied');
+                showBanner(false);
+                gtag('consent', 'update', { analytics_storage: 'denied' });
+                clearAnalyticsCookies();
+            },
+            reopen: function () { showBanner(true); },
+            state: read
+        };
+
+        function start() {
+            var choice = read();
+            if (choice === 'granted') loadTags();
+            else if (choice !== 'denied') showBanner(true);
+        }
+
+        if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', start);
+        else start();
+    })(window, document);
     </script>
 
     <!-- Preconnect and Fonts -->
@@ -1736,6 +1829,109 @@
         main:focus {
             outline: none;
         }
+
+        /* Cookie consent: accept and decline carry the same visual weight. */
+        .cookie-consent {
+            position: fixed;
+            left: 1rem;
+            right: 1rem;
+            bottom: 1rem;
+            z-index: 2000;
+            max-width: 32rem;
+            margin-left: auto;
+            background: var(--white);
+            border: 1px solid var(--mist);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            padding: 1.5rem;
+        }
+
+        .cookie-consent[hidden] { display: none; }
+
+        .cookie-consent h2 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--midnight);
+            margin-bottom: 0.5rem;
+        }
+
+        .cookie-consent p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 1.1rem;
+        }
+
+        .cookie-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            align-items: center;
+        }
+
+        .cookie-btn {
+            font: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.65rem 1.4rem;
+            border-radius: 50px;
+            border: 1px solid var(--mist);
+            background: var(--white);
+            color: var(--dark);
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s, background 0.2s;
+        }
+
+        .cookie-btn:hover { border-color: var(--sky); color: var(--sky); }
+
+        .cookie-btn.primary {
+            background: var(--sky);
+            border-color: var(--sky);
+            color: var(--white);
+        }
+
+        .cookie-btn.primary:hover {
+            background: var(--sky-dark);
+            border-color: var(--sky-dark);
+            color: var(--white);
+        }
+
+        .cookie-consent a {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-left: auto;
+        }
+
+        .cookie-consent a:hover { color: var(--sky); }
+
+        .footer-legal {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem 1rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+
+        .footer-legal a,
+        .footer-legal button {
+            font: inherit;
+            font-size: inherit;
+            color: inherit;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            text-decoration: underline;
+            opacity: 0.85;
+        }
+
+        .footer-legal a:hover,
+        .footer-legal button:hover { opacity: 1; }
+
+        @media (max-width: 520px) {
+            .cookie-consent { padding: 1.25rem; }
+            .cookie-consent a { margin-left: 0; }
+        }
     </style>
 </head>
 
@@ -1847,7 +2043,7 @@
     <div class="stats-strip">
         <div class="stats-grid">
             <div class="stat">
-                <div class="stat-value">35<span>+</span></div>
+                <div class="stat-value">30<span>+</span></div>
                 <div class="stat-label">Parkoptionen</div>
             </div>
             <div class="stat">
@@ -2781,7 +2977,7 @@
                 <h3>MOL Gas Station</h3>
                 <p>Tankstelle mit vollem Service auf dem Weg zum Flughafen. Benzin, Diesel und LPG. Mini-Markt drinnen.</p>
                 <div class="service-details">
-                    <div class="service-detail"><span class="service-detail-icon">✓</span> lli út, before airport</div>
+                    <div class="service-detail"><span class="service-detail-icon">✓</span> Üllői út, before airport</div>
                     <div class="service-detail"><span class="service-detail-icon">⏰</span> Geöffnet 24/7</div>
                     <div class="service-detail"><span class="service-detail-icon">✓</span> Karten akzeptiert</div>
                 </div>
@@ -2818,7 +3014,7 @@
                 <h3>McDonald's Vecsés</h3>
                 <p>Praktisches Drive-Through auf dem Weg zum Flughafen. Volle Speisekarte mit schnellem Service.</p>
                 <div class="service-details">
-                    <div class="service-detail"><span class="service-detail-icon">✓</span> Vecsés, F út</div>
+                    <div class="service-detail"><span class="service-detail-icon">✓</span> Vecsés, Fő út</div>
                     <div class="service-detail"><span class="service-detail-icon">⏰</span> 6:00 - 24:00</div>
                     <div class="service-detail"><span class="service-detail-icon">✓</span> Drive-Through</div>
                 </div>
@@ -2856,7 +3052,7 @@
                 <div class="service-details">
                     <div class="service-detail"><span class="service-detail-icon">✓</span> Terminal 2B</div>
                     <div class="service-detail"><span class="service-detail-icon">⏰</span> 6:00 - 21:00</div>
-                    <div class="service-detail"><span class="service-detail-icon">️</span> Restaurant mit Sitzplätzen</div>
+                    <div class="service-detail"><span class="service-detail-icon">🍽️</span> Restaurant mit Sitzplätzen</div>
                 </div>
             </div>
 
@@ -2909,9 +3105,9 @@
                 <h3>Market Central Ferihegy</h3>
                 <p>Großes Einkaufszentrum 5 Min vom Flughafen. Supermarkt, Geschäfte, Restaurants und Services an einem Ort.</p>
                 <div class="service-details">
-                    <div class="service-detail"><span class="service-detail-icon">✓</span> Vecsés, F út 246</div>
+                    <div class="service-detail"><span class="service-detail-icon">✓</span> Vecsés, Fő út 246</div>
                     <div class="service-detail"><span class="service-detail-icon">⏰</span> 10:00 - 20:00</div>
-                    <div class="service-detail"><span class="service-detail-icon">️</span> Kostenloses Parken</div>
+                    <div class="service-detail"><span class="service-detail-icon">🅿️</span> Kostenloses Parken</div>
                 </div>
             </div>
 
@@ -2945,7 +3141,7 @@
                 <h3>Tesco Extra</h3>
                 <p>Großer Hypermarkt mit allem, was Sie brauchen. Lebensmittel, Elektronik, Reiseartikel und Apotheke drinnen.</p>
                 <div class="service-details">
-                    <div class="service-detail"><span class="service-detail-icon">✓</span> ll / Gyál area</div>
+                    <div class="service-detail"><span class="service-detail-icon">✓</span> Üllő / Gyál area</div>
                     <div class="service-detail"><span class="service-detail-icon">⏰</span> 6:00 - 22:00</div>
                     <div class="service-detail"><span class="service-detail-icon">✓</span> Apotheke drinnen</div>
                 </div>
@@ -3006,7 +3202,7 @@
                 <h3>MOL Car Wash</h3>
                 <p>Selbstbedienung und automatische Wäsche an der MOL-Tankstelle. Schnelle und günstige Autoreinigung.</p>
                 <div class="service-details">
-                    <div class="service-detail"><span class="service-detail-icon">✓</span> MOL lli út</div>
+                    <div class="service-detail"><span class="service-detail-icon">✓</span> MOL Üllői út</div>
                     <div class="service-detail"><span class="service-detail-icon">⏰</span> Geöffnet 24/7</div>
                     <div class="service-detail"><span class="service-detail-icon">✓</span> Selbstbedienung verfügbar</div>
                 </div>
@@ -3045,9 +3241,9 @@
                 <h3>ibis Budapest Airport</h3>
                 <p>Praktisches Hotel direkt am Flughafen. Perfekt für Frühflüge oder lange Zwischenaufenthalte. Kostenloser Shuttle.</p>
                 <div class="service-details">
-                    <div class="service-detail"><span class="service-detail-icon">✓</span> Lrinci út 39, Vecsés</div>
+                    <div class="service-detail"><span class="service-detail-icon">✓</span> Lőrinci út 39, Vecsés</div>
                     <div class="service-detail"><span class="service-detail-icon">✓</span> Kostenloser Flughafen-Shuttle</div>
-                    <div class="service-detail"><span class="service-detail-icon">️</span> Parken verfügbar</div>
+                    <div class="service-detail"><span class="service-detail-icon">🅿️</span> Parken verfügbar</div>
                 </div>
             </div>
 
@@ -3385,6 +3581,10 @@
         <div class="footer-bottom container">
             <p>© 2026 Flughafen Budapest Parken. Unabhängige Quelle. Nicht mit dem Flughafen Budapest verbunden.</p>
             <p>📧 E-Mail: <a href="mailto:contact@airportparkingbudapest.info" style="color: inherit;">contact@airportparkingbudapest.info</a></p>
+            <p class="footer-legal">
+                <a href="/privacy/">Datenschutz &amp; Cookies</a>
+                <button type="button" onclick="ParkBUDConsent.reopen()">Cookie-Einstellungen</button>
+            </p>
         </div>
     </footer>
 
@@ -3686,5 +3886,19 @@
         applyServiceFilters();
     })();
     </script>
+
+    <!-- Shown only until the reader answers; see the consent script in <head>. -->
+    <aside class="cookie-consent" id="cookieConsent" role="dialog" aria-modal="false"
+           aria-labelledby="cookieConsentTitle" aria-label="Cookie-Einwilligung" hidden>
+        <h2 id="cookieConsentTitle">Dürfen wir messen, wie dieser Ratgeber genutzt wird?</h2>
+        <p>Wir möchten Analyse-Cookies laden, um zu sehen, welche Parkoptionen verglichen werden, und den Ratgeber zu verbessern. Sie werden nur mit Ihrer Zustimmung geladen. Wenn Sie ablehnen, wird nichts geladen und es werden keine Cookies gesetzt.</p>
+        <div class="cookie-actions">
+            <button type="button" class="cookie-btn primary"
+                    onclick="ParkBUDConsent.accept()">Analyse akzeptieren</button>
+            <button type="button" class="cookie-btn"
+                    onclick="ParkBUDConsent.reject()">Ablehnen</button>
+            <a href="/privacy/">Datenschutz &amp; Cookies</a>
+        </div>
+    </aside>
 </body>
 </html>
