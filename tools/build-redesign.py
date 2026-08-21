@@ -13,6 +13,7 @@ Usage:  python3 tools/build-redesign.py
 """
 from __future__ import annotations
 
+import csv
 import html
 import re
 from pathlib import Path
@@ -30,50 +31,73 @@ S = {
         byPrice="{n} lots · cheapest first", byDistance="{n} lots · nearest first",
         checked="Prices checked 21 Aug 2026", trip="Trip length", days="days",
         total="Total for {n} days", perDay="/ day", shortStay="short-stay tariff",
-        est="est.", details="Details", one="1 lot"),
+        verified="Rate checked on {d}", est="est.", details="Details", one="1 lot"),
     "hu/index.html": dict(
         search="Keresés parkoló vagy szolgáltatás", price="Ár", distance="Távolság",
         filters="Szűrők", show="{n} parkoló mutatása",
         byPrice="{n} parkoló · legolcsóbb elöl", byDistance="{n} parkoló · legközelebbi elöl",
         checked="Árak ellenőrizve: 2026. aug. 21.", trip="Utazás hossza", days="nap",
         total="Összesen {n} napra", perDay="/ nap", shortStay="rövid távú tarifa",
-        est="becsült", details="Részletek", one="1 parkoló"),
+        verified="Ár ellenőrizve: {d}", est="becsült", details="Részletek", one="1 parkoló"),
     "de/index.html": dict(
         search="Parkplatz oder Merkmal suchen", price="Preis", distance="Entfernung",
         filters="Filter", show="{n} Parkplätze anzeigen",
         byPrice="{n} Parkplätze · günstigste zuerst", byDistance="{n} Parkplätze · nächste zuerst",
         checked="Preise geprüft am 21. Aug. 2026", trip="Reisedauer", days="Tage",
         total="Gesamt für {n} Tage", perDay="/ Tag", shortStay="Kurzzeittarif",
-        est="ca.", details="Details", one="1 Parkplatz"),
+        verified="Preis geprüft am {d}", est="ca.", details="Details", one="1 Parkplatz"),
     "ro/index.html": dict(
         search="Caută o parcare sau o facilitate", price="Preț", distance="Distanță",
         filters="Filtre", show="Arată {n} parcări",
         byPrice="{n} parcări · cele mai ieftine primele", byDistance="{n} parcări · cele mai apropiate primele",
         checked="Prețuri verificate la 21 aug. 2026", trip="Durata călătoriei", days="zile",
         total="Total pentru {n} zile", perDay="/ zi", shortStay="tarif de scurtă durată",
-        est="aprox.", details="Detalii", one="1 parcare"),
+        verified="Preț verificat la {d}", est="aprox.", details="Detalii", one="1 parcare"),
     "sr/index.html": dict(
         search="Pretraži parking ili uslugu", price="Cena", distance="Udaljenost",
         filters="Filteri", show="Prikaži {n} parkinga",
         byPrice="{n} parkinga · najjeftiniji prvi", byDistance="{n} parkinga · najbliži prvi",
         checked="Cene proverene 21. avg 2026.", trip="Dužina putovanja", days="dana",
         total="Ukupno za {n} dana", perDay="/ dan", shortStay="tarifa za kratak boravak",
-        est="pribl.", details="Detalji", one="1 parking"),
+        verified="Cena proverena {d}", est="pribl.", details="Detalji", one="1 parking"),
     "hr/index.html": dict(
         search="Pretraži parkiralište ili uslugu", price="Cijena", distance="Udaljenost",
         filters="Filtri", show="Prikaži {n} parkirališta",
         byPrice="{n} parkirališta · najjeftinija prva", byDistance="{n} parkirališta · najbliža prva",
         checked="Cijene provjerene 21. kol 2026.", trip="Trajanje putovanja", days="dana",
         total="Ukupno za {n} dana", perDay="/ dan", shortStay="tarifa za kratak boravak",
-        est="pribl.", details="Detalji", one="1 parkiralište"),
+        verified="Cijena provjerena {d}", est="pribl.", details="Detalji", one="1 parkiralište"),
     "sk/index.html": dict(
         search="Hľadať parkovisko alebo službu", price="Cena", distance="Vzdialenosť",
         filters="Filtre", show="Zobraziť {n} parkovísk",
         byPrice="{n} parkovísk · najlacnejšie prvé", byDistance="{n} parkovísk · najbližšie prvé",
         checked="Ceny overené 21. aug 2026", trip="Dĺžka cesty", days="dní",
         total="Spolu za {n} dní", perDay="/ deň", shortStay="krátkodobá tarifa",
-        est="cca", details="Detaily", one="1 parkovisko"),
+        verified="Cena overená {d}", est="cca", details="Detaily", one="1 parkovisko"),
 }
+
+def load_prices() -> list[dict]:
+    """Verified figures from data/prices.csv, in page order.
+
+    A row only counts as verified when it carries checked_on: that is the
+    difference between a figure someone read on the operator\'s site and a
+    figure someone typed. Unverified rows keep whatever the page shows today.
+    """
+    path = ROOT / "data" / "prices.csv"
+    if not path.exists():
+        return []
+    with path.open(encoding="utf-8", newline="") as f:
+        rows = list(csv.DictReader(f))
+    for row in rows:
+        checked = (row.get("checked_on") or "").strip()
+        frm = (row.get("from_ft_per_day") or "").strip()
+        till = (row.get("till_ft_per_day") or "").strip()
+        row["_verified"] = bool(checked and (frm or till))
+        row["_from"] = frm
+        row["_till"] = till
+        row["_checked"] = checked
+    return rows
+
 
 DELTA = "M12 3.2l7.4 15.9-7.4-3.9-7.4 3.9z"
 
@@ -316,7 +340,7 @@ NEW_CSS = """
         .lot.hidden { display: none; }
         .lot[data-cheapest="true"] { background: #F3F8F5; box-shadow: inset 3px 0 0 var(--emerald); }
 
-        .lot-row { display: flex; align-items: center; gap: 0.5rem; padding: 0.65rem 0.5rem 0.65rem 1rem; }
+        .lot-row { display: flex; align-items: center; gap: 0.4rem; padding: 0.65rem 0.25rem 0.65rem 0.75rem; }
 
         .lot-main { flex: 1 1 auto; min-width: 0; }
 
@@ -364,11 +388,26 @@ NEW_CSS = """
             margin-left: 0.35rem;
         }
 
+        /* Read from the operator's own site on a known date. */
+        .lot-checked {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            font-size: 0.62rem;
+            font-weight: 600;
+            color: var(--emerald);
+            background: var(--emerald-light);
+            padding: 1px 5px;
+            border-radius: 3px;
+            margin-left: 0.35rem;
+            white-space: nowrap;
+        }
+
         /* Fixed width so prices form a column the eye can run down. Wide
            enough for a three-week total, and clipped rather than allowed to
            overflow back over the lot name. */
-        .lot-price { flex: 0 0 100px; min-width: 0; text-align: right; overflow: hidden; }
-        .lot-total { font-size: 0.98rem; font-weight: 700; color: var(--sky); letter-spacing: -0.01em; white-space: nowrap; }
+        .lot-price { flex: 0 0 116px; min-width: 0; text-align: right; overflow: hidden; }
+        .lot-total { font-size: 0.94rem; font-weight: 700; color: var(--sky); letter-spacing: -0.01em; white-space: nowrap; }
         .lot-day { font-size: 0.68rem; color: var(--slate); font-weight: 500; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
         .lot-toggle {
@@ -547,7 +586,8 @@ def parse_price(price_html: str) -> dict:
     return dict(amount=amount, unit=unit, approx=approx, sep=sep, text=flat)
 
 
-def transform_cards(grid: str, strings: dict) -> tuple[str, int, str]:
+def transform_cards(grid: str, strings: dict, prices: list[dict],
+                    strict_names: bool = False) -> tuple[str, int, str]:
     chunks = grid.split('<div class="parking-card"')
     head, cards = chunks[0], chunks[1:]
     out, sep = [], ","
@@ -575,11 +615,31 @@ def transform_cards(grid: str, strings: dict) -> tuple[str, int, str]:
             tag = '<span class="lot-tag official">%s</span>' % html.escape(
                 text_of(badge.group(2)).lstrip("✈️ ").strip() or "Official")
 
-        est = ('<span class="lot-est">%s</span>' % html.escape(strings["est"])) if p["approx"] else ""
+        row = prices[i - 1] if i - 1 < len(prices) else {}
+        # Position is the key: card order is identical across the language
+        # pages. Names are only checked against English, the page the CSV was
+        # generated from — a few lot names are localized elsewhere.
+        if strict_names and row.get("lot") and row["lot"] != name_t:
+            raise SystemExit("prices.csv row %d is %r but the page has %r"
+                             % (i, row["lot"], name_t))
+
+        verified = bool(row.get("_verified"))
+        price_data = ""
+        if verified:
+            price_data = ' data-from="%s" data-till="%s" data-checked="%s"' % (
+                row["_from"], row["_till"], html.escape(row["_checked"], quote=True))
+            est = ('<span class="lot-checked" title="%s">'
+                   '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"'
+                   ' stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                   '<path d="M5 12.5l4.5 4.5L19 7"/></svg>%s</span>'
+                   % (html.escape(strings["verified"].replace("{d}", row["_checked"]), quote=True),
+                      html.escape(row["_checked"])))
+        else:
+            est = ('<span class="lot-est">%s</span>' % html.escape(strings["est"])) if p["approx"] else ""
 
         out.append(
             '            <article class="lot" data-type="%s" data-access="%s" data-features="%s"'
-            ' data-amount="%d" data-unit="%s" data-approx="%s" data-km="%s"\n'
+            ' data-amount="%d" data-unit="%s" data-approx="%s" data-km="%s"%s\n'
             '                     data-search="%s">\n'
             '                <div class="lot-row">\n'
             '                    <div class="lot-main">\n'
@@ -604,7 +664,7 @@ def transform_cards(grid: str, strings: dict) -> tuple[str, int, str]:
             '            </article>\n'
             % (data.get("type", ""), data.get("access", ""), data.get("features", ""),
                p["amount"], p["unit"], "1" if p["approx"] else "0",
-               ("%g" % km),
+               ("%g" % km), price_data,
                html.escape(haystack, quote=True),
                tag, html.escape(name_t), html.escape(loc_t), est,
                i, html.escape(strings["details"]), html.escape(name_t),
@@ -752,6 +812,8 @@ JS = r"""    <script>
            tariff have no daily rate to compare at all. */
         function dailyRate(lot) {
             if (lot.dataset.unit !== 'day') return null;
+            var from = parseInt(lot.dataset.from, 10);
+            if (lot.dataset.checked && !isNaN(from)) return from;
             return parseInt(lot.dataset.amount, 10) || 0;
         }
 
@@ -782,14 +844,32 @@ JS = r"""    <script>
             return lots.filter(function (lot) { return matchesFacets(lot) && matchesQuery(lot); });
         }
 
+        /* Where an operator's own site was read, show the spread between the
+           long-stay and one-day per-day rates. Anything unverified keeps the
+           single figure the page already published. */
         function renderPrices() {
             lots.forEach(function (lot) {
                 var main = lot.querySelector('[data-total]');
                 var unit = lot.querySelector('[data-rate]');
                 var amount = parseInt(lot.dataset.amount, 10) || 0;
                 var approx = lot.dataset.approx === '1' ? '~' : '';
-                main.textContent = approx + fmt(amount) + ' Ft';
-                unit.textContent = lot.dataset.unit === 'day' ? T.perDay : T.shortStay;
+                var from = parseInt(lot.dataset.from, 10);
+                var till = parseInt(lot.dataset.till, 10);
+                var hasRange = lot.dataset.checked && !isNaN(from) && !isNaN(till);
+
+                if (hasRange) {
+                    main.textContent = from === till
+                        ? fmt(from) + ' Ft'
+                        : fmt(from) + '\u2013' + fmt(till) + ' Ft';
+                    unit.textContent = T.perDay;
+                    lot.setAttribute('data-range', from === till ? 'single' : 'range');
+                } else if (lot.dataset.checked && !isNaN(from)) {
+                    main.textContent = fmt(from) + ' Ft';
+                    unit.textContent = T.perDay;
+                } else {
+                    main.textContent = approx + fmt(amount) + ' Ft';
+                    unit.textContent = lot.dataset.unit === 'day' ? T.perDay : T.shortStay;
+                }
             });
         }
 
@@ -1115,6 +1195,7 @@ def build(rel: str) -> str:
         raise SystemExit("%s is already built — reset it from git first" % rel)
     s = S[rel]
     L = extract_labels(src)
+    prices = load_prices()
     notes = []
 
     tshow = re.search(r"transportShow: '([^']*)'", src)
@@ -1157,7 +1238,7 @@ def build(rel: str) -> str:
     no_results = outer_html(section, '<div class="no-results container" id="noResults">')
     grid = section[section.index('<div class="parking-grid container" id="parkingGrid">'):
                    section.index('<div class="show-all-container')]
-    rows, count, sep = transform_cards(grid, s)
+    rows, count, sep = transform_cards(grid, s, prices, strict_names=(rel == "index.html"))
     rows = rows.split("\n", 1)[1]  # drop the old opening div
 
     new_section = (

@@ -138,6 +138,39 @@ def check_analytics_gated(rel: str, src: str) -> None:
         ok("%s: no analytics tag bypasses the consent gate" % rel)
 
 
+def check_verified_prices(rel: str, src: str) -> None:
+    """Rows verified in data/prices.csv must reach the page, and only those.
+
+    A lot may show a range only when someone recorded the date they read the
+    operator's site. Everything else keeps the figure the page already had.
+    """
+    import csv as _csv
+    path = ROOT / "data" / "prices.csv"
+    if not path.exists():
+        ok("%s: no price data to check" % rel)
+        return
+
+    with path.open(encoding="utf-8", newline="") as f:
+        rows = list(_csv.DictReader(f))
+    expected = sum(1 for r in rows
+                   if (r.get("checked_on") or "").strip()
+                   and ((r.get("from_ft_per_day") or "").strip()
+                        or (r.get("till_ft_per_day") or "").strip()))
+
+    on_page = len(re.findall(r'data-checked="[^"]+"', src))
+    markers = len(re.findall(r'class="lot-checked"', src))
+
+    if on_page != expected:
+        fail("%s: %d verified rows in the CSV but %d on the page"
+             % (rel, expected, on_page))
+    elif markers != expected:
+        fail("%s: %d verified rows but %d checked-date markers" % (rel, expected, markers))
+    elif expected == 0:
+        ok("%s: nothing verified yet, every lot shows its published rate" % rel)
+    else:
+        ok("%s: %d verified price range(s) carried through" % (rel, expected))
+
+
 def check_no_derived_totals(rel: str, src: str) -> None:
     """Daily rates must not be multiplied out into trip totals.
 
@@ -332,6 +365,7 @@ def main() -> int:
             check_consent_wiring(rel, src)
             check_results_ui(rel, src)
             check_no_derived_totals(rel, src)
+            check_verified_prices(rel, src)
             check_lot_data(rel, src)
             check_content_preserved(rel, src)
             check_accessibility_basics(rel, src)

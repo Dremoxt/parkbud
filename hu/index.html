@@ -2018,7 +2018,7 @@
         .lot.hidden { display: none; }
         .lot[data-cheapest="true"] { background: #F3F8F5; box-shadow: inset 3px 0 0 var(--emerald); }
 
-        .lot-row { display: flex; align-items: center; gap: 0.5rem; padding: 0.65rem 0.5rem 0.65rem 1rem; }
+        .lot-row { display: flex; align-items: center; gap: 0.4rem; padding: 0.65rem 0.25rem 0.65rem 0.75rem; }
 
         .lot-main { flex: 1 1 auto; min-width: 0; }
 
@@ -2066,11 +2066,26 @@
             margin-left: 0.35rem;
         }
 
+        /* Read from the operator's own site on a known date. */
+        .lot-checked {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            font-size: 0.62rem;
+            font-weight: 600;
+            color: var(--emerald);
+            background: var(--emerald-light);
+            padding: 1px 5px;
+            border-radius: 3px;
+            margin-left: 0.35rem;
+            white-space: nowrap;
+        }
+
         /* Fixed width so prices form a column the eye can run down. Wide
            enough for a three-week total, and clipped rather than allowed to
            overflow back over the lot name. */
-        .lot-price { flex: 0 0 100px; min-width: 0; text-align: right; overflow: hidden; }
-        .lot-total { font-size: 0.98rem; font-weight: 700; color: var(--sky); letter-spacing: -0.01em; white-space: nowrap; }
+        .lot-price { flex: 0 0 116px; min-width: 0; text-align: right; overflow: hidden; }
+        .lot-total { font-size: 0.94rem; font-weight: 700; color: var(--sky); letter-spacing: -0.01em; white-space: nowrap; }
         .lot-day { font-size: 0.68rem; color: var(--slate); font-weight: 500; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
         .lot-toggle {
@@ -4022,6 +4037,8 @@
            tariff have no daily rate to compare at all. */
         function dailyRate(lot) {
             if (lot.dataset.unit !== 'day') return null;
+            var from = parseInt(lot.dataset.from, 10);
+            if (lot.dataset.checked && !isNaN(from)) return from;
             return parseInt(lot.dataset.amount, 10) || 0;
         }
 
@@ -4052,14 +4069,32 @@
             return lots.filter(function (lot) { return matchesFacets(lot) && matchesQuery(lot); });
         }
 
+        /* Where an operator's own site was read, show the spread between the
+           long-stay and one-day per-day rates. Anything unverified keeps the
+           single figure the page already published. */
         function renderPrices() {
             lots.forEach(function (lot) {
                 var main = lot.querySelector('[data-total]');
                 var unit = lot.querySelector('[data-rate]');
                 var amount = parseInt(lot.dataset.amount, 10) || 0;
                 var approx = lot.dataset.approx === '1' ? '~' : '';
-                main.textContent = approx + fmt(amount) + ' Ft';
-                unit.textContent = lot.dataset.unit === 'day' ? T.perDay : T.shortStay;
+                var from = parseInt(lot.dataset.from, 10);
+                var till = parseInt(lot.dataset.till, 10);
+                var hasRange = lot.dataset.checked && !isNaN(from) && !isNaN(till);
+
+                if (hasRange) {
+                    main.textContent = from === till
+                        ? fmt(from) + ' Ft'
+                        : fmt(from) + '\u2013' + fmt(till) + ' Ft';
+                    unit.textContent = T.perDay;
+                    lot.setAttribute('data-range', from === till ? 'single' : 'range');
+                } else if (lot.dataset.checked && !isNaN(from)) {
+                    main.textContent = fmt(from) + ' Ft';
+                    unit.textContent = T.perDay;
+                } else {
+                    main.textContent = approx + fmt(amount) + ' Ft';
+                    unit.textContent = lot.dataset.unit === 'day' ? T.perDay : T.shortStay;
+                }
             });
         }
 
