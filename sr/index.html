@@ -253,6 +253,9 @@
     <!-- ========== YOUR ORIGINAL CSS STYLES ========== -->
     <style>
         :root {
+            /* Height of the fixed header; kept in sync by script. */
+            --header-h: 73px;
+
             /* Bright, fresh colors */
             --white: #ffffff;
             --snow: #f8fafc;
@@ -329,6 +332,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 1.5rem;
         }
 
         .logo {
@@ -384,6 +388,8 @@
 
         .mobile-toggle {
             display: none;
+            background: none;
+            border: none;
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
@@ -400,7 +406,7 @@
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 68px;
+            top: var(--header-h);
             left: 0;
             right: 0;
             background: var(--white);
@@ -431,7 +437,7 @@
         .transport-quick-bar {
             background: linear-gradient(135deg, var(--midnight) 0%, var(--dark) 100%);
             padding: 0;
-            margin-top: 70px;
+            margin-top: var(--header-h);
             position: relative;
             z-index: 100;
         }
@@ -1677,14 +1683,57 @@
         }
         .lang-link:hover { color: var(--sky); border-color: var(--sky); }
         .lang-link.active { color: white; background: var(--sky); border-color: var(--sky); }
+
+        /* Phone header: the language picker gets its own row so the menu
+           button stays on screen. --header-h is kept in sync by script. */
         @media (max-width: 768px) {
-            .lang-picker { margin-left: 0; margin-top: 0.75rem; justify-content: center; }
+            nav {
+                flex-wrap: wrap;
+                row-gap: 0.5rem;
+            }
+
+            .logo,
+            .mobile-toggle {
+                flex: 0 0 auto;
+            }
+
+            .lang-picker {
+                order: 3;
+                flex: 1 0 100%;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-left: 0;
+                margin-top: 0;
+            }
         }
 
+
+        /* Keyboard-only shortcut past the header navigation. */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            z-index: 200;
+            padding: 0.75rem 1.25rem;
+            background: var(--sky, #0ea5e9);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 0 0 8px 0;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            left: 0;
+        }
+
+        main:focus {
+            outline: none;
+        }
     </style>
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Pređi na glavni sadržaj</a>
     <!-- Header -->
     <header>
         <nav>
@@ -1699,30 +1748,32 @@
                 <li><a href="#transport">Prevoz</a></li>
                 <li><a href="#tips">Saveti</a></li>
             </ul>
-            <div class="lang-picker" aria-label="Language"><a href="/" class="lang-link" hreflang="en" rel="alternate">EN</a><a href="/hu/" class="lang-link" hreflang="hu" rel="alternate">HU</a><a href="/de/" class="lang-link" hreflang="de" rel="alternate">DE</a><a href="/ro/" class="lang-link" hreflang="ro" rel="alternate">RO</a><a href="/sr/" class="lang-link active" hreflang="sr" rel="alternate">SR</a><a href="/hr/" class="lang-link" hreflang="hr" rel="alternate">HR</a><a href="/sk/" class="lang-link" hreflang="sk" rel="alternate">SK</a></div>
-            <div class="mobile-toggle" onclick="toggleMobileMenu()">
+            <nav class="lang-picker" aria-label="Jezik"><a href="/" class="lang-link" hreflang="en" rel="alternate">EN</a><a href="/hu/" class="lang-link" hreflang="hu" rel="alternate">HU</a><a href="/de/" class="lang-link" hreflang="de" rel="alternate">DE</a><a href="/ro/" class="lang-link" hreflang="ro" rel="alternate">RO</a><a href="/sr/" class="lang-link active" hreflang="sr" rel="alternate">SR</a><a href="/hr/" class="lang-link" hreflang="hr" rel="alternate">HR</a><a href="/sk/" class="lang-link" hreflang="sk" rel="alternate">SK</a></nav>
+            <button class="mobile-toggle" type="button" onclick="toggleMobileMenu()" aria-label="Meni" aria-expanded="false" aria-controls="mobileMenu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </nav>
         <div class="mobile-menu" id="mobileMenu">
             <ul>
-                <li><a href="#parking" onclick="toggleMobileMenu()">Opcije parkinga</a></li>
-                <li><a href="#services" onclick="toggleMobileMenu()">Usluge u blizini</a></li>
-                <li><a href="#directions" onclick="toggleMobileMenu()">Uputstva</a></li>
-                <li><a href="#transport" onclick="toggleMobileMenu()">Prevoz</a></li>
-                <li><a href="#tips" onclick="toggleMobileMenu()">Saveti</a></li>
+                <li><a href="#parking">Opcije parkinga</a></li>
+                <li><a href="#services">Usluge u blizini</a></li>
+                <li><a href="#directions">Uputstva</a></li>
+                <li><a href="#transport">Prevoz</a></li>
+                <li><a href="#tips">Saveti</a></li>
             </ul>
         </div>
     </header>
+
+    <main id="main" tabindex="-1">
 
     <!-- Prevoz Quick Pristup Bar -->
     <div class="transport-quick-bar" id="transportBar">
         <div class="container">
             <div class="transport-bar-header">
                 <h3>🚌 Prevoz do/iz grada</h3>
-                <button class="transport-toggle" onclick="toggleTransportBar()">
+                <button class="transport-toggle" type="button" onclick="toggleTransportBar()" aria-expanded="false" aria-controls="transportBarContent">
                     <span id="transportToggleText">Prikaži opcije</span>
                     <span id="transportToggleIcon">▼</span>
                 </button>
@@ -1820,9 +1871,9 @@
             <div class="filter-bar-header">
                 <div class="filter-bar-title">
                     <span> Filtriraj parking opcije</span>
-                    <span class="filter-count" id="resultCount">38</span>
+                    <span class="filter-count" id="resultCount">33</span>
                 </div>
-                <button class="filter-reset" onclick="resetFilters()"> Resetuj sve</button>
+                <button class="filter-reset" type="button" onclick="resetFilters()"> Resetuj sve</button>
             </div>
             <div class="filter-groups">
                 <div class="filter-group">
@@ -2682,9 +2733,9 @@
             <div class="filter-bar-header">
                 <div class="filter-bar-title">
                     <span> Filtriraj usluge</span>
-                    <span class="filter-count" id="serviceResultCount">26</span>
+                    <span class="filter-count" id="serviceResultCount">30</span>
                 </div>
-                <button class="filter-reset" onclick="resetServiceFilters()"> Resetuj sve</button>
+                <button class="filter-reset" type="button" onclick="resetServiceFilters()"> Resetuj sve</button>
             </div>
             <div class="filter-groups">
                 <div class="filter-group" style="width: 100%;">
@@ -3107,7 +3158,6 @@
                 transition: all 0.3s ease;
             ">Prikaži sve usluge →</button>
         </div>
-    </div>
 
         <!-- No Results for Usluge -->
         <div class="no-results container" id="noServiceResults">
@@ -3284,6 +3334,8 @@
     </section>
 
     <!-- Footer -->
+    </main>
+
     <footer>
         <div class="footer-grid container">
             <div class="footer-brand">
@@ -3330,350 +3382,302 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('active');
-        }
+    (function () {
+        'use strict';
 
-        // ============ PARKING FILTERS ============
-        const filters = {
-            type: 'all',
-            access: 'all',
-            features: []
+        /* The only strings JS writes at runtime. Everything else lives in the markup. */
+        var I18N = {
+            transportShow: 'Prikaži opcije',
+            transportHide: 'Sakrij opcije',
+            showAllParking: function (total, more) { return 'Prikaži svih ' + total + ' parkinga (' + more + ' više) →'; },
+            showAllServices: function (total, more) { return 'Prikaži svih ' + total + ' usluga (' + more + ' više) →'; }
         };
 
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const filterType = this.dataset.filter;
-                const value = this.dataset.value;
+        /* Cards shown before the "show all" button appears. */
+        var CARD_LIMIT = 6;
+
+        function byId(id) { return document.getElementById(id); }
+
+        function setPressed(btn, pressed) {
+            btn.classList.toggle('active', pressed);
+            btn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+        }
+
+        /* A shared "show all" button: visible only while the list is capped. */
+        function updateShowAllButton(container, capped, matching, label) {
+            if (!container) return;
+            var visible = capped && matching > CARD_LIMIT;
+            container.style.display = visible ? 'block' : 'none';
+            if (visible) {
+                var button = container.querySelector('button');
+                if (button) button.textContent = label(matching, matching - CARD_LIMIT);
+            }
+        }
+
+        /* ============ HEADER HEIGHT ============ */
+        /* The header is fixed and its height changes when the nav wraps, so
+           publish the real value for the offsets that sit below it. */
+        var header = document.querySelector('header');
+
+        function syncHeaderHeight() {
+            if (!header) return;
+            document.documentElement.style.setProperty(
+                '--header-h', Math.round(header.getBoundingClientRect().height) + 'px');
+        }
+
+        syncHeaderHeight();
+        window.addEventListener('resize', syncHeaderHeight);
+        if (window.ResizeObserver && header) {
+            new ResizeObserver(syncHeaderHeight).observe(header);
+        }
+
+        /* ============ MOBILE MENU ============ */
+        var mobileMenu = byId('mobileMenu');
+        var mobileToggle = document.querySelector('.mobile-toggle');
+
+        function setMobileMenu(open) {
+            if (!mobileMenu) return;
+            mobileMenu.classList.toggle('active', open);
+            if (mobileToggle) mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+
+        function toggleMobileMenu() {
+            setMobileMenu(!(mobileMenu && mobileMenu.classList.contains('active')));
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') setMobileMenu(false);
+        });
+
+        /* ============ PARKING FILTERS ============ */
+        var filters = { type: 'all', access: 'all', features: [] };
+        var showAllParkingEnabled = false;
+
+        var parkingCards = document.querySelectorAll('.parking-card');
+        var parkingFilterButtons = document.querySelectorAll('.filter-btn');
+
+        function parkingCardMatches(card) {
+            if (filters.type !== 'all' && card.dataset.type !== filters.type) return false;
+            if (filters.access !== 'all' && card.dataset.access !== filters.access) return false;
+            if (!filters.features.length) return true;
+            var cardFeatures = card.dataset.features ? card.dataset.features.split(',') : [];
+            return filters.features.every(function (f) { return cardFeatures.indexOf(f) !== -1; });
+        }
+
+        function applyFilters() {
+            var capped = !showAllParkingEnabled;
+            var shown = 0;
+            var matching = 0;
+
+            parkingCards.forEach(function (card) {
+                if (!parkingCardMatches(card)) {
+                    card.classList.add('hidden');
+                    return;
+                }
+                matching++;
+                if (capped && shown >= CARD_LIMIT) {
+                    card.classList.add('hidden');
+                } else {
+                    card.classList.remove('hidden');
+                    shown++;
+                }
+            });
+
+            byId('resultCount').textContent = matching;
+            byId('noResults').classList.toggle('visible', matching === 0);
+            updateShowAllButton(byId('showAllContainer'), capped, matching, I18N.showAllParking);
+        }
+
+        parkingFilterButtons.forEach(function (btn) {
+            setPressed(btn, btn.classList.contains('active'));
+
+            btn.addEventListener('click', function () {
+                var filterType = this.dataset.filter;
+                var value = this.dataset.value;
 
                 if (filterType === 'feature') {
-                    this.classList.toggle('active');
-                    if (this.classList.contains('active')) {
+                    var nowActive = !this.classList.contains('active');
+                    setPressed(this, nowActive);
+                    if (nowActive) {
                         filters.features.push(value);
                     } else {
-                        filters.features = filters.features.filter(f => f !== value);
+                        filters.features = filters.features.filter(function (f) { return f !== value; });
                     }
                 } else {
-                    document.querySelectorAll(`[data-filter="${filterType}"]`).forEach(b => {
-                        b.classList.remove('active');
+                    document.querySelectorAll('[data-filter="' + filterType + '"]').forEach(function (b) {
+                        setPressed(b, false);
                     });
-                    this.classList.add('active');
+                    setPressed(this, true);
                     filters[filterType] = value;
                 }
 
+                /* A new selection collapses the list back to the first page of cards. */
+                showAllParkingEnabled = false;
                 applyFilters();
 
-                const parkingSection = document.querySelector('#parking');
-                if (parkingSection) {
-                    parkingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                var parkingSection = document.querySelector('#parking');
+                if (parkingSection) parkingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        function applyFilters() {
-            const cards = document.querySelectorAll('.parking-card');
-            let visibleCount = 0;
-
-            cards.forEach(card => {
-                const cardType = card.dataset.type;
-                const cardAccess = card.dataset.access;
-                const cardFeatures = card.dataset.features ? card.dataset.features.split(',') : [];
-
-                let show = true;
-
-                if (filters.type !== 'all' && cardType !== filters.type) {
-                    show = false;
-                }
-
-                if (filters.access !== 'all' && cardAccess !== filters.access) {
-                    show = false;
-                }
-
-                if (filters.features.length > 0) {
-                    const hasAllFeatures = filters.features.every(f => cardFeatures.includes(f));
-                    if (!hasAllFeatures) {
-                        show = false;
-                    }
-                }
-
-                if (show) {
-                    card.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-
-            document.getElementById('resultCount').textContent = visibleCount;
-            document.getElementById('noResults').classList.toggle('visible', visibleCount === 0);
+        function showAllParking() {
+            showAllParkingEnabled = true;
+            applyFilters();
         }
 
         function resetFilters() {
             filters.type = 'all';
             filters.access = 'all';
             filters.features = [];
+            showAllParkingEnabled = false;
 
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-
-            document.querySelectorAll('[data-filter="type"][data-value="all"]').forEach(b => b.classList.add('active'));
-            document.querySelectorAll('[data-filter="access"][data-value="all"]').forEach(b => b.classList.add('active'));
+            parkingFilterButtons.forEach(function (btn) { setPressed(btn, false); });
+            document.querySelectorAll('[data-filter="type"][data-value="all"], [data-filter="access"][data-value="all"]')
+                .forEach(function (btn) { setPressed(btn, true); });
 
             applyFilters();
         }
 
-        // ============ SERVICES FILTERS ============
-        let activeServiceCategory = 'all';
-        let activeServiceLocation = 'all';
+        /* ============ SERVICES FILTERS ============ */
+        var activeServiceCategory = 'all';
+        var activeServiceLocation = 'all';
+        var showAllServicesEnabled = false;
 
-        // Category filter buttons
-        document.querySelectorAll('.service-filter-btn:not(.service-location-btn)').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.service-filter-btn:not(.service-location-btn)').forEach(b => {
-                    b.classList.remove('active');
-                });
-                this.classList.add('active');
-                activeServiceCategory = this.dataset.category;
-                applyServiceFilters();
-            });
-        });
+        var serviceCards = document.querySelectorAll('.service-card');
+        var serviceCategoryButtons = document.querySelectorAll('.service-filter-btn:not(.service-location-btn)');
+        var serviceLocationButtons = document.querySelectorAll('.service-location-btn');
 
-        // Location filter buttons
-        document.querySelectorAll('.service-location-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                document.querySelectorAll('.service-location-btn').forEach(b => {
-                    b.classList.remove('active');
-                });
-                this.classList.add('active');
-                activeServiceLocation = this.dataset.location;
-                applyServiceFilters();
-            });
-        });
+        function setServiceCardVisible(card, visible) {
+            card.classList.toggle('hidden', !visible);
+            card.style.display = visible ? '' : 'none';
+        }
 
         function applyServiceFilters() {
-            const serviceCards = document.querySelectorAll('.service-card');
-            let visibleCount = 0;
+            var capped = !showAllServicesEnabled;
+            var shown = 0;
+            var matching = 0;
 
-            serviceCards.forEach(card => {
-                const cardCategory = card.dataset.category;
-                const cardLocation = card.dataset.location || 'nearby';
-                
-                const categoryMatch = activeServiceCategory === 'all' || cardCategory === activeServiceCategory;
-                const locationMatch = activeServiceLocation === 'all' || cardLocation === activeServiceLocation;
+            serviceCards.forEach(function (card) {
+                var categoryMatch = activeServiceCategory === 'all' || card.dataset.category === activeServiceCategory;
+                var locationMatch = activeServiceLocation === 'all' || (card.dataset.location || 'nearby') === activeServiceLocation;
 
-                if (categoryMatch && locationMatch) {
-                    card.classList.remove('hidden');
-                    card.style.display = '';
-                    visibleCount++;
+                if (!categoryMatch || !locationMatch) {
+                    setServiceCardVisible(card, false);
+                    return;
+                }
+                matching++;
+                if (capped && shown >= CARD_LIMIT) {
+                    setServiceCardVisible(card, false);
                 } else {
-                    card.classList.add('hidden');
-                    card.style.display = 'none';
+                    setServiceCardVisible(card, true);
+                    shown++;
                 }
             });
 
-            document.getElementById('serviceResultCount').textContent = visibleCount;
-            document.getElementById('noServiceResults').classList.toggle('visible', visibleCount === 0);
+            byId('serviceResultCount').textContent = matching;
+            byId('noServiceResults').classList.toggle('visible', matching === 0);
+            updateShowAllButton(byId('showAllServicesContainer'), capped, matching, I18N.showAllServices);
+        }
+
+        serviceCategoryButtons.forEach(function (btn) {
+            setPressed(btn, btn.classList.contains('active'));
+
+            btn.addEventListener('click', function () {
+                serviceCategoryButtons.forEach(function (b) { setPressed(b, false); });
+                setPressed(this, true);
+                activeServiceCategory = this.dataset.category;
+                showAllServicesEnabled = false;
+                applyServiceFilters();
+            });
+        });
+
+        serviceLocationButtons.forEach(function (btn) {
+            setPressed(btn, btn.classList.contains('active'));
+
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                serviceLocationButtons.forEach(function (b) { setPressed(b, false); });
+                setPressed(this, true);
+                activeServiceLocation = this.dataset.location;
+                showAllServicesEnabled = false;
+                applyServiceFilters();
+            });
+        });
+
+        function showAllServices() {
+            showAllServicesEnabled = true;
+            applyServiceFilters();
         }
 
         function resetServiceFilters() {
             activeServiceCategory = 'all';
             activeServiceLocation = 'all';
-            
-            document.querySelectorAll('.service-filter-btn:not(.service-location-btn)').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelectorAll('.service-location-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            document.querySelector('.service-filter-btn[data-category="all"]').classList.add('active');
-            document.querySelector('.service-location-btn[data-location="all"]').classList.add('active');
-            
+            showAllServicesEnabled = false;
+
+            serviceCategoryButtons.forEach(function (btn) { setPressed(btn, false); });
+            serviceLocationButtons.forEach(function (btn) { setPressed(btn, false); });
+
+            var allCategory = document.querySelector('.service-filter-btn[data-category="all"]');
+            var allLocation = document.querySelector('.service-location-btn[data-location="all"]');
+            if (allCategory) setPressed(allCategory, true);
+            if (allLocation) setPressed(allLocation, true);
+
             applyServiceFilters();
         }
 
-        // Transport Bar Toggle
+        /* ============ TRANSPORT QUICK BAR ============ */
+        var transportBarContent = byId('transportBarContent');
+        var transportToggleButton = document.querySelector('.transport-toggle');
+
         function toggleTransportBar() {
-            const content = document.getElementById('transportBarContent');
-            const toggleText = document.getElementById('transportToggleText');
-            const toggleIcon = document.getElementById('transportToggleIcon');
-            
-            if (content.style.display === 'none') {
-                content.style.display = 'block';
-                toggleText.textContent = 'Hide Options';
-                toggleIcon.classList.add('rotated');
-            } else {
-                content.style.display = 'none';
-                toggleText.textContent = 'Show Options';
-                toggleIcon.classList.remove('rotated');
-            }
+            if (!transportBarContent) return;
+            var open = transportBarContent.style.display === 'none';
+            transportBarContent.style.display = open ? 'block' : 'none';
+
+            var text = byId('transportToggleText');
+            var icon = byId('transportToggleIcon');
+            if (text) text.textContent = open ? I18N.transportHide : I18N.transportShow;
+            if (icon) icon.classList.toggle('rotated', open);
+            if (transportToggleButton) transportToggleButton.setAttribute('aria-expanded', open ? 'true' : 'false');
         }
 
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+        /* ============ IN-PAGE NAVIGATION ============ */
+        document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+            anchor.addEventListener('click', function (e) {
+                var href = this.getAttribute('href');
+                setMobileMenu(false);
+
+                /* The logo links point at "#": send the reader to the top rather than nowhere. */
+                if (!href || href === '#') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
+
+                var target = document.querySelector(href);
+                if (!target) return;
+
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                /* Keep keyboard focus with the reader, and keep the URL shareable. */
+                if (target.hasAttribute('tabindex')) target.focus({ preventScroll: true });
+                if (window.history && window.history.replaceState) {
+                    window.history.replaceState(null, '', href);
                 }
             });
         });
 
-        // Initialize
+        /* Handlers referenced from onclick attributes in the markup. */
+        window.toggleMobileMenu = toggleMobileMenu;
+        window.toggleTransportBar = toggleTransportBar;
+        window.resetFilters = resetFilters;
+        window.resetServiceFilters = resetServiceFilters;
+        window.showAllParking = showAllParking;
+        window.showAllServices = showAllServices;
+
         applyFilters();
         applyServiceFilters();
-    
-        // Show All Parking functionality
-        let showAllParkingEnabled = false;
-        
-        function showAllParking() {
-            showAllParkingEnabled = true;
-            const showAllContainer = document.getElementById('showAllContainer');
-            if (showAllContainer) {
-                showAllContainer.style.display = 'none';
-            }
-            
-            // Re-run filter to show all matching cards
-            applyFiltersWithLimit(false);
-        }
-        
-        function applyFiltersWithLimit(limitTo6) {
-            const cards = document.querySelectorAll('.parking-card');
-            let visibleCount = 0;
-            let totalMatching = 0;
-
-            cards.forEach(card => {
-                const type = card.dataset.type;
-                const access = card.dataset.access;
-                const features = card.dataset.features ? card.dataset.features.split(',') : [];
-
-                let show = true;
-
-                if (filters.type !== 'all' && type !== filters.type) show = false;
-                if (filters.access !== 'all' && access !== filters.access) show = false;
-                if (filters.features.length > 0) {
-                    const hasAllFeatures = filters.features.every(f => features.includes(f));
-                    if (!hasAllFeatures) show = false;
-                }
-
-                if (show) {
-                    totalMatching++;
-                    if (limitTo6 && visibleCount >= 6) {
-                        card.classList.add('hidden');
-                    } else {
-                        card.classList.remove('hidden');
-                        visibleCount++;
-                    }
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-
-            document.getElementById('resultCount').textContent = totalMatching;
-            document.getElementById('noResults').classList.toggle('visible', totalMatching === 0);
-            
-            // Show/hide the Show All button
-            const showAllContainer = document.getElementById('showAllContainer');
-            if (showAllContainer) {
-                if (limitTo6 && totalMatching > 6) {
-                    showAllContainer.style.display = 'block';
-                    // Update button text to show how many more
-                    const remaining = totalMatching - 6;
-                    showAllContainer.querySelector('button').textContent = 'Prikaži svih ' + totalMatching + ' parkinga (' + remaining + ' više) →';
-                } else {
-                    showAllContainer.style.display = 'none';
-                }
-            }
-        }
-        
-        // Override the original applyFilters to use the limit version
-        const originalApplyFilters = applyFilters;
-        applyFilters = function() {
-            applyFiltersWithLimit(!showAllParkingEnabled);
-        };
-        
-        // When filters change, reset showAll state
-        document.querySelectorAll('[data-filter]').forEach(btn => {
-            btn.addEventListener('click', function() {
-                showAllParkingEnabled = false;
-            });
-        });
-
-        // Show All Services functionality (mirrors parking)
-        let showAllServicesEnabled = false;
-
-        function showAllServices() {
-            showAllServicesEnabled = true;
-            const c = document.getElementById('showAllServicesContainer');
-            if (c) c.style.display = 'none';
-            applyServiceFiltersWithLimit(false);
-        }
-
-        function applyServiceFiltersWithLimit(limitTo6) {
-            const serviceCards = document.querySelectorAll('.service-card');
-            let visibleCount = 0;
-            let totalMatching = 0;
-
-            serviceCards.forEach(card => {
-                const cardCategory = card.dataset.category;
-                const cardLocation = card.dataset.location || 'nearby';
-
-                const categoryMatch = activeServiceCategory === 'all' || cardCategory === activeServiceCategory;
-                const locationMatch = activeServiceLocation === 'all' || cardLocation === activeServiceLocation;
-
-                if (categoryMatch && locationMatch) {
-                    totalMatching++;
-                    if (limitTo6 && visibleCount >= 6) {
-                        card.classList.add('hidden');
-                        card.style.display = 'none';
-                    } else {
-                        card.classList.remove('hidden');
-                        card.style.display = '';
-                        visibleCount++;
-                    }
-                } else {
-                    card.classList.add('hidden');
-                    card.style.display = 'none';
-                }
-            });
-
-            document.getElementById('serviceResultCount').textContent = totalMatching;
-            document.getElementById('noServiceResults').classList.toggle('visible', totalMatching === 0);
-
-            const c = document.getElementById('showAllServicesContainer');
-            if (c) {
-                if (limitTo6 && totalMatching > 6) {
-                    c.style.display = 'block';
-                    const remaining = totalMatching - 6;
-                    c.querySelector('button').textContent = 'Prikaži svih ' + totalMatching + ' usluga (' + remaining + ' više) →';
-                } else {
-                    c.style.display = 'none';
-                }
-            }
-        }
-
-        // Override the original applyServiceFilters to use the limit version
-        applyServiceFilters = function() {
-            applyServiceFiltersWithLimit(!showAllServicesEnabled);
-        };
-
-        // When service filters change, reset showAll state
-        document.querySelectorAll('.service-filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                showAllServicesEnabled = false;
-            });
-        });
-
-        // Run initial service filter with limit
-        applyServiceFilters();
-        
-        // Run initial filter with limit
-        applyFilters();
-
+    })();
     </script>
 </body>
 </html>
