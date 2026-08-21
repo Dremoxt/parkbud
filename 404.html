@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | ParkBUD - Budapest Airport Parking Guide</title>
+    <meta name="description" content="This page could not be found. Return to the Budapest Airport parking guide to compare terminal and off-site parking options.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://airportparkingbudapest.info/">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#0ea5e9">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --white: #ffffff;
+            --snow: #f8fafc;
+            --mist: #e2e8f0;
+            --gray: #64748b;
+            --dark: #1e293b;
+            --midnight: #0f172a;
+            --sky: #0ea5e9;
+            --sky-light: #e0f2fe;
+            --sky-dark: #0284c7;
+            --violet: #8b5cf6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(180deg, var(--white) 0%, var(--sky-light) 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .plane {
+            position: absolute;
+            right: -4rem;
+            top: 8%;
+            font-size: clamp(14rem, 34vw, 26rem);
+            line-height: 1;
+            color: var(--sky);
+            opacity: 0.08;
+            transform: rotate(-18deg);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .wrap {
+            position: relative;
+            max-width: 640px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--sky), var(--violet));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--white);
+            line-height: 1;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-text {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--midnight);
+        }
+
+        .logo-text span { color: var(--sky); }
+
+        .code {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(4.5rem, 18vw, 7rem);
+            font-weight: 700;
+            line-height: 1;
+            color: var(--sky);
+            letter-spacing: -0.03em;
+        }
+
+        h1 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            font-weight: 700;
+            color: var(--midnight);
+            margin: 0.75rem 0 0.75rem;
+        }
+
+        .lead {
+            color: var(--gray);
+            font-size: 1.05rem;
+            max-width: 30rem;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--sky), var(--sky-dark));
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.95rem 2.25rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover, .btn:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.45);
+        }
+
+        .jump {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--mist);
+        }
+
+        .jump h2 {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .links a {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gray);
+            text-decoration: none;
+            padding: 0.45rem 0.9rem;
+            border: 1px solid var(--mist);
+            border-radius: 8px;
+            background: var(--white);
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .links a:hover, .links a:focus-visible {
+            color: var(--sky);
+            border-color: var(--sky);
+        }
+
+        :focus-visible { outline: 3px solid var(--sky-dark); outline-offset: 3px; }
+    </style>
+</head>
+<body>
+    <div class="plane" aria-hidden="true">✈</div>
+
+    <main class="wrap">
+        <a href="/" class="logo">
+            <span class="logo-icon" aria-hidden="true">✈</span>
+            <span class="logo-text">Park<span>BUD</span></span>
+        </a>
+
+        <p class="code">404</p>
+        <h1>This page took a wrong turn</h1>
+        <p class="lead">
+            The page you were looking for isn't here. The parking guide, with every
+            terminal and off-site option at Budapest Airport, is one click away.
+        </p>
+
+        <a href="/" class="btn">Back to the parking guide</a>
+
+        <nav class="jump" aria-labelledby="lang-heading">
+            <h2 id="lang-heading">Read it in your language</h2>
+            <ul class="links">
+                <li><a href="/" hreflang="en">English</a></li>
+                <li><a href="/hu/" hreflang="hu">Magyar</a></li>
+                <li><a href="/de/" hreflang="de">Deutsch</a></li>
+                <li><a href="/ro/" hreflang="ro">Română</a></li>
+                <li><a href="/sr/" hreflang="sr">Srpski</a></li>
+                <li><a href="/hr/" hreflang="hr">Hrvatski</a></li>
+                <li><a href="/sk/" hreflang="sk">Slovenčina</a></li>
+            </ul>
+        </nav>
+    </main>
+</body>
+</html>

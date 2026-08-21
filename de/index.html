@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>Flughafen Budapest Parken 2026 | Vergleichen Sie 35+ BUD-Optionen</title>
-    <meta name="title" content="Flughafen Budapest Parken 2026 | Vergleichen Sie 35+ BUD-Optionen">
+    <title>Flughafen Budapest Parken 2026 | Vergleichen Sie 30+ BUD-Optionen</title>
+    <meta name="title" content="Flughafen Budapest Parken 2026 | Vergleichen Sie 30+ BUD-Optionen">
     <meta name="description" content="Vollständiger Leitfaden zum Parken am Flughafen Budapest (BUD). Vergleichen Sie offizielle Terminal-Parkplätze mit externen Parkplätzen mit kostenlosem Shuttle. Beste Preise ab 1.600 Ft/Tag. 24/7-Service, E-Auto-Laden, Autowäsche.">
     <meta name="keywords" content="Budapest airport parking, BUD parking, Liszt Ferenc airport parking, Ferihegy parking, airport parking Budapest, cheap airport parking Hungary, Budapest airport shuttle parking, Terminal 2 parking Budapest">
     <meta name="author" content="ParkBUD">
@@ -30,7 +30,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://airportparkingbudapest.info/de/">
-    <meta property="og:title" content="Flughafen Budapest Parken 2026 | Vergleichen Sie 35+ BUD-Optionen">
+    <meta property="og:title" content="Flughafen Budapest Parken 2026 | Vergleichen Sie 30+ BUD-Optionen">
     <meta property="og:description" content="Finden Sie das beste Parken am Flughafen Budapest. Vergleichen Sie offizielle und externe Optionen, Preise ab 1.600 Ft/Tag, kostenlose Shuttles, E-Auto-Laden und 24/7-Service.">
     <meta property="og:image" content="https://airportparkingbudapest.info/og-image.jpg">
     <meta property="og:image:width" content="1200">
@@ -42,7 +42,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://airportparkingbudapest.info/de/">
-    <meta property="twitter:title" content="Flughafen Budapest Parken 2026 | 35+ Optionen">
+    <meta property="twitter:title" content="Flughafen Budapest Parken 2026 | 30+ Optionen">
     <meta property="twitter:description" content="Finden Sie das beste Parken am Flughafen Budapest. Vergleichen Sie offizielle und externe Optionen, Preise ab 1.600 Ft/Tag, kostenlose Shuttles und 24/7-Service.">
     <meta property="twitter:image" content="https://airportparkingbudapest.info/og-image.jpg">
     
@@ -51,6 +51,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#0ea5e9">
     <meta name="msapplication-TileColor" content="#0ea5e9">
 
@@ -62,7 +63,7 @@
         "name": "ParkBUD - Budapest Airport Parking Guide",
         "alternateName": "Budapest Airport Parking Guide",
         "url": "https://airportparkingbudapest.info/",
-        "description": "Complete guide to parking at Budapest Ferenc Liszt International Airport (BUD). Compare 35+ parking options, find best rates, and book online.",
+        "description": "Complete guide to parking at Budapest Ferenc Liszt International Airport (BUD). Compare 30+ parking options, find best rates, and book online.",
         "publisher": {
             "@type": "Organization",
             "name": "ParkBUD",
@@ -159,7 +160,7 @@
         "@context": "https://schema.org",
         "@type": "TouristInformationCenter",
         "name": "Budapest Airport Parking Guide",
-        "description": "Comprehensive parking guide for Budapest Ferenc Liszt International Airport (BUD) featuring 35+ parking options with prices, shuttle services, and amenities.",
+        "description": "Comprehensive parking guide for Budapest Ferenc Liszt International Airport (BUD) featuring 30+ parking options with prices, shuttle services, and amenities.",
         "url": "https://airportparkingbudapest.info/",
         "address": {
             "@type": "PostalAddress",
@@ -233,14 +234,109 @@
     <meta name="coverage" content="Hungary">
     <meta name="distribution" content="global">
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RD5NGYD43E"></script>
-    <script src="https://t.contentsquare.net/uxa/50da9bdd68c59.js"></script>
+    <!-- Analytics, loaded only after consent (see /privacy/) -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-RD5NGYD43E');
+    (function (w, d) {
+        'use strict';
+
+        var STORAGE_KEY = 'parkbud:consent';
+        var GA_ID = 'G-RD5NGYD43E';
+        var CS_TAG = 'https://t.contentsquare.net/uxa/50da9bdd68c59.js';
+
+        w.dataLayer = w.dataLayer || [];
+        function gtag() { w.dataLayer.push(arguments); }
+        w.gtag = gtag;
+
+        /* Deny by default, so nothing is measured until the reader opts in. */
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            functionality_storage: 'denied',
+            personalization_storage: 'denied',
+            security_storage: 'granted'
+        });
+
+        function read() {
+            try { return w.localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+        }
+
+        function write(value) {
+            try { w.localStorage.setItem(STORAGE_KEY, value); } catch (e) { /* private mode */ }
+        }
+
+        var loaded = false;
+
+        function loadTags() {
+            if (loaded) return;
+            loaded = true;
+
+            gtag('consent', 'update', { analytics_storage: 'granted' });
+
+            var ga = d.createElement('script');
+            ga.async = true;
+            ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+            d.head.appendChild(ga);
+
+            gtag('js', new Date());
+            gtag('config', GA_ID, { anonymize_ip: true });
+
+            var cs = d.createElement('script');
+            cs.async = true;
+            cs.src = CS_TAG;
+            d.head.appendChild(cs);
+        }
+
+        /* Best effort: stop the cookies already dropped from being sent again. */
+        function clearAnalyticsCookies() {
+            var host = d.location.hostname;
+            var domains = ['', host, '.' + host];
+            var parts = host.split('.');
+            if (parts.length > 2) domains.push('.' + parts.slice(-2).join('.'));
+
+            d.cookie.split(';').forEach(function (entry) {
+                var name = entry.split('=')[0].trim();
+                if (!/^(_ga|_gid|_gat|_cs|_uetsid)/.test(name)) return;
+                domains.forEach(function (domain) {
+                    d.cookie = name + '=; Max-Age=0; path=/' +
+                        (domain ? '; domain=' + domain : '');
+                });
+            });
+        }
+
+        var banner = null;
+
+        function showBanner(show) {
+            if (!banner) banner = d.getElementById('cookieConsent');
+            if (banner) banner.hidden = !show;
+        }
+
+        w.ParkBUDConsent = {
+            accept: function () {
+                write('granted');
+                showBanner(false);
+                loadTags();
+            },
+            reject: function () {
+                write('denied');
+                showBanner(false);
+                gtag('consent', 'update', { analytics_storage: 'denied' });
+                clearAnalyticsCookies();
+            },
+            reopen: function () { showBanner(true); },
+            state: read
+        };
+
+        function start() {
+            var choice = read();
+            if (choice === 'granted') loadTags();
+            else if (choice !== 'denied') showBanner(true);
+        }
+
+        if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', start);
+        else start();
+    })(window, document);
     </script>
 
     <!-- Preconnect and Fonts -->
@@ -251,6 +347,9 @@
     <!-- ========== YOUR ORIGINAL CSS STYLES ========== -->
     <style>
         :root {
+            /* Height of the fixed header; kept in sync by script. */
+            --header-h: 73px;
+
             /* Bright, fresh colors */
             --white: #ffffff;
             --snow: #f8fafc;
@@ -327,6 +426,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 1.5rem;
         }
 
         .logo {
@@ -382,6 +482,8 @@
 
         .mobile-toggle {
             display: none;
+            background: none;
+            border: none;
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
@@ -398,7 +500,7 @@
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 68px;
+            top: var(--header-h);
             left: 0;
             right: 0;
             background: var(--white);
@@ -429,7 +531,7 @@
         .transport-quick-bar {
             background: linear-gradient(135deg, var(--midnight) 0%, var(--dark) 100%);
             padding: 0;
-            margin-top: 70px;
+            margin-top: var(--header-h);
             position: relative;
             z-index: 100;
         }
@@ -951,7 +1053,7 @@
         /* Parken Grid */
         .parking-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
             gap: 1.5rem;
             max-width: 1400px;
             margin: 0 auto;
@@ -1150,7 +1252,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
             gap: 1.25rem;
             max-width: 1400px;
             margin: 0 auto;
@@ -1391,7 +1493,7 @@
 
         .transport-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
             gap: 1.5rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -1480,7 +1582,7 @@
 
         .tips-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
             gap: 1.5rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -1675,14 +1777,166 @@
         }
         .lang-link:hover { color: var(--sky); border-color: var(--sky); }
         .lang-link.active { color: white; background: var(--sky); border-color: var(--sky); }
+
+        /* Phone header: the language picker gets its own row so the menu
+           button stays on screen. --header-h is kept in sync by script. */
         @media (max-width: 768px) {
-            .lang-picker { margin-left: 0; margin-top: 0.75rem; justify-content: center; }
+            /* Fallback for the wrapped two-row header when script has not run;
+               syncHeaderHeight() replaces it with the measured value. */
+            :root {
+                --header-h: 105px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                row-gap: 0.5rem;
+            }
+
+            .logo,
+            .mobile-toggle {
+                flex: 0 0 auto;
+            }
+
+            .lang-picker {
+                order: 3;
+                flex: 1 0 100%;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-left: 0;
+                margin-top: 0;
+            }
         }
 
+
+        /* Keyboard-only shortcut past the header navigation. */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            z-index: 200;
+            padding: 0.75rem 1.25rem;
+            background: var(--sky, #0ea5e9);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 0 0 8px 0;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            left: 0;
+        }
+
+        main:focus {
+            outline: none;
+        }
+
+        /* Cookie consent: accept and decline carry the same visual weight. */
+        .cookie-consent {
+            position: fixed;
+            left: 1rem;
+            right: 1rem;
+            bottom: 1rem;
+            z-index: 2000;
+            max-width: 32rem;
+            margin-left: auto;
+            background: var(--white);
+            border: 1px solid var(--mist);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            padding: 1.5rem;
+        }
+
+        .cookie-consent[hidden] { display: none; }
+
+        .cookie-consent h2 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--midnight);
+            margin-bottom: 0.5rem;
+        }
+
+        .cookie-consent p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 1.1rem;
+        }
+
+        .cookie-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            align-items: center;
+        }
+
+        .cookie-btn {
+            font: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.65rem 1.4rem;
+            border-radius: 50px;
+            border: 1px solid var(--mist);
+            background: var(--white);
+            color: var(--dark);
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s, background 0.2s;
+        }
+
+        .cookie-btn:hover { border-color: var(--sky); color: var(--sky); }
+
+        .cookie-btn.primary {
+            background: var(--sky);
+            border-color: var(--sky);
+            color: var(--white);
+        }
+
+        .cookie-btn.primary:hover {
+            background: var(--sky-dark);
+            border-color: var(--sky-dark);
+            color: var(--white);
+        }
+
+        .cookie-consent a {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-left: auto;
+        }
+
+        .cookie-consent a:hover { color: var(--sky); }
+
+        .footer-legal {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem 1rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+
+        .footer-legal a,
+        .footer-legal button {
+            font: inherit;
+            font-size: inherit;
+            color: inherit;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            text-decoration: underline;
+            opacity: 0.85;
+        }
+
+        .footer-legal a:hover,
+        .footer-legal button:hover { opacity: 1; }
+
+        @media (max-width: 520px) {
+            .cookie-consent { padding: 1.25rem; }
+            .cookie-consent a { margin-left: 0; }
+        }
     </style>
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Zum Hauptinhalt springen</a>
     <!-- Header -->
     <header>
         <nav>
@@ -1697,30 +1951,32 @@
                 <li><a href="#transport">Verkehr</a></li>
                 <li><a href="#tips">Tipps</a></li>
             </ul>
-            <div class="lang-picker" aria-label="Language"><a href="/" class="lang-link" hreflang="en" rel="alternate">EN</a><a href="/hu/" class="lang-link" hreflang="hu" rel="alternate">HU</a><a href="/de/" class="lang-link active" hreflang="de" rel="alternate">DE</a><a href="/ro/" class="lang-link" hreflang="ro" rel="alternate">RO</a><a href="/sr/" class="lang-link" hreflang="sr" rel="alternate">SR</a><a href="/hr/" class="lang-link" hreflang="hr" rel="alternate">HR</a><a href="/sk/" class="lang-link" hreflang="sk" rel="alternate">SK</a></div>
-            <div class="mobile-toggle" onclick="toggleMobileMenu()">
+            <nav class="lang-picker" aria-label="Sprache"><a href="/" class="lang-link" hreflang="en" rel="alternate">EN</a><a href="/hu/" class="lang-link" hreflang="hu" rel="alternate">HU</a><a href="/de/" class="lang-link active" hreflang="de" rel="alternate">DE</a><a href="/ro/" class="lang-link" hreflang="ro" rel="alternate">RO</a><a href="/sr/" class="lang-link" hreflang="sr" rel="alternate">SR</a><a href="/hr/" class="lang-link" hreflang="hr" rel="alternate">HR</a><a href="/sk/" class="lang-link" hreflang="sk" rel="alternate">SK</a></nav>
+            <button class="mobile-toggle" type="button" onclick="toggleMobileMenu()" aria-label="Menü" aria-expanded="false" aria-controls="mobileMenu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </nav>
         <div class="mobile-menu" id="mobileMenu">
             <ul>
-                <li><a href="#parking" onclick="toggleMobileMenu()">Parkoptionen</a></li>
-                <li><a href="#services" onclick="toggleMobileMenu()">Services in der Nähe</a></li>
-                <li><a href="#directions" onclick="toggleMobileMenu()">Anfahrt</a></li>
-                <li><a href="#transport" onclick="toggleMobileMenu()">Verkehr</a></li>
-                <li><a href="#tips" onclick="toggleMobileMenu()">Tipps</a></li>
+                <li><a href="#parking">Parkoptionen</a></li>
+                <li><a href="#services">Services in der Nähe</a></li>
+                <li><a href="#directions">Anfahrt</a></li>
+                <li><a href="#transport">Verkehr</a></li>
+                <li><a href="#tips">Tipps</a></li>
             </ul>
         </div>
     </header>
+
+    <main id="main" tabindex="-1">
 
     <!-- Verkehr Quick Zugang Bar -->
     <div class="transport-quick-bar" id="transportBar">
         <div class="container">
             <div class="transport-bar-header">
                 <h3>🚌 Verkehr in die Stadt und zurück</h3>
-                <button class="transport-toggle" onclick="toggleTransportBar()">
+                <button class="transport-toggle" type="button" onclick="toggleTransportBar()" aria-expanded="false" aria-controls="transportBarContent">
                     <span id="transportToggleText">Optionen anzeigen</span>
                     <span id="transportToggleIcon">▼</span>
                 </button>
@@ -1787,7 +2043,7 @@
     <div class="stats-strip">
         <div class="stats-grid">
             <div class="stat">
-                <div class="stat-value">35<span>+</span></div>
+                <div class="stat-value">30<span>+</span></div>
                 <div class="stat-label">Parkoptionen</div>
             </div>
             <div class="stat">
@@ -1818,9 +2074,9 @@
             <div class="filter-bar-header">
                 <div class="filter-bar-title">
                     <span> Parkoptionen filtern</span>
-                    <span class="filter-count" id="resultCount">38</span>
+                    <span class="filter-count" id="resultCount">33</span>
                 </div>
-                <button class="filter-reset" onclick="resetFilters()"> Allee zurücksetzen</button>
+                <button class="filter-reset" type="button" onclick="resetFilters()"> Allee zurücksetzen</button>
             </div>
             <div class="filter-groups">
                 <div class="filter-group">
@@ -1876,7 +2132,7 @@
                         <span class="feature-tag">🔒 CCTV 24/7</span>
                     </div>
                     <p class="card-description">Parkplatz am nächsten zum Terminal. Ideal für schnelles Bringen und Abholen. Kennzeichenerkennung für reibungslose Einfahrt.</p>
-                    <a href="https://parkolo.bud.hu/en/" target="_blank" class="card-link">Auf offizieller Seite buchen →</a>
+                    <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Auf offizieller Seite buchen →</a>
                 </div>
             </div>
 
@@ -1900,7 +2156,7 @@
                         <span class="feature-tag">🔒 CCTV</span>
                     </div>
                     <p class="card-description">Hervorragendes Verhältnis von Komfort und Preis. Überdachter Weg zum Terminal. Ideal für Geschäftsreisen.</p>
-                    <a href="https://parkolo.bud.hu/en/" target="_blank" class="card-link">Auf offizieller Seite buchen →</a>
+                    <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Auf offizieller Seite buchen →</a>
                 </div>
             </div>
 
@@ -1924,7 +2180,7 @@
                         <span class="feature-tag">🏠 Überdachter Weg</span>
                     </div>
                     <p class="card-description">Perfekt für Wochenendausflüge. Überdachter Weg schützt vor Wetter. Gutes Preis-Leistungs-Verhältnis für 2-5 Tage.</p>
-                    <a href="https://parkolo.bud.hu/en/" target="_blank" class="card-link">Auf offizieller Seite buchen →</a>
+                    <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Auf offizieller Seite buchen →</a>
                 </div>
             </div>
 
@@ -1948,7 +2204,7 @@
                         <span class="feature-tag">🏠 Überdachter Weg</span>
                     </div>
                     <p class="card-description">Wirtschaftlichste offizielle Option für den Urlaub. Ideal für 1-2 Wochen Urlaub mit deutlichen Ersparnissen.</p>
-                    <a href="https://parkolo.bud.hu/en/" target="_blank" class="card-link">Auf offizieller Seite buchen →</a>
+                    <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Auf offizieller Seite buchen →</a>
                 </div>
             </div>
 
@@ -1972,7 +2228,7 @@
                         <span class="feature-tag">🏠 Überdachter Weg</span>
                     </div>
                     <p class="card-description">Neueste und größte offizielle Anlage. Nur Ganztages-Buchungen. Beste Preise für längere Aufenthalte ab einer Woche.</p>
-                    <a href="https://parkolo.bud.hu/en/" target="_blank" class="card-link">Auf offizieller Seite buchen →</a>
+                    <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Auf offizieller Seite buchen →</a>
                 </div>
             </div>
 
@@ -1999,7 +2255,7 @@
                         <span class="feature-tag">🚿 Autowäsche</span>
                     </div>
                     <p class="card-description">Einer der größten Privatparkplätze. Kostenloser Shuttle, Terrassencafé, Sanitäranlagen. Kindersitze auf Anfrage.</p>
-                    <a href="https://www.bestparking.hu/en/" target="_blank" class="card-link">Webseite besuchen →</a>
+                    <a href="https://www.bestparking.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Webseite besuchen →</a>
                 </div>
             </div>
 
@@ -2023,7 +2279,7 @@
                         <span class="feature-tag">🕐 24/7</span>
                     </div>
                     <p class="card-description">Neben MOL-Tankstelle und McDonald's gelegen. Eingezäunter, kameraüberwachter Bereich. Praktische Lage in Nähe der Schnellstraße.</p>
-                    <a href="https://en.mybudparking.hu/" target="_blank" class="card-link">Webseite besuchen →</a>
+                    <a href="https://en.mybudparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Webseite besuchen →</a>
                 </div>
             </div>
 
@@ -2047,7 +2303,7 @@
                         <span class="feature-tag">🚿 Autowäsche</span>
                     </div>
                     <p class="card-description">Sicheres Parken hinter Steinmauern. Outdoor- und überdachte Garagenoptionen. Autowäsche vor Ort verfügbar.</p>
-                    <a href="https://en.budcarparking.hu/" target="_blank" class="card-link">Webseite besuchen →</a>
+                    <a href="https://en.budcarparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Webseite besuchen →</a>
                 </div>
             </div>
 
@@ -2072,7 +2328,7 @@
                         <span class="feature-tag">🚿 Autowäsche</span>
                     </div>
                     <p class="card-description">Preisgünstig mit zuverlässigem Shuttle. Technische Hilfe bei Batterie/Reifen. Flugverfolgung inklusive.</p>
-                    <a href="https://www.budapestrepterparkolo.hu/en/" target="_blank" class="card-link">Webseite besuchen →</a>
+                    <a href="https://www.budapestrepterparkolo.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Webseite besuchen →</a>
                 </div>
             </div>
 
@@ -2096,7 +2352,7 @@
                         <span class="feature-tag">🕐 24/7</span>
                     </div>
                     <p class="card-description">Privater Autotransfer zwischen Parkplatz und Terminals. Kurz- und Langzeitoptionen. Zahlung bei Ankunft oder Abreise.</p>
-                    <a href="https://safeparking.hu/en/" target="_blank" class="card-link">Webseite besuchen →</a>
+                    <a href="https://safeparking.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Webseite besuchen →</a>
                 </div>
             </div>
 
@@ -2120,7 +2376,7 @@
                         <span class="feature-tag">🕐 24/7 bewacht</span>
                     </div>
                     <p class="card-description">Premium-VIP-Transfers verfügbar (Maserati, Mercedes V-Klasse). E-Auto-Laden vor Ort. Betonierter, elektrisch eingezäunter Bereich.</p>
-                    <a href="http://www.en.parkolomester.com/" target="_blank" class="card-link">Webseite besuchen →</a>
+                    <a href="http://www.en.parkolomester.com/" target="_blank" rel="noopener noreferrer" class="card-link">Webseite besuchen →</a>
                 </div>
             </div>
 
@@ -2144,7 +2400,7 @@
                         <span class="feature-tag">🔒 Bewacht</span>
                     </div>
                     <p class="card-description">Shuttle fährt auf Anfrage 24/7, kein fester Fahrplan. 5-10 Min Transferzeit. Abholung innerhalb von 10-20 Min nach Landung.</p>
-                    <a href="https://ferihegyparkolas.eu/en/" target="_blank" class="card-link">Webseite besuchen →</a>
+                    <a href="https://ferihegyparkolas.eu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Webseite besuchen →</a>
                 </div>
             </div>
 
@@ -2168,7 +2424,7 @@
                         <span class="feature-tag">🕐 24/7</span>
                     </div>
                     <p class="card-description">Bewachter Parkplatz nur Minuten vom Flughafen. Zuverlässiger Shuttle zu allen Terminals.</p>
-                    <a href="https://repteriparkolocentrum.hu/en/" target="_blank" class="card-link">Webseite besuchen →</a>
+                    <a href="https://repteriparkolocentrum.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Webseite besuchen →</a>
                 </div>
             </div>
 
@@ -2195,7 +2451,7 @@
                         <span class="feature-tag">🔒 Gesichert</span>
                     </div>
                     <p class="card-description">Gesichertes Parken mit kostenlosem Shuttle zu den Flughafenterminals.</p>
-                    <a href="https://zokarepteriparkolo.hu" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="https://zokarepteriparkolo.hu" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2218,7 +2474,7 @@
                         <span class="feature-tag">🔒 24/7 CCTV</span>
                     </div>
                     <p class="card-description">Günstiges Parken mit kostenlosem Shuttle.</p>
-                    <a href="https://repteresparkolo.hu" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="https://repteresparkolo.hu" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2241,7 +2497,7 @@
                         <span class="feature-tag">🔒 Gesichert</span>
                     </div>
                     <p class="card-description">Schnelles Bringen mit kostenlosem Shuttle zum Terminal.</p>
-                    <a href="https://pkrepterparkolo.com/" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="https://pkrepterparkolo.com/" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2264,7 +2520,7 @@
                         <span class="feature-tag">🔒 Überwacht</span>
                     </div>
                     <p class="card-description">Bequemes Parken mit kostenlosem Shuttle-Transfer.</p>
-                    <a href="https://noaparking.hu" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="https://noaparking.hu" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2288,7 +2544,7 @@
                         <span class="feature-tag">🔒 24/7</span>
                     </div>
                     <p class="card-description">Führender Parkservice seit 2008. Garantiert überdachtes Parken. Kostenlose Änderungen und Stornierungen.</p>
-                    <a href="https://www.repterparkolo.hu" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="https://www.repterparkolo.hu" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2311,7 +2567,7 @@
                         <span class="feature-tag">🔒 Gesichert</span>
                     </div>
                     <p class="card-description">Günstiges Parken am Flughafen mit Shuttle-Service.</p>
-                    <a href="https://budapestairportparking.hu/" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="https://budapestairportparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2335,7 +2591,7 @@
                         <span class="feature-tag">⭐ Premium</span>
                     </div>
                     <p class="card-description">VIP-Parkerlebnis mit Premium-Transfer-Service.</p>
-                    <a href="https://www.vip-parking.hu/" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="https://www.vip-parking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2358,7 +2614,7 @@
                         <span class="feature-tag">🔒 Gesichert</span>
                     </div>
                     <p class="card-description">Günstiges Parken mit Shuttle zu den Terminals.</p>
-                    <a href="https://skyparking.hu/hu/fooldal" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="https://skyparking.hu/hu/fooldal" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2381,7 +2637,7 @@
                         <span class="feature-tag">🔒 24/7</span>
                     </div>
                     <p class="card-description">Preisgünstige Parkoption mit Shuttle.</p>
-                    <a href="https://repteriparkolas.com/" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="https://repteriparkolas.com/" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2405,7 +2661,7 @@
                         <span class="feature-tag">🔒 Gesichert</span>
                     </div>
                     <p class="card-description">Wettbewerbsfähige Preise mit kostenlosem WLAN und Shuttle.</p>
-                    <a href="https://abcparking.hu/" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="https://abcparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2428,7 +2684,7 @@
                         <span class="feature-tag">🔒 24/7</span>
                     </div>
                     <p class="card-description">Zentral gelegener Parkplatz mit Shuttle.</p>
-                    <a href="https://parkcentralairport.hu/" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="https://parkcentralairport.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2451,7 +2707,7 @@
                         <span class="feature-tag">🔒 24/7</span>
                     </div>
                     <p class="card-description">Günstiges Parken mit kostenlosem Shuttle.</p>
-                    <a href="http://dobrocarparking.hu/" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="http://dobrocarparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2475,7 +2731,7 @@
                         <span class="feature-tag">🔒 Gesichert</span>
                     </div>
                     <p class="card-description">Überdachte Parkoption mit Shuttle.</p>
-                    <a href="https://fedettrepterparkolo.hu/" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="https://fedettrepterparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2498,7 +2754,7 @@
                         <span class="feature-tag">🔒 24/7</span>
                     </div>
                     <p class="card-description">Preisgünstiges Parken am Flughafen.</p>
-                    <a href="http://repteri-parkolas.hu/" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="http://repteri-parkolas.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2521,7 +2777,7 @@
                         <span class="feature-tag">🔒 Gesichert</span>
                     </div>
                     <p class="card-description">Zuverlässiges Parken mit Shuttle.</p>
-                    <a href="http://hungariaparkolo.hu/" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="http://hungariaparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2544,7 +2800,7 @@
                         <span class="feature-tag">🔒 24/7</span>
                     </div>
                     <p class="card-description">Nationaler Parkservice mit Transfer.</p>
-                    <a href="https://nemzetiparkolo.hu/" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="https://nemzetiparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2568,7 +2824,7 @@
                         <span class="feature-tag">🔒 24/7</span>
                     </div>
                     <p class="card-description">Bewachtes Parken mit 24/7-Sicherheit.</p>
-                    <a href="https://orzottrepteriparkolo.hu/" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="https://orzottrepteriparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2591,7 +2847,7 @@
                         <span class="feature-tag">🔒 Gesichert</span>
                     </div>
                     <p class="card-description">Parken nach europäischem Standard mit Shuttle.</p>
-                    <a href="http://www.europaparkolo.hu/" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="http://www.europaparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2614,7 +2870,7 @@
                         <span class="feature-tag">🔒 24/7</span>
                     </div>
                     <p class="card-description">Bequemes Parkerlebnis mit Transfer.</p>
-                    <a href="https://ferihegyfedettparkolo.hu/" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="https://ferihegyfedettparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2638,7 +2894,7 @@
                         <span class="feature-tag">🔒 Gesichert</span>
                     </div>
                     <p class="card-description">Einfache Online-Buchung mit Shuttle.</p>
-                    <a href="https://www.repteriparkolo.com/" target="_blank" class="card-link">Jetzt buchen →</a>
+                    <a href="https://www.repteriparkolo.com/" target="_blank" rel="noopener noreferrer" class="card-link">Jetzt buchen →</a>
                 </div>
             </div>
 
@@ -2680,9 +2936,9 @@
             <div class="filter-bar-header">
                 <div class="filter-bar-title">
                     <span> Services filtern</span>
-                    <span class="filter-count" id="serviceResultCount">26</span>
+                    <span class="filter-count" id="serviceResultCount">30</span>
                 </div>
-                <button class="filter-reset" onclick="resetServiceFilters()"> Allee zurücksetzen</button>
+                <button class="filter-reset" type="button" onclick="resetServiceFilters()"> Allee zurücksetzen</button>
             </div>
             <div class="filter-groups">
                 <div class="filter-group" style="width: 100%;">
@@ -2721,7 +2977,7 @@
                 <h3>MOL Gas Station</h3>
                 <p>Tankstelle mit vollem Service auf dem Weg zum Flughafen. Benzin, Diesel und LPG. Mini-Markt drinnen.</p>
                 <div class="service-details">
-                    <div class="service-detail"><span class="service-detail-icon">✓</span> lli út, before airport</div>
+                    <div class="service-detail"><span class="service-detail-icon">✓</span> Üllői út, before airport</div>
                     <div class="service-detail"><span class="service-detail-icon">⏰</span> Geöffnet 24/7</div>
                     <div class="service-detail"><span class="service-detail-icon">✓</span> Karten akzeptiert</div>
                 </div>
@@ -2758,7 +3014,7 @@
                 <h3>McDonald's Vecsés</h3>
                 <p>Praktisches Drive-Through auf dem Weg zum Flughafen. Volle Speisekarte mit schnellem Service.</p>
                 <div class="service-details">
-                    <div class="service-detail"><span class="service-detail-icon">✓</span> Vecsés, F út</div>
+                    <div class="service-detail"><span class="service-detail-icon">✓</span> Vecsés, Fő út</div>
                     <div class="service-detail"><span class="service-detail-icon">⏰</span> 6:00 - 24:00</div>
                     <div class="service-detail"><span class="service-detail-icon">✓</span> Drive-Through</div>
                 </div>
@@ -2796,7 +3052,7 @@
                 <div class="service-details">
                     <div class="service-detail"><span class="service-detail-icon">✓</span> Terminal 2B</div>
                     <div class="service-detail"><span class="service-detail-icon">⏰</span> 6:00 - 21:00</div>
-                    <div class="service-detail"><span class="service-detail-icon">️</span> Restaurant mit Sitzplätzen</div>
+                    <div class="service-detail"><span class="service-detail-icon">🍽️</span> Restaurant mit Sitzplätzen</div>
                 </div>
             </div>
 
@@ -2836,7 +3092,7 @@
                 <div class="service-detail"><span class="service-detail-icon">✓</span> Kostenloses WLAN</div>
                 <div class="service-detail"><span class="service-detail-icon">✓</span> Drive-Through</div>
         </div>
-    <a href="https://maps.google.com/?q=Starbucks+Market+Central+Vecsés+Hungary" target="_blank" style="display: block; text-align: center; padding: 0.75rem; background: var(--sky); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 0.85rem; margin-top: 1rem;">📍 Auf Karte anzeigen →</a>
+    <a href="https://maps.google.com/?q=Starbucks+Market+Central+Vecsés+Hungary" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; padding: 0.75rem; background: var(--sky); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 0.85rem; margin-top: 1rem;">📍 Auf Karte anzeigen →</a>
 </div>
                  
             
@@ -2849,9 +3105,9 @@
                 <h3>Market Central Ferihegy</h3>
                 <p>Großes Einkaufszentrum 5 Min vom Flughafen. Supermarkt, Geschäfte, Restaurants und Services an einem Ort.</p>
                 <div class="service-details">
-                    <div class="service-detail"><span class="service-detail-icon">✓</span> Vecsés, F út 246</div>
+                    <div class="service-detail"><span class="service-detail-icon">✓</span> Vecsés, Fő út 246</div>
                     <div class="service-detail"><span class="service-detail-icon">⏰</span> 10:00 - 20:00</div>
-                    <div class="service-detail"><span class="service-detail-icon">️</span> Kostenloses Parken</div>
+                    <div class="service-detail"><span class="service-detail-icon">🅿️</span> Kostenloses Parken</div>
                 </div>
             </div>
 
@@ -2885,7 +3141,7 @@
                 <h3>Tesco Extra</h3>
                 <p>Großer Hypermarkt mit allem, was Sie brauchen. Lebensmittel, Elektronik, Reiseartikel und Apotheke drinnen.</p>
                 <div class="service-details">
-                    <div class="service-detail"><span class="service-detail-icon">✓</span> ll / Gyál area</div>
+                    <div class="service-detail"><span class="service-detail-icon">✓</span> Üllő / Gyál area</div>
                     <div class="service-detail"><span class="service-detail-icon">⏰</span> 6:00 - 22:00</div>
                     <div class="service-detail"><span class="service-detail-icon">✓</span> Apotheke drinnen</div>
                 </div>
@@ -2946,7 +3202,7 @@
                 <h3>MOL Car Wash</h3>
                 <p>Selbstbedienung und automatische Wäsche an der MOL-Tankstelle. Schnelle und günstige Autoreinigung.</p>
                 <div class="service-details">
-                    <div class="service-detail"><span class="service-detail-icon">✓</span> MOL lli út</div>
+                    <div class="service-detail"><span class="service-detail-icon">✓</span> MOL Üllői út</div>
                     <div class="service-detail"><span class="service-detail-icon">⏰</span> Geöffnet 24/7</div>
                     <div class="service-detail"><span class="service-detail-icon">✓</span> Selbstbedienung verfügbar</div>
                 </div>
@@ -2985,9 +3241,9 @@
                 <h3>ibis Budapest Airport</h3>
                 <p>Praktisches Hotel direkt am Flughafen. Perfekt für Frühflüge oder lange Zwischenaufenthalte. Kostenloser Shuttle.</p>
                 <div class="service-details">
-                    <div class="service-detail"><span class="service-detail-icon">✓</span> Lrinci út 39, Vecsés</div>
+                    <div class="service-detail"><span class="service-detail-icon">✓</span> Lőrinci út 39, Vecsés</div>
                     <div class="service-detail"><span class="service-detail-icon">✓</span> Kostenloser Flughafen-Shuttle</div>
-                    <div class="service-detail"><span class="service-detail-icon">️</span> Parken verfügbar</div>
+                    <div class="service-detail"><span class="service-detail-icon">🅿️</span> Parken verfügbar</div>
                 </div>
             </div>
 
@@ -3024,7 +3280,7 @@
                 <div class="service-details">
                     <div class="service-detail"><span class="service-detail-icon">📍</span> 2220 Vecsés, Fő út 232</div>
                     <div class="service-detail"><span class="service-detail-icon">📞</span> +36 29 351 397</div>
-                    <div class="service-detail"><span class="service-detail-icon">🌐</span> <a href="https://vecsesgumi.hu/" target="_blank" style="color: var(--sky);">vecsesgumi.hu</a></div>
+                    <div class="service-detail"><span class="service-detail-icon">🌐</span> <a href="https://vecsesgumi.hu/" target="_blank" rel="noopener noreferrer" style="color: var(--sky);">vecsesgumi.hu</a></div>
                 </div>
             </div>
 
@@ -3036,7 +3292,7 @@
                 <div class="service-details">
                     <div class="service-detail"><span class="service-detail-icon">📍</span> Mobil – kommt zu Ihnen</div>
                     <div class="service-detail"><span class="service-detail-icon">⏰</span> Notfall verfügbar</div>
-                    <div class="service-detail"><span class="service-detail-icon">🌐</span> <a href="https://comfortgumiszerviz.hu/en/fooldal/" target="_blank" style="color: var(--sky);">comfortgumiszerviz.hu</a></div>
+                    <div class="service-detail"><span class="service-detail-icon">🌐</span> <a href="https://comfortgumiszerviz.hu/en/fooldal/" target="_blank" rel="noopener noreferrer" style="color: var(--sky);">comfortgumiszerviz.hu</a></div>
                 </div>
             </div>
 
@@ -3048,7 +3304,7 @@
                 <div class="service-details">
                     <div class="service-detail"><span class="service-detail-icon">📍</span> Mobil – Großraum Budapest</div>
                     <div class="service-detail"><span class="service-detail-icon">⏰</span> 0-24-Service</div>
-                    <div class="service-detail"><span class="service-detail-icon">🌐</span> <a href="https://spiritmobilgumis.hu/en/" target="_blank" style="color: var(--sky);">spiritmobilgumis.hu</a></div>
+                    <div class="service-detail"><span class="service-detail-icon">🌐</span> <a href="https://spiritmobilgumis.hu/en/" target="_blank" rel="noopener noreferrer" style="color: var(--sky);">spiritmobilgumis.hu</a></div>
                 </div>
             </div>
 
@@ -3060,7 +3316,7 @@
                 <div class="service-details">
                     <div class="service-detail"><span class="service-detail-icon">📍</span> Budapest</div>
                     <div class="service-detail"><span class="service-detail-icon">⏰</span> Nach Terminvereinbarung</div>
-                    <div class="service-detail"><span class="service-detail-icon">🌐</span> <a href="https://cool-mobil.hu/en/" target="_blank" style="color: var(--sky);">cool-mobil.hu</a></div>
+                    <div class="service-detail"><span class="service-detail-icon">🌐</span> <a href="https://cool-mobil.hu/en/" target="_blank" rel="noopener noreferrer" style="color: var(--sky);">cool-mobil.hu</a></div>
                 </div>
             </div>
 
@@ -3072,7 +3328,7 @@
                 <div class="service-details">
                     <div class="service-detail"><span class="service-detail-icon">📍</span> Budapest XVII, Hajdúcsárda u. 9</div>
                     <div class="service-detail"><span class="service-detail-icon">✓</span> Englischsprachig</div>
-                    <div class="service-detail"><span class="service-detail-icon">🌐</span> <a href="https://gumi-klinika.hu/car_service_budapest" target="_blank" style="color: var(--sky);">gumi-klinika.hu</a></div>
+                    <div class="service-detail"><span class="service-detail-icon">🌐</span> <a href="https://gumi-klinika.hu/car_service_budapest" target="_blank" rel="noopener noreferrer" style="color: var(--sky);">gumi-klinika.hu</a></div>
                 </div>
             </div>
 
@@ -3105,7 +3361,6 @@
                 transition: all 0.3s ease;
             ">Allee Services anzeigen →</button>
         </div>
-    </div>
 
         <!-- No Results for Services -->
         <div class="no-results container" id="noServiceResults">
@@ -3282,6 +3537,8 @@
     </section>
 
     <!-- Footer -->
+    </main>
+
     <footer>
         <div class="footer-grid container">
             <div class="footer-brand">
@@ -3306,9 +3563,9 @@
             <div class="footer-column">
                 <h4>Offizielle Quellen</h4>
                 <ul class="footer-links">
-                    <li><a href="https://www.bud.hu/en" target="_blank">Flughafen Budapest</a></li>
-                    <li><a href="https://parkolo.bud.hu/en/" target="_blank">Offizielles Parken</a></li>
-                    <li><a href="https://bkk.hu/en/visiting-budapest/247-connection-between-the-airport-and-the-city-centre/ target="_blank">ÖPNV-Info</a></li>
+                    <li><a href="https://www.bud.hu/en" target="_blank" rel="noopener noreferrer">Flughafen Budapest</a></li>
+                    <li><a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer">Offizielles Parken</a></li>
+                    <li><a href="https://bkk.hu/en/visiting-budapest/247-connection-between-the-airport-and-the-city-centre/" target="_blank" rel="noopener noreferrer">ÖPNV-Info</a></li>
                 </ul>
             </div>
             
@@ -3316,362 +3573,332 @@
                 <h4>Kontakt</h4>
                 <ul class="footer-links">
                     <li><a href="mailto:contact@airportparkingbudapest.info">📧 contact@airportparkingbudapest.info</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=61585639418624" target="_blank">📘 Facebook</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61585639418624" target="_blank" rel="noopener noreferrer">📘 Facebook</a></li>
                 </ul>
             </div>
         </div>
         
         <div class="footer-bottom container">
-            <p>© 2025 Flughafen Budapest Parken. Unabhängige Quelle. Nicht mit dem Flughafen Budapest verbunden.</p>
+            <p>© 2026 Flughafen Budapest Parken. Unabhängige Quelle. Nicht mit dem Flughafen Budapest verbunden.</p>
             <p>📧 E-Mail: <a href="mailto:contact@airportparkingbudapest.info" style="color: inherit;">contact@airportparkingbudapest.info</a></p>
+            <p class="footer-legal">
+                <a href="/privacy/">Datenschutz &amp; Cookies</a>
+                <button type="button" onclick="ParkBUDConsent.reopen()">Cookie-Einstellungen</button>
+            </p>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('active');
-        }
+    (function () {
+        'use strict';
 
-        // ============ PARKING FILTERS ============
-        const filters = {
-            type: 'all',
-            access: 'all',
-            features: []
+        /* The only strings JS writes at runtime. Everything else lives in the markup. */
+        var I18N = {
+            transportShow: 'Optionen anzeigen',
+            transportHide: 'Optionen ausblenden',
+            showAllParking: function (total, more) { return 'Alle ' + total + ' Parkplätze anzeigen (' + more + ' weitere) →'; },
+            showAllServices: function (total, more) { return 'Alle ' + total + ' Services anzeigen (' + more + ' weitere) →'; }
         };
 
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const filterType = this.dataset.filter;
-                const value = this.dataset.value;
+        /* Cards shown before the "show all" button appears. */
+        var CARD_LIMIT = 6;
+
+        function byId(id) { return document.getElementById(id); }
+
+        function setPressed(btn, pressed) {
+            btn.classList.toggle('active', pressed);
+            btn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+        }
+
+        /* A shared "show all" button: visible only while the list is capped. */
+        function updateShowAllButton(container, capped, matching, label) {
+            if (!container) return;
+            var visible = capped && matching > CARD_LIMIT;
+            container.style.display = visible ? 'block' : 'none';
+            if (visible) {
+                var button = container.querySelector('button');
+                if (button) button.textContent = label(matching, matching - CARD_LIMIT);
+            }
+        }
+
+        /* ============ HEADER HEIGHT ============ */
+        /* The header is fixed and its height changes when the nav wraps, so
+           publish the real value for the offsets that sit below it. */
+        var header = document.querySelector('header');
+
+        function syncHeaderHeight() {
+            if (!header) return;
+            document.documentElement.style.setProperty(
+                '--header-h', Math.round(header.getBoundingClientRect().height) + 'px');
+        }
+
+        syncHeaderHeight();
+        window.addEventListener('resize', syncHeaderHeight);
+        if (window.ResizeObserver && header) {
+            new ResizeObserver(syncHeaderHeight).observe(header);
+        }
+
+        /* ============ MOBILE MENU ============ */
+        var mobileMenu = byId('mobileMenu');
+        var mobileToggle = document.querySelector('.mobile-toggle');
+
+        function setMobileMenu(open) {
+            if (!mobileMenu) return;
+            mobileMenu.classList.toggle('active', open);
+            if (mobileToggle) mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+
+        function toggleMobileMenu() {
+            setMobileMenu(!(mobileMenu && mobileMenu.classList.contains('active')));
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') setMobileMenu(false);
+        });
+
+        /* ============ PARKING FILTERS ============ */
+        var filters = { type: 'all', access: 'all', features: [] };
+        var showAllParkingEnabled = false;
+
+        var parkingCards = document.querySelectorAll('.parking-card');
+        var parkingFilterButtons = document.querySelectorAll('.filter-btn');
+
+        function parkingCardMatches(card) {
+            if (filters.type !== 'all' && card.dataset.type !== filters.type) return false;
+            if (filters.access !== 'all' && card.dataset.access !== filters.access) return false;
+            if (!filters.features.length) return true;
+            var cardFeatures = card.dataset.features ? card.dataset.features.split(',') : [];
+            return filters.features.every(function (f) { return cardFeatures.indexOf(f) !== -1; });
+        }
+
+        function applyFilters() {
+            var capped = !showAllParkingEnabled;
+            var shown = 0;
+            var matching = 0;
+
+            parkingCards.forEach(function (card) {
+                if (!parkingCardMatches(card)) {
+                    card.classList.add('hidden');
+                    return;
+                }
+                matching++;
+                if (capped && shown >= CARD_LIMIT) {
+                    card.classList.add('hidden');
+                } else {
+                    card.classList.remove('hidden');
+                    shown++;
+                }
+            });
+
+            byId('resultCount').textContent = matching;
+            byId('noResults').classList.toggle('visible', matching === 0);
+            updateShowAllButton(byId('showAllContainer'), capped, matching, I18N.showAllParking);
+        }
+
+        parkingFilterButtons.forEach(function (btn) {
+            setPressed(btn, btn.classList.contains('active'));
+
+            btn.addEventListener('click', function () {
+                var filterType = this.dataset.filter;
+                var value = this.dataset.value;
 
                 if (filterType === 'feature') {
-                    this.classList.toggle('active');
-                    if (this.classList.contains('active')) {
+                    var nowActive = !this.classList.contains('active');
+                    setPressed(this, nowActive);
+                    if (nowActive) {
                         filters.features.push(value);
                     } else {
-                        filters.features = filters.features.filter(f => f !== value);
+                        filters.features = filters.features.filter(function (f) { return f !== value; });
                     }
                 } else {
-                    document.querySelectorAll(`[data-filter="${filterType}"]`).forEach(b => {
-                        b.classList.remove('active');
+                    document.querySelectorAll('[data-filter="' + filterType + '"]').forEach(function (b) {
+                        setPressed(b, false);
                     });
-                    this.classList.add('active');
+                    setPressed(this, true);
                     filters[filterType] = value;
                 }
 
+                /* A new selection collapses the list back to the first page of cards. */
+                showAllParkingEnabled = false;
                 applyFilters();
 
-                const parkingSection = document.querySelector('#parking');
-                if (parkingSection) {
-                    parkingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                var parkingSection = document.querySelector('#parking');
+                if (parkingSection) parkingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        function applyFilters() {
-            const cards = document.querySelectorAll('.parking-card');
-            let visibleCount = 0;
-
-            cards.forEach(card => {
-                const cardType = card.dataset.type;
-                const cardAccess = card.dataset.access;
-                const cardFeatures = card.dataset.features ? card.dataset.features.split(',') : [];
-
-                let show = true;
-
-                if (filters.type !== 'all' && cardType !== filters.type) {
-                    show = false;
-                }
-
-                if (filters.access !== 'all' && cardAccess !== filters.access) {
-                    show = false;
-                }
-
-                if (filters.features.length > 0) {
-                    const hasAllFeatures = filters.features.every(f => cardFeatures.includes(f));
-                    if (!hasAllFeatures) {
-                        show = false;
-                    }
-                }
-
-                if (show) {
-                    card.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-
-            document.getElementById('resultCount').textContent = visibleCount;
-            document.getElementById('noResults').classList.toggle('visible', visibleCount === 0);
+        function showAllParking() {
+            showAllParkingEnabled = true;
+            applyFilters();
         }
 
         function resetFilters() {
             filters.type = 'all';
             filters.access = 'all';
             filters.features = [];
+            showAllParkingEnabled = false;
 
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-
-            document.querySelectorAll('[data-filter="type"][data-value="all"]').forEach(b => b.classList.add('active'));
-            document.querySelectorAll('[data-filter="access"][data-value="all"]').forEach(b => b.classList.add('active'));
+            parkingFilterButtons.forEach(function (btn) { setPressed(btn, false); });
+            document.querySelectorAll('[data-filter="type"][data-value="all"], [data-filter="access"][data-value="all"]')
+                .forEach(function (btn) { setPressed(btn, true); });
 
             applyFilters();
         }
 
-        // ============ SERVICES FILTERS ============
-        let activeServiceCategory = 'all';
-        let activeServiceLocation = 'all';
+        /* ============ SERVICES FILTERS ============ */
+        var activeServiceCategory = 'all';
+        var activeServiceLocation = 'all';
+        var showAllServicesEnabled = false;
 
-        // Category filter buttons
-        document.querySelectorAll('.service-filter-btn:not(.service-location-btn)').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.service-filter-btn:not(.service-location-btn)').forEach(b => {
-                    b.classList.remove('active');
-                });
-                this.classList.add('active');
-                activeServiceCategory = this.dataset.category;
-                applyServiceFilters();
-            });
-        });
+        var serviceCards = document.querySelectorAll('.service-card');
+        var serviceCategoryButtons = document.querySelectorAll('.service-filter-btn:not(.service-location-btn)');
+        var serviceLocationButtons = document.querySelectorAll('.service-location-btn');
 
-        // Location filter buttons
-        document.querySelectorAll('.service-location-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                document.querySelectorAll('.service-location-btn').forEach(b => {
-                    b.classList.remove('active');
-                });
-                this.classList.add('active');
-                activeServiceLocation = this.dataset.location;
-                applyServiceFilters();
-            });
-        });
+        function setServiceCardVisible(card, visible) {
+            card.classList.toggle('hidden', !visible);
+            card.style.display = visible ? '' : 'none';
+        }
 
         function applyServiceFilters() {
-            const serviceCards = document.querySelectorAll('.service-card');
-            let visibleCount = 0;
+            var capped = !showAllServicesEnabled;
+            var shown = 0;
+            var matching = 0;
 
-            serviceCards.forEach(card => {
-                const cardCategory = card.dataset.category;
-                const cardLocation = card.dataset.location || 'nearby';
-                
-                const categoryMatch = activeServiceCategory === 'all' || cardCategory === activeServiceCategory;
-                const locationMatch = activeServiceLocation === 'all' || cardLocation === activeServiceLocation;
+            serviceCards.forEach(function (card) {
+                var categoryMatch = activeServiceCategory === 'all' || card.dataset.category === activeServiceCategory;
+                var locationMatch = activeServiceLocation === 'all' || (card.dataset.location || 'nearby') === activeServiceLocation;
 
-                if (categoryMatch && locationMatch) {
-                    card.classList.remove('hidden');
-                    card.style.display = '';
-                    visibleCount++;
+                if (!categoryMatch || !locationMatch) {
+                    setServiceCardVisible(card, false);
+                    return;
+                }
+                matching++;
+                if (capped && shown >= CARD_LIMIT) {
+                    setServiceCardVisible(card, false);
                 } else {
-                    card.classList.add('hidden');
-                    card.style.display = 'none';
+                    setServiceCardVisible(card, true);
+                    shown++;
                 }
             });
 
-            document.getElementById('serviceResultCount').textContent = visibleCount;
-            document.getElementById('noServiceResults').classList.toggle('visible', visibleCount === 0);
+            byId('serviceResultCount').textContent = matching;
+            byId('noServiceResults').classList.toggle('visible', matching === 0);
+            updateShowAllButton(byId('showAllServicesContainer'), capped, matching, I18N.showAllServices);
+        }
+
+        serviceCategoryButtons.forEach(function (btn) {
+            setPressed(btn, btn.classList.contains('active'));
+
+            btn.addEventListener('click', function () {
+                serviceCategoryButtons.forEach(function (b) { setPressed(b, false); });
+                setPressed(this, true);
+                activeServiceCategory = this.dataset.category;
+                showAllServicesEnabled = false;
+                applyServiceFilters();
+            });
+        });
+
+        serviceLocationButtons.forEach(function (btn) {
+            setPressed(btn, btn.classList.contains('active'));
+
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                serviceLocationButtons.forEach(function (b) { setPressed(b, false); });
+                setPressed(this, true);
+                activeServiceLocation = this.dataset.location;
+                showAllServicesEnabled = false;
+                applyServiceFilters();
+            });
+        });
+
+        function showAllServices() {
+            showAllServicesEnabled = true;
+            applyServiceFilters();
         }
 
         function resetServiceFilters() {
             activeServiceCategory = 'all';
             activeServiceLocation = 'all';
-            
-            document.querySelectorAll('.service-filter-btn:not(.service-location-btn)').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelectorAll('.service-location-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            document.querySelector('.service-filter-btn[data-category="all"]').classList.add('active');
-            document.querySelector('.service-location-btn[data-location="all"]').classList.add('active');
-            
+            showAllServicesEnabled = false;
+
+            serviceCategoryButtons.forEach(function (btn) { setPressed(btn, false); });
+            serviceLocationButtons.forEach(function (btn) { setPressed(btn, false); });
+
+            var allCategory = document.querySelector('.service-filter-btn[data-category="all"]');
+            var allLocation = document.querySelector('.service-location-btn[data-location="all"]');
+            if (allCategory) setPressed(allCategory, true);
+            if (allLocation) setPressed(allLocation, true);
+
             applyServiceFilters();
         }
 
-        // Transport Bar Toggle
+        /* ============ TRANSPORT QUICK BAR ============ */
+        var transportBarContent = byId('transportBarContent');
+        var transportToggleButton = document.querySelector('.transport-toggle');
+
         function toggleTransportBar() {
-            const content = document.getElementById('transportBarContent');
-            const toggleText = document.getElementById('transportToggleText');
-            const toggleIcon = document.getElementById('transportToggleIcon');
-            
-            if (content.style.display === 'none') {
-                content.style.display = 'block';
-                toggleText.textContent = 'Hide Options';
-                toggleIcon.classList.add('rotated');
-            } else {
-                content.style.display = 'none';
-                toggleText.textContent = 'Show Options';
-                toggleIcon.classList.remove('rotated');
-            }
+            if (!transportBarContent) return;
+            var open = transportBarContent.style.display === 'none';
+            transportBarContent.style.display = open ? 'block' : 'none';
+
+            var text = byId('transportToggleText');
+            var icon = byId('transportToggleIcon');
+            if (text) text.textContent = open ? I18N.transportHide : I18N.transportShow;
+            if (icon) icon.classList.toggle('rotated', open);
+            if (transportToggleButton) transportToggleButton.setAttribute('aria-expanded', open ? 'true' : 'false');
         }
 
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+        /* ============ IN-PAGE NAVIGATION ============ */
+        document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+            anchor.addEventListener('click', function (e) {
+                var href = this.getAttribute('href');
+                setMobileMenu(false);
+
+                /* The logo links point at "#": send the reader to the top rather than nowhere. */
+                if (!href || href === '#') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
+
+                var target = document.querySelector(href);
+                if (!target) return;
+
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                /* Keep keyboard focus with the reader, and keep the URL shareable. */
+                if (target.hasAttribute('tabindex')) target.focus({ preventScroll: true });
+                if (window.history && window.history.replaceState) {
+                    window.history.replaceState(null, '', href);
                 }
             });
         });
 
-        // Initialize
+        /* Handlers referenced from onclick attributes in the markup. */
+        window.toggleMobileMenu = toggleMobileMenu;
+        window.toggleTransportBar = toggleTransportBar;
+        window.resetFilters = resetFilters;
+        window.resetServiceFilters = resetServiceFilters;
+        window.showAllParking = showAllParking;
+        window.showAllServices = showAllServices;
+
         applyFilters();
         applyServiceFilters();
-    
-        // Show All Parking functionality
-        let showAllParkingEnabled = false;
-        
-        function showAllParking() {
-            showAllParkingEnabled = true;
-            const showAllContainer = document.getElementById('showAllContainer');
-            if (showAllContainer) {
-                showAllContainer.style.display = 'none';
-            }
-            
-            // Re-run filter to show all matching cards
-            applyFiltersWithLimit(false);
-        }
-        
-        function applyFiltersWithLimit(limitTo6) {
-            const cards = document.querySelectorAll('.parking-card');
-            let visibleCount = 0;
-            let totalMatching = 0;
-
-            cards.forEach(card => {
-                const type = card.dataset.type;
-                const access = card.dataset.access;
-                const features = card.dataset.features ? card.dataset.features.split(',') : [];
-
-                let show = true;
-
-                if (filters.type !== 'all' && type !== filters.type) show = false;
-                if (filters.access !== 'all' && access !== filters.access) show = false;
-                if (filters.features.length > 0) {
-                    const hasAllFeatures = filters.features.every(f => features.includes(f));
-                    if (!hasAllFeatures) show = false;
-                }
-
-                if (show) {
-                    totalMatching++;
-                    if (limitTo6 && visibleCount >= 6) {
-                        card.classList.add('hidden');
-                    } else {
-                        card.classList.remove('hidden');
-                        visibleCount++;
-                    }
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-
-            document.getElementById('resultCount').textContent = totalMatching;
-            document.getElementById('noResults').classList.toggle('visible', totalMatching === 0);
-            
-            // Show/hide the Show All button
-            const showAllContainer = document.getElementById('showAllContainer');
-            if (showAllContainer) {
-                if (limitTo6 && totalMatching > 6) {
-                    showAllContainer.style.display = 'block';
-                    // Update button text to show how many more
-                    const remaining = totalMatching - 6;
-                    showAllContainer.querySelector('button').textContent = 'Alle ' + totalMatching + ' Parkplätze anzeigen (' + remaining + ' weitere) →';
-                } else {
-                    showAllContainer.style.display = 'none';
-                }
-            }
-        }
-        
-        // Override the original applyFilters to use the limit version
-        const originalApplyFilters = applyFilters;
-        applyFilters = function() {
-            applyFiltersWithLimit(!showAllParkingEnabled);
-        };
-        
-        // When filters change, reset showAll state
-        document.querySelectorAll('[data-filter]').forEach(btn => {
-            btn.addEventListener('click', function() {
-                showAllParkingEnabled = false;
-            });
-        });
-
-        // Show All Services functionality (mirrors parking)
-        let showAllServicesEnabled = false;
-
-        function showAllServices() {
-            showAllServicesEnabled = true;
-            const c = document.getElementById('showAllServicesContainer');
-            if (c) c.style.display = 'none';
-            applyServiceFiltersWithLimit(false);
-        }
-
-        function applyServiceFiltersWithLimit(limitTo6) {
-            const serviceCards = document.querySelectorAll('.service-card');
-            let visibleCount = 0;
-            let totalMatching = 0;
-
-            serviceCards.forEach(card => {
-                const cardCategory = card.dataset.category;
-                const cardLocation = card.dataset.location || 'nearby';
-
-                const categoryMatch = activeServiceCategory === 'all' || cardCategory === activeServiceCategory;
-                const locationMatch = activeServiceLocation === 'all' || cardLocation === activeServiceLocation;
-
-                if (categoryMatch && locationMatch) {
-                    totalMatching++;
-                    if (limitTo6 && visibleCount >= 6) {
-                        card.classList.add('hidden');
-                        card.style.display = 'none';
-                    } else {
-                        card.classList.remove('hidden');
-                        card.style.display = '';
-                        visibleCount++;
-                    }
-                } else {
-                    card.classList.add('hidden');
-                    card.style.display = 'none';
-                }
-            });
-
-            document.getElementById('serviceResultCount').textContent = totalMatching;
-            document.getElementById('noServiceResults').classList.toggle('visible', totalMatching === 0);
-
-            const c = document.getElementById('showAllServicesContainer');
-            if (c) {
-                if (limitTo6 && totalMatching > 6) {
-                    c.style.display = 'block';
-                    const remaining = totalMatching - 6;
-                    c.querySelector('button').textContent = 'Alle ' + totalMatching + ' Services anzeigen (' + remaining + ' weitere) →';
-                } else {
-                    c.style.display = 'none';
-                }
-            }
-        }
-
-        // Override the original applyServiceFilters to use the limit version
-        applyServiceFilters = function() {
-            applyServiceFiltersWithLimit(!showAllServicesEnabled);
-        };
-
-        // When service filters change, reset showAll state
-        document.querySelectorAll('.service-filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                showAllServicesEnabled = false;
-            });
-        });
-
-        // Run initial service filter with limit
-        applyServiceFilters();
-        
-        // Run initial filter with limit
-        applyFilters();
-
+    })();
     </script>
+
+    <!-- Shown only until the reader answers; see the consent script in <head>. -->
+    <aside class="cookie-consent" id="cookieConsent" role="dialog" aria-modal="false"
+           aria-labelledby="cookieConsentTitle" aria-label="Cookie-Einwilligung" hidden>
+        <h2 id="cookieConsentTitle">Dürfen wir messen, wie dieser Ratgeber genutzt wird?</h2>
+        <p>Wir möchten Analyse-Cookies laden, um zu sehen, welche Parkoptionen verglichen werden, und den Ratgeber zu verbessern. Sie werden nur mit Ihrer Zustimmung geladen. Wenn Sie ablehnen, wird nichts geladen und es werden keine Cookies gesetzt.</p>
+        <div class="cookie-actions">
+            <button type="button" class="cookie-btn primary"
+                    onclick="ParkBUDConsent.accept()">Analyse akzeptieren</button>
+            <button type="button" class="cookie-btn"
+                    onclick="ParkBUDConsent.reject()">Ablehnen</button>
+            <a href="/privacy/">Datenschutz &amp; Cookies</a>
+        </div>
+    </aside>
 </body>
 </html>

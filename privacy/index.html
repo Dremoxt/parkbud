@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy &amp; Cookie Policy | ParkBUD</title>
+    <meta name="description" content="How airportparkingbudapest.info handles personal data and cookies: what is collected, on what basis, how long it is kept, and how to withdraw consent.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://airportparkingbudapest.info/privacy/">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0ea5e9">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --white: #ffffff;
+            --snow: #f8fafc;
+            --cloud: #f1f5f9;
+            --mist: #e2e8f0;
+            --gray: #64748b;
+            --dark: #1e293b;
+            --midnight: #0f172a;
+            --sky: #0ea5e9;
+            --sky-light: #e0f2fe;
+            --sky-dark: #0284c7;
+            --gold-light: #fef3c7;
+            --gold-dark: #d97706;
+            --violet: #8b5cf6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--snow);
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            z-index: 200;
+            padding: 0.75rem 1.25rem;
+            background: var(--sky);
+            color: var(--white);
+            font-weight: 600;
+            border-radius: 0 0 8px 0;
+            text-decoration: none;
+        }
+
+        .skip-link:focus { left: 0; }
+
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--mist);
+            padding: 0.875rem 1.5rem;
+        }
+
+        nav {
+            max-width: 48rem;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--sky), var(--violet));
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .logo-text {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--midnight);
+        }
+
+        .logo-text span { color: var(--sky); }
+
+        .back {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray);
+            text-decoration: none;
+        }
+
+        .back:hover { color: var(--sky); }
+
+        main {
+            max-width: 48rem;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        main:focus { outline: none; }
+
+        h1 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(1.9rem, 5vw, 2.5rem);
+            font-weight: 700;
+            color: var(--midnight);
+            line-height: 1.2;
+        }
+
+        .updated {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--midnight);
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--midnight);
+            margin-top: 1.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        p, li { color: var(--dark); }
+
+        p + p { margin-top: 0.9rem; }
+
+        ul, ol { margin: 0.75rem 0 0 1.35rem; }
+
+        li + li { margin-top: 0.4rem; }
+
+        a { color: var(--sky-dark); }
+
+        a:hover { color: var(--sky); }
+
+        .lede {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        .callout {
+            background: var(--gold-light);
+            border-left: 4px solid var(--gold-dark);
+            border-radius: 0 12px 12px 0;
+            padding: 1.15rem 1.35rem;
+            margin: 1.5rem 0;
+        }
+
+        .callout strong { color: var(--midnight); }
+
+        .panel {
+            background: var(--white);
+            border: 1px solid var(--mist);
+            border-radius: 16px;
+            padding: 1.35rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .table-scroll { overflow-x: auto; margin: 1rem 0; }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 34rem;
+            font-size: 0.92rem;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 0.7rem 0.85rem;
+            border-bottom: 1px solid var(--mist);
+            vertical-align: top;
+        }
+
+        th {
+            background: var(--cloud);
+            font-weight: 700;
+            color: var(--midnight);
+            white-space: nowrap;
+        }
+
+        .cookie-btn {
+            font: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.65rem 1.4rem;
+            border-radius: 50px;
+            border: 1px solid var(--sky);
+            background: var(--sky);
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        .cookie-btn.secondary {
+            background: var(--white);
+            color: var(--dark);
+            border-color: var(--mist);
+        }
+
+        .cookie-btn:hover { background: var(--sky-dark); border-color: var(--sky-dark); color: var(--white); }
+
+        .actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+
+        .status { font-size: 0.9rem; color: var(--gray); margin-top: 0.85rem; }
+
+        footer {
+            border-top: 1px solid var(--mist);
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.88rem;
+        }
+
+        :focus-visible { outline: 3px solid var(--sky-dark); outline-offset: 3px; }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <span class="logo-icon" aria-hidden="true">✈</span>
+                <span class="logo-text">Park<span>BUD</span></span>
+            </a>
+            <a href="/" class="back">← Back to the parking guide</a>
+        </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+        <h1>Privacy &amp; Cookie Policy</h1>
+        <p class="updated">Last updated: 21 August 2026</p>
+
+        <p class="lede">
+            This site is an independent guide to parking at Budapest Ferenc Liszt
+            International Airport. It has no accounts, no bookings and no forms — the
+            only personal data involved is what your browser sends when you open a page,
+            plus analytics that run only if you agree to them.
+        </p>
+
+        <div class="callout">
+            <p>
+                <strong>Note for the site operator:</strong> the controller details below
+                are a placeholder. Under GDPR Article 13 this policy must name the legal
+                entity or person responsible for the site and give a postal address.
+                Replace the marked section before treating this policy as complete, and
+                have it reviewed if you are unsure.
+            </p>
+        </div>
+
+        <h2>Who is responsible for your data</h2>
+        <div class="panel">
+            <p>
+                <strong>Controller:</strong> [OPERATOR LEGAL NAME — to be completed]<br>
+                <strong>Address:</strong> [POSTAL ADDRESS — to be completed]<br>
+                <strong>Email:</strong>
+                <a href="mailto:contact@airportparkingbudapest.info">contact@airportparkingbudapest.info</a>
+            </p>
+        </div>
+
+        <h2>What this site collects</h2>
+
+        <h3>1. Server and hosting logs</h3>
+        <p>
+            The site is served by GitHub Pages. Like any web host, GitHub records requests
+            it serves, which can include your IP address and browser user agent. This
+            happens for every visit and is necessary to deliver the page and keep the
+            service secure and available. See
+            <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub's privacy statement</a>.
+        </p>
+        <p>
+            <strong>Legal basis:</strong> legitimate interest in delivering and securing
+            the site (GDPR Art. 6(1)(f)).
+        </p>
+
+        <h3>2. Web fonts</h3>
+        <p>
+            Typefaces are loaded from Google Fonts, so your browser contacts
+            <code>fonts.googleapis.com</code> and <code>fonts.gstatic.com</code> and those
+            servers receive your IP address. No cookies are set by these requests.
+        </p>
+        <p>
+            <strong>Legal basis:</strong> legitimate interest in presenting the site
+            consistently (GDPR Art. 6(1)(f)).
+        </p>
+
+        <h3>3. Analytics — only with your consent</h3>
+        <p>
+            If you accept analytics, the site loads Google Analytics 4 and Contentsquare.
+            These record how the guide is used — pages viewed, filters selected, how far
+            down the page readers scroll — so the guide can be improved. They set cookies
+            on your device and share data with providers outside the EU.
+        </p>
+        <p>
+            <strong>If you decline, or simply ignore the banner, neither script is loaded
+            and neither sets a cookie.</strong> Nothing about analytics runs before you
+            choose. Google Consent Mode is set to "denied" by default on every page load.
+        </p>
+        <p>
+            <strong>Legal basis:</strong> your consent (GDPR Art. 6(1)(a) and the ePrivacy
+            Directive). You can withdraw it at any time — see below.
+        </p>
+
+        <h2>Cookies and local storage</h2>
+
+        <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Set by</th>
+                        <th scope="col">Purpose</th>
+                        <th scope="col">Retention</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>parkbud:consent</code><br>(local storage, not a cookie)</td>
+                        <td>This site</td>
+                        <td>Remembers whether you accepted or declined analytics, so you are
+                            not asked on every page. Strictly necessary; set regardless of
+                            your choice because it <em>records</em> your choice.</td>
+                        <td>Until you clear your browser storage</td>
+                    </tr>
+                    <tr>
+                        <td><code>_ga</code>, <code>_ga_&lt;id&gt;</code></td>
+                        <td>Google Analytics</td>
+                        <td>Distinguishes visitors and sessions for usage statistics.</td>
+                        <td>Up to 2 years</td>
+                    </tr>
+                    <tr>
+                        <td><code>_cs_*</code></td>
+                        <td>Contentsquare</td>
+                        <td>Session and behaviour analytics.</td>
+                        <td>Up to 13 months</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>
+            The Google Analytics and Contentsquare rows apply only after you accept. If you
+            decline, those cookies are never created, and any left over from an earlier
+            visit are cleared as far as the browser allows.
+        </p>
+
+        <h2>Change your choice</h2>
+        <p>
+            You can accept or withdraw consent at any time. Withdrawing stops any further
+            analytics loading and clears the analytics cookies this site can reach.
+        </p>
+        <div class="actions">
+            <button type="button" class="cookie-btn" id="acceptBtn">Accept analytics</button>
+            <button type="button" class="cookie-btn secondary" id="rejectBtn">Decline / withdraw consent</button>
+        </div>
+        <p class="status" id="consentStatus">Checking your current setting…</p>
+
+        <h2>Who your data is shared with</h2>
+        <p>
+            The site sells nothing and shares nothing for marketing. Data reaches only the
+            service providers needed to run it:
+        </p>
+        <ul>
+            <li><strong>GitHub, Inc.</strong> — hosting (always).</li>
+            <li><strong>Google (Fonts)</strong> — typefaces (always).</li>
+            <li><strong>Google (Analytics 4)</strong> — usage statistics (only with consent).</li>
+            <li><strong>Contentsquare SAS</strong> — usage analytics (only with consent).</li>
+        </ul>
+        <p>
+            Google and GitHub are based in the United States and may process data there
+            under the EU–US Data Privacy Framework or standard contractual clauses.
+        </p>
+
+        <h2>Links to parking operators</h2>
+        <p>
+            The guide links to parking operators, the airport, and transport providers. Once
+            you follow a link you are on that company's site, under their privacy policy,
+            not this one. This site receives no commission data or booking details back
+            from them.
+        </p>
+
+        <h2>Your rights</h2>
+        <p>
+            If you are in the EU or EEA you have the right to access, rectify or erase your
+            personal data, to restrict or object to processing, to data portability, and to
+            withdraw consent at any time without affecting processing already carried out.
+            Write to
+            <a href="mailto:contact@airportparkingbudapest.info">contact@airportparkingbudapest.info</a>
+            to exercise any of these.
+        </p>
+        <p>
+            You also have the right to complain to a supervisory authority. In Hungary this
+            is the Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH),
+            <a href="https://naih.hu" target="_blank" rel="noopener noreferrer">naih.hu</a>.
+        </p>
+
+        <h2>Children</h2>
+        <p>
+            This site is aimed at adults planning airport parking. It does not knowingly
+            collect data from children.
+        </p>
+
+        <h2>Changes to this policy</h2>
+        <p>
+            If the site starts using a new service that processes personal data, this page
+            is updated and the date at the top changes. Material changes to analytics will
+            ask for consent again.
+        </p>
+    </main>
+
+    <footer>
+        <p>© 2026 Budapest Airport Parking Guide. Independent resource. Not affiliated with Budapest Airport.</p>
+    </footer>
+
+    <script>
+    (function (w, d) {
+        'use strict';
+
+        var STORAGE_KEY = 'parkbud:consent';
+        var status = d.getElementById('consentStatus');
+
+        function read() {
+            try { return w.localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+        }
+
+        function write(value) {
+            try { w.localStorage.setItem(STORAGE_KEY, value); return true; }
+            catch (e) { return false; }
+        }
+
+        /* Best effort: clear what this document can reach. */
+        function clearAnalyticsCookies() {
+            var host = d.location.hostname;
+            var domains = ['', host, '.' + host];
+            var parts = host.split('.');
+            if (parts.length > 2) domains.push('.' + parts.slice(-2).join('.'));
+
+            d.cookie.split(';').forEach(function (entry) {
+                var name = entry.split('=')[0].trim();
+                if (!/^(_ga|_gid|_gat|_cs|_uetsid)/.test(name)) return;
+                domains.forEach(function (domain) {
+                    d.cookie = name + '=; Max-Age=0; path=/' + (domain ? '; domain=' + domain : '');
+                });
+            });
+        }
+
+        function render() {
+            var choice = read();
+            if (choice === 'granted') {
+                status.textContent = 'Analytics are currently accepted on this browser.';
+            } else if (choice === 'denied') {
+                status.textContent = 'Analytics are currently declined on this browser. Nothing is loaded.';
+            } else {
+                status.textContent = 'You have not chosen yet. Until you do, no analytics are loaded.';
+            }
+        }
+
+        d.getElementById('acceptBtn').addEventListener('click', function () {
+            if (!write('granted')) {
+                status.textContent = 'Your browser is blocking local storage, so the choice cannot be saved here.';
+                return;
+            }
+            status.textContent = 'Saved. Analytics will load the next time you open the guide.';
+        });
+
+        d.getElementById('rejectBtn').addEventListener('click', function () {
+            clearAnalyticsCookies();
+            if (!write('denied')) {
+                status.textContent = 'Your browser is blocking local storage, so the choice cannot be saved — but nothing is loaded either way.';
+                return;
+            }
+            status.textContent = 'Saved. Analytics are declined and the analytics cookies have been cleared.';
+        });
+
+        render();
+    })(window, document);
+    </script>
+</body>
+</html>
