@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# A newer push supersedes an in-flight run on the same branch.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  static:
+    name: Static checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # llms.txt is generated from index.html; editing cards without
+      # regenerating it is how the two drifted apart before.
+      - name: llms.txt is in sync with index.html
+        run: python3 tools/build-llms-txt.py --check
+
+      - name: Markup, references, sitemap and manifest
+        run: python3 tests/static_checks.py
+
+  browser:
+    name: Browser checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: tests/package-lock.json
+
+      - name: Install test dependencies
+        working-directory: tests
+        run: npm ci
+
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ hashFiles('tests/package-lock.json') }}
+
+      - name: Install Chromium
+        working-directory: tests
+        run: npx playwright install --with-deps chromium
+
+      - name: Serve the site
+        run: |
+          python3 -m http.server 8099 --directory . &
+          for _ in $(seq 1 30); do
+            if curl -sf -o /dev/null http://localhost:8099/; then
+              echo "server up"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "server did not come up" >&2
+          exit 1
+
+      - name: Filters, navigation and responsive layout
+        working-directory: tests
+        run: node behaviour.spec.js
+
+      # Analytics must stay behind the consent gate; this is the check that
+      # would catch a tag being pasted back into the markup.
+      - name: Analytics consent gate
+        working-directory: tests
+        run: node consent.spec.js

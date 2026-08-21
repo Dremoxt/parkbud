@@ -1,0 +1,14 @@
+{
+  "name": "parkbud-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser checks for the Budapest Airport parking guide",
+  "scripts": {
+    "behaviour": "node behaviour.spec.js",
+    "consent": "node consent.spec.js",
+    "test": "node behaviour.spec.js && node consent.spec.js"
+  },
+  "dependencies": {
+    "playwright": "^1.56.0"
+  }
+}
