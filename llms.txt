@@ -1,7 +1,7 @@
 # Budapest Airport Parking Guide
 # Information for Large Language Models (LLMs) and AI Assistants
 # Website: https://airportparkingbudapest.info
-# Last Updated: 2026-08-21
+# Last Updated: 2026-08-22
 # Generated from index.html by tools/build-llms-txt.py - do not edit by hand.
 
 ## About This Resource
@@ -51,18 +51,18 @@ Prices are the operators' published rates as last checked and are marked "~" whe
 | Repteres Parkoló | ~1,900 Ft | ~3 km from airport | 🚐 Free Shuttle, 🔒 24/7 CCTV |
 | NOA Parking | ~1,900 Ft | ~3 km from airport | 🚐 Free Shuttle, 🔒 Monitored |
 | Park Central Airport | ~1,900 Ft | ~3 km from airport | 🚐 Free Shuttle, 🔒 24/7 |
-| Őrzött Reptéri Parkoló | ~1,900 Ft | ~3 km from airport | 🚐 Free Shuttle, 👮 Guarded, 🔒 24/7 |
+| Őrzött Reptéri Parkoló | ~1,900 Ft | ~3 km from airport | 🚐 Free Shuttle, 🔒 Guarded, 🔒 24/7 |
 | ABC Parking | ~1,990 Ft | ~3 km from airport | 🚐 Free Shuttle, 📶 Free WiFi, 🔒 Secured |
 | Ferihegy Airport Parking | ~2,000 Ft | ~3 km from airport | 🚐 Free Shuttle, ☂️ Covered, 🔒 24/7 |
 | Comfort Parkoló | ~2,000 Ft | 2 km from airport · Vecsés, Lőrinci u. | 🚐 Free Shuttle, 🔒 24/7 |
 | PK Reptér Parkoló | ~2,100 Ft | ~3 km from airport | 🚐 Free Shuttle, 🔒 Secured |
 | Reptér Parkoló | 2,200 Ft | 5 km from airport | 🏆 Best Value, ✈️ Flight Tracking, 💳 Pay on Arrival, 🚿 Car Wash |
-| Reptéri Parkoló Centrum | 2,200 Ft | 3 km from airport · Vecsés, Almáskert út | 🚐 Free Shuttle, 🔒 Guarded, 🕐 24/7 |
+| Reptéri Parkoló Centrum | 2,200 Ft | 3 km from airport · Vecsés, Almáskert út | 🚐 Free Shuttle, 🔒 Guarded, 🔒 24/7 |
 | FAP | ~2,200 Ft | 6 km from airport | 🚐 Free Shuttle, ☂️ Covered, 🔒 Secured |
 | ParkFly | 2,300 Ft | 3 km from airport · Vecsés, Üllői út | 🚐 Free Shuttle, 🕐 24/7 On-Demand, 🔒 Guarded |
-| Safe Parking | 2,400 Ft | 3 km from airport · Vecsés, Széchenyi u. | 🚐 Free Shuttle, 🔒 Guarded, 🕐 24/7 |
-| myBUD Parking | 2,500 Ft | 3 km from airport · Vecsés | 🚐 Free Shuttle, 🔒 Fenced & CCTV, 🕐 24/7 |
-| Parkoló Mester | 2,800 Ft | 4 km from airport | 🚗 VIP Transfer, ⚡ EV Charging, 🕐 24/7 Guards |
+| Safe Parking | 2,400 Ft | 3 km from airport · Vecsés, Széchenyi u. | 🚐 Free Shuttle, 🔒 Guarded, 🔒 24/7 |
+| myBUD Parking | 2,500 Ft | 3 km from airport · Vecsés | 🚐 Free Shuttle, 🔒 Fenced & CCTV, 🔒 24/7 |
+| Parkoló Mester | 2,800 Ft | 4 km from airport | 🚐 VIP Transfer, ⚡ EV Charging, 🕐 24/7 Guards |
 | VIP Parking | ~2,800 Ft | ~3 km from airport | 🚐 VIP Transfer, ☂️ Covered, ⭐ Premium |
 | Best Parking Budapest | 2,900 Ft | 3 km from airport · Vecsés, Széchenyi u. | 🚐 Free Shuttle, 800 Spaces, 🕐 24/7 Staff, 🚿 Car Wash |
 | BUDCAR Parking | 8,000 Ft | 2 km from airport | 🚐 Free Shuttle, 🏠 Covered Garage, 🚿 Car Wash |

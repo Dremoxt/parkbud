@@ -26,6 +26,12 @@ jobs:
         with:
           python-version: '3.12'
 
+      # The parking rows on all seven pages are written from data/lots.csv.
+      # Hand-editing one page is how the prices, names and service tags drifted
+      # apart in the first place; this is the check that catches it.
+      - name: Parking rows match data/lots.csv
+        run: python3 tools/build-lots.py --check
+
       # llms.txt is generated from index.html; editing cards without
       # regenerating it is how the two drifted apart before.
       - name: llms.txt is in sync with index.html

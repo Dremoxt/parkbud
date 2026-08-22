@@ -139,13 +139,13 @@ def check_analytics_gated(rel: str, src: str) -> None:
 
 
 def check_verified_prices(rel: str, src: str) -> None:
-    """Rows verified in data/prices.csv must reach the page, and only those.
+    """Rows verified in data/lots.csv must reach the page, and only those.
 
     A lot may show a range only when someone recorded the date they read the
     operator's site. Everything else keeps the figure the page already had.
     """
     import csv as _csv
-    path = ROOT / "data" / "prices.csv"
+    path = ROOT / "data" / "lots.csv"
     if not path.exists():
         ok("%s: no price data to check" % rel)
         return
