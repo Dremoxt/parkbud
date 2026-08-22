@@ -93,7 +93,32 @@ run('BEHAVIOUR', async r => {
     r.check(tag, 'clearing search restores every lot',
       (await page.locator('.lot:not(.hidden)').count()) === total);
 
-    // --- filter sheet ---
+    // --- desktop: the filters are a permanent left column, not a modal ---
+    r.check(tag, 'filter sidebar is visible without opening',
+      await page.locator('#filterSheet').isVisible());
+    r.check(tag, 'no modal opener on desktop',
+      !(await page.locator('#filterOpen').isVisible()));
+    r.check(tag, 'sidebar drops its dialog role',
+      (await page.getAttribute('#filterSheet', 'role')) === null);
+    const sideBox = await page.locator('#filterSheet').boundingBox();
+    const listBox = await page.locator('#parkingGrid').boundingBox();
+    r.check(tag, 'sidebar sits left of the results, not over them',
+      sideBox.x + sideBox.width <= listBox.x + 1,
+      `${Math.round(sideBox.x + sideBox.width)} vs ${Math.round(listBox.x)}`);
+    r.check(tag, 'sidebar filters the list in place', await (async () => {
+      await page.locator('.sheet-opt[data-value="official"] .label').click();
+      await page.waitForTimeout(300);
+      const n = await page.locator('.lot:not(.hidden)').count();
+      await page.locator('#filterClear').click();
+      await page.waitForTimeout(300);
+      return n === 5 && (await page.locator('.lot:not(.hidden)').count()) === total;
+    })());
+
+    // --- phone: the same filters come back as a modal sheet ---
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.waitForTimeout(250);
+    r.check(tag, 'filter sheet starts closed on a phone',
+      !(await page.locator('#filterSheet').isVisible()));
     await page.locator('#filterOpen').click();
     await page.waitForTimeout(250);
     r.check(tag, 'filter sheet opens', await page.locator('#filterSheet').isVisible());
@@ -158,6 +183,12 @@ run('BEHAVIOUR', async r => {
     await page.keyboard.press('Escape');
     await page.waitForTimeout(200);
     r.check(tag, 'Escape closes the sheet', !(await page.locator('#filterSheet').isVisible()));
+
+    // back to desktop, where the sidebar has to come back on its own
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.waitForTimeout(250);
+    r.check(tag, 'sidebar returns when the viewport widens again',
+      await page.locator('#filterSheet').isVisible());
 
     // --- row expansion keeps the detail the old card carried ---
     const toggle = page.locator('.lot-toggle').first();
@@ -224,6 +255,39 @@ run('BEHAVIOUR', async r => {
     r.check(tag, 'hamburger sits inside the viewport',
       box !== null && box.x >= 0 && box.x + box.width <= 390,
       box ? `x=${Math.round(box.x)}` : 'no box');
+
+    // The picker used to take a second header row, and the results toolbar
+    // then started ~1,440px down the page.
+    const tops = await page.locator('.lang-link').evaluateAll(els =>
+      [...new Set(els.map(e => Math.round(e.getBoundingClientRect().top)))]);
+    r.check(tag, 'language pills stay on one row', tops.length === 1, tops.join(','));
+
+    // the strip scrolls on a narrow phone; the current language must not be
+    // the chip that gets scrolled out of sight
+    const activeChip = await page.locator('.lang-link.active').evaluate(e => {
+      const strip = e.parentNode.getBoundingClientRect(), c = e.getBoundingClientRect();
+      return c.left >= strip.left - 1 && c.right <= strip.right + 1;
+    });
+    r.check(tag, 'current language chip is in view', activeChip);
+
+    const headerH = await page.locator('header').evaluate(e => e.getBoundingClientRect().height);
+    r.check(tag, 'header is a single row on a phone', headerH <= 80, `${Math.round(headerH)}px`);
+
+    // "30+", "16km" are single tokens; they must never break.
+    const wrapped = await page.locator('.stat-value').evaluateAll(els =>
+      els.filter(e => e.getBoundingClientRect().height >
+        parseFloat(getComputedStyle(e).lineHeight || 0) * 1.5).map(e => e.textContent.trim()));
+    r.check(tag, 'stat figures render on one line', wrapped.length === 0, wrapped.join(', '));
+
+    // measure a first load, not the transport panel the assertions above left open
+    if (await page.locator('#transportBarContent').isVisible()) {
+      await page.locator('.transport-toggle').click();
+      await page.waitForTimeout(250);
+    }
+    const toolbarTop = await page.evaluate(() =>
+      Math.round(document.querySelector('.results-toolbar').getBoundingClientRect().top + window.scrollY));
+    r.check(tag, 'filters are reachable without a long scroll', toolbarTop <= 1150,
+      `${toolbarTop}px`);
 
     await page.locator('button.mobile-toggle').click();
     await page.waitForTimeout(200);
