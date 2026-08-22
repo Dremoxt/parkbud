@@ -327,6 +327,86 @@ run('BEHAVIOUR', async r => {
     }
 
     await context.close();
+
+    // --- usage events, once analytics has been agreed to ---
+    // Everything above ran with no consent decision, so nothing was measured;
+    // that half of the contract is asserted in consent.spec.js.
+    const measured = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+    await r.isolate(measured);
+    await measured.addInitScript(() => {
+      try { localStorage.setItem('parkbud:consent', 'granted'); } catch (e) { /* private mode */ }
+    });
+    const mp = await measured.newPage();
+    // The booking link opens a tab; it has nowhere to go under isolate().
+    // Registered after mp exists, or this would close mp itself.
+    measured.on('page', p => { if (p !== mp) p.close().catch(() => {}); });
+    await mp.goto(r.baseUrl + path, { waitUntil: 'domcontentloaded' });
+    await mp.waitForTimeout(400);
+
+    const readEvents = () => (window.dataLayer || []).map(a => Array.from(a))
+      .filter(a => a[0] === 'event').map(a => ({ name: a[1], p: a[2] || {} }));
+    const last = async name =>
+      (await mp.evaluate(readEvents)).filter(e => e.name === name).pop();
+
+    await mp.locator('.sheet-opt[data-value="official"] .label').click();
+    await mp.waitForTimeout(250);
+    const picked = await last('filter_select');
+    r.check(tag, 'picking a filter is measured',
+      picked && picked.p.filter_kind === 'type' && picked.p.filter_value === 'official' &&
+      picked.p.results_shown === 5, JSON.stringify(picked));
+    r.check(tag, 'events carry the page language',
+      picked && picked.p.page_language === tag, picked && picked.p.page_language);
+
+    await mp.locator('.sheet-opt[data-value="official"] .label').click();
+    await mp.waitForTimeout(250);
+    const dropped = await last('filter_deselect');
+    r.check(tag, 'dropping a filter is measured',
+      dropped && dropped.p.filter_value === 'official' && dropped.p.results_shown === total,
+      JSON.stringify(dropped));
+
+    await mp.locator('.sort-btn[data-sort="distance"]').click();
+    await mp.waitForTimeout(250);
+    const sorted = await last('sort_change');
+    r.check(tag, 'changing the sort is measured',
+      sorted && sorted.p.sort_by === 'distance', JSON.stringify(sorted));
+
+    // clicking the sort already in force is not a change, so it is not an event
+    const sortsBefore = (await mp.evaluate(readEvents)).filter(e => e.name === 'sort_change').length;
+    await mp.locator('.sort-btn[data-sort="distance"]').click();
+    await mp.waitForTimeout(250);
+    const sortsAfter = (await mp.evaluate(readEvents)).filter(e => e.name === 'sort_change').length;
+    r.check(tag, 're-pressing the active sort is not counted', sortsBefore === sortsAfter,
+      `${sortsBefore} -> ${sortsAfter}`);
+
+    const firstToggle = mp.locator('.lot-toggle').first();
+    await firstToggle.click();
+    await mp.waitForTimeout(250);
+    const expanded = await last('lot_expand');
+    r.check(tag, 'opening a lot is measured',
+      expanded && expanded.p.lot_id && expanded.p.list_position === 1,
+      JSON.stringify(expanded));
+
+    // the id must be the language-independent one, not the translated name
+    const shownName = (await mp.locator('.lot:not(.hidden) .lot-name').first().textContent()).trim();
+    r.check(tag, 'lot id is not the translated name',
+      expanded && expanded.p.lot_id !== shownName, expanded && expanded.p.lot_id);
+
+    const openBody = await firstToggle.getAttribute('aria-controls');
+    const link = mp.locator('#' + openBody + ' .card-link');
+    const href = await link.getAttribute('href');
+    await link.click();
+    await mp.waitForTimeout(300);
+    const booked = await last('booking_click');
+    r.check(tag, 'the click through to the operator is measured',
+      booked && booked.p.lot_id === expanded.p.lot_id &&
+      href.indexOf(booked.p.link_domain) !== -1 &&
+      booked.p.link_url === href,
+      JSON.stringify(booked));
+    r.check(tag, 'booking event records the sort and filters in force',
+      booked && booked.p.sort_by === 'distance' && booked.p.active_filters === '',
+      booked && `${booked.p.sort_by} / ${booked.p.active_filters}`);
+
+    await measured.close();
   }
 
   await browser.close();
