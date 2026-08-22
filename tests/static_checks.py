@@ -212,6 +212,58 @@ def check_lot_data(rel: str, src: str) -> None:
         ok("%s: all %d lots carry price and distance data" % (rel, len(lots)))
 
 
+def check_analytics_events(rel: str, src: str) -> None:
+    """Usage events must exist, and must go out through the consent gate.
+
+    An event pushed onto dataLayer before the reader has agreed is not
+    harmless: gtag.js replays whatever is already queued the moment it loads.
+    """
+    if "w.ParkBUDTrack = function" not in src:
+        fail("%s: no event helper" % rel)
+        return
+
+    helper = src[src.index("w.ParkBUDTrack = function"):][:400]
+    if "read() !== 'granted'" not in helper:
+        fail("%s: the event helper does not check the stored consent" % rel)
+        return
+
+    missing = [name for name in ("filter_select", "filter_deselect", "filter_clear",
+                                 "sort_change", "booking_click", "lot_expand")
+               if "'%s'" % name not in src]
+    if missing:
+        fail("%s: events missing: %s" % (rel, ", ".join(missing)))
+        return
+
+    lots = re.findall(r'<article class="lot"([^>]*)>', src)
+    unnamed = [a for a in lots if 'data-lot-id="' not in a]
+    if unnamed:
+        fail("%s: %d lot(s) have no stable id to report on" % (rel, len(unnamed)))
+    else:
+        ok("%s: consent-gated events on all %d lots" % (rel, len(lots)))
+
+
+def check_lot_ids_match() -> None:
+    """The same lot must carry the same id in all seven languages.
+
+    Reporting is grouped by this id; if it drifted per page, every lot would
+    appear as seven separate rows in GA4.
+    """
+    reference = None
+    for rel in LANG_PAGES:
+        src = (ROOT / rel).read_text(encoding="utf-8")
+        ids = re.findall(r'data-lot-id="([^"]+)"', src)
+        if reference is None:
+            reference = (rel, ids)
+            continue
+        if ids != reference[1]:
+            first = next((i for i, (a, b) in enumerate(zip(ids, reference[1])) if a != b),
+                         min(len(ids), len(reference[1])))
+            fail("%s: lot ids differ from %s at position %d"
+                 % (rel, reference[0], first + 1))
+            return
+    ok("lot ids are identical across all %d language pages" % len(LANG_PAGES))
+
+
 def check_content_preserved(rel: str, src: str) -> None:
     """The expandable body must still carry what the old card showed."""
     lots = len(re.findall(r'class="lot"[ >]', src))
@@ -367,11 +419,13 @@ def main() -> int:
             check_no_derived_totals(rel, src)
             check_verified_prices(rel, src)
             check_lot_data(rel, src)
+            check_analytics_events(rel, src)
             check_content_preserved(rel, src)
             check_accessibility_basics(rel, src)
             check_counts_match_cards(rel, src)
             check_hreflang(rel, src)
 
+    check_lot_ids_match()
     check_sitemap()
     check_manifest()
     check_no_stripped_characters()

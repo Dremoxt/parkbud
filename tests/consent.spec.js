@@ -22,6 +22,20 @@ const injectedTrackers = () => document.querySelectorAll(
 
 const consentCalls = () => (window.dataLayer || []).map(a => Array.from(a));
 
+const usageEvents = () => (window.dataLayer || [])
+  .map(a => Array.from(a)).filter(a => a[0] === 'event').map(a => a[1]);
+
+/* Driven through the elements rather than the mouse: what is under test here
+ * is the gate, not hit-testing, and the banner itself covers part of the page.
+ */
+const useTheResults = () => {
+  document.querySelector('.sheet-opt input[data-value="official"]').click();
+  document.querySelector('.sort-btn[data-sort="distance"]').click();
+  document.querySelector('.lot-toggle').click();
+  document.querySelector('.lot:not(.hidden) .card-link').dispatchEvent(
+    new MouseEvent('click', { bubbles: true, cancelable: true }));
+};
+
 run('CONSENT GATE', async r => {
   const browser = await chromium.launch(LAUNCH);
 
@@ -65,6 +79,15 @@ run('CONSENT GATE', async r => {
     r.check(tag, 'accept and decline are both offered up front',
       (await buttons.count()) === 2);
 
+    // Using the page must not queue anything for GA4 either: gtag.js replays
+    // whatever is already sitting in dataLayer the moment it loads, so an
+    // event pushed "harmlessly" before a decision is sent after one.
+    await page.evaluate(useTheResults);
+    await page.waitForTimeout(300);
+    let queued = await page.evaluate(usageEvents);
+    r.check(tag, 'no usage event queued before a decision', queued.length === 0,
+      queued.join(','));
+
     // ---------- 2. Decline ----------
     await buttons.nth(1).click();
     await page.waitForTimeout(600);
@@ -74,6 +97,11 @@ run('CONSENT GATE', async r => {
     r.check(tag, 'still no tracker request after declining', hits.length === 0, hits.join(', '));
     r.check(tag, 'decline is stored',
       (await page.evaluate(k => localStorage.getItem(k), STORAGE_KEY)) === 'denied');
+
+    await page.evaluate(useTheResults);
+    await page.waitForTimeout(300);
+    queued = await page.evaluate(usageEvents);
+    r.check(tag, 'no usage event after declining', queued.length === 0, queued.join(','));
 
     const revisitHits = [];
     const revisit = await context.newPage();
@@ -101,6 +129,16 @@ run('CONSENT GATE', async r => {
     r.check(tag, 'both tracker scripts injected after accepting',
       (await page.evaluate(injectedTrackers)) === 2);
     r.check(tag, 'tracker requests attempted after accepting', acceptHits.length > 0);
+
+    // the other half of the contract: after a yes, usage does get measured
+    await page.evaluate(useTheResults);
+    await page.waitForTimeout(300);
+    const measured = await page.evaluate(usageEvents);
+    r.check(tag, 'usage is measured once accepted',
+      ['filter_select', 'sort_change', 'lot_expand', 'booking_click']
+        .every(name => measured.indexOf(name) !== -1),
+      measured.join(','));
+
     r.check(tag, 'accept is stored',
       (await page.evaluate(k => localStorage.getItem(k), STORAGE_KEY)) === 'granted');
     r.check(tag, 'consent mode updated to granted',
