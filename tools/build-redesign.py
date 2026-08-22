@@ -10,6 +10,12 @@ tags and filter labels are read from each page and carried across unchanged.
 Only the small set of strings genuinely new to this design is translated here.
 
 Usage:  python3 tools/build-redesign.py
+
+
+SUPERSEDED. The lot rows now come from data/lots.csv via
+tools/build-lots.py; data/prices.csv is gone and this script cannot
+run against a built page anyway. Kept only as the record of how the
+redesign was applied.
 """
 from __future__ import annotations
 
