@@ -192,7 +192,11 @@ def main(argv):
         path = os.path.join(ROOT, rel)
         src = open(path, encoding="utf-8").read()
         blocks = re.findall(r'<article class="lot".*?</article>', src, re.S)
-        if len(blocks) != len(lots):
+        if len(blocks) > len(lots):
+            print("%s has %d lots, data/lots.csv has only %d — remove extra HTML blocks first"
+                  % (rel, len(blocks), len(lots)))
+            return 1
+        if not write and len(blocks) != len(lots):
             print("%s has %d lots, data/lots.csv has %d"
                   % (rel, len(blocks), len(lots)))
             return 1
@@ -200,9 +204,11 @@ def main(argv):
         built = [render(lot, texts[lot["lot_id"]], labels, ui, code, i + 1)
                  for i, lot in enumerate(lots)]
 
-        if blocks == built:
+        new_lots = built[len(blocks):]   # articles not yet in the HTML
+        if blocks == built[:len(blocks)] and not new_lots:
             continue
-        stale.append((rel, sum(1 for a, b in zip(blocks, built) if a != b)))
+        changed = sum(1 for a, b in zip(blocks, built) if a != b)
+        stale.append((rel, changed + len(new_lots)))
 
         if write:
             out, at = [], 0
@@ -211,6 +217,9 @@ def main(argv):
                 out.append(src[at:found])
                 out.append(new)
                 at = found + len(block)
+            # Insert new articles (not yet in HTML) before the rest of the file
+            for new in new_lots:
+                out.append("\n            " + new)
             out.append(src[at:])
             open(path, "w", encoding="utf-8").write("".join(out))
 
