@@ -36,7 +36,7 @@ run('BEHAVIOUR', async r => {
     r.check(tag, 'no JS errors', real.length === 0, real.join(' | '));
 
     const total = await page.locator('.lot').count();
-    r.check(tag, 'every lot is listed', total === 33, `${total}`);
+    r.check(tag, 'every lot is listed', total === 45, `${total}`);
     r.check(tag, 'all lots visible before filtering',
       (await page.locator('.lot:not(.hidden)').count()) === total);
 
@@ -111,7 +111,7 @@ run('BEHAVIOUR', async r => {
       const n = await page.locator('.lot:not(.hidden)').count();
       await page.locator('#filterClear').click();
       await page.waitForTimeout(300);
-      return n === 5 && (await page.locator('.lot:not(.hidden)').count()) === total;
+      return n === 6 && (await page.locator('.lot:not(.hidden)').count()) === total;
     })());
 
     // --- phone: the same filters come back as a modal sheet ---
@@ -129,18 +129,18 @@ run('BEHAVIOUR', async r => {
     const counts = await page.locator('.sheet-opt').evaluateAll(els =>
       els.map(e => ({ v: e.dataset.value, n: parseInt(e.querySelector('[data-count]').textContent, 10) })));
     r.check(tag, 'every filter option shows a count',
-      counts.length === 8 && counts.every(c => Number.isFinite(c.n)),
+      counts.length === 9 && counts.every(c => Number.isFinite(c.n)),
       JSON.stringify(counts));
     const official = counts.find(c => c.v === 'official');
-    r.check(tag, 'official count matches the markup', official && official.n === 5,
+    r.check(tag, 'official count matches the markup', official && official.n === 6,
       official && String(official.n));
 
     await page.locator('.sheet-opt[data-value="official"] .label').click();
     await page.waitForTimeout(300);
     r.check(tag, 'filtering narrows the list',
-      (await page.locator('.lot:not(.hidden)').count()) === 5);
+      (await page.locator('.lot:not(.hidden)').count()) === 6);
     r.check(tag, 'apply button names the result count',
-      (await page.locator('#applyCount').textContent()).trim() === '5');
+      (await page.locator('#applyCount').textContent()).trim() === '6');
     r.check(tag, 'only the chosen type remains',
       (await page.locator('.lot:not(.hidden):not([data-type="official"])').count()) === 0);
 
@@ -353,7 +353,7 @@ run('BEHAVIOUR', async r => {
     const picked = await last('filter_select');
     r.check(tag, 'picking a filter is measured',
       picked && picked.p.filter_kind === 'type' && picked.p.filter_value === 'official' &&
-      picked.p.results_shown === 5, JSON.stringify(picked));
+      picked.p.results_shown === 6, JSON.stringify(picked));
     r.check(tag, 'events carry the page language',
       picked && picked.p.page_language === tag, picked && picked.p.page_language);
 
