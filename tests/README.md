@@ -19,6 +19,14 @@ fails the build — that drift is how the two fell out of sync before.
 ## Running locally
 
 ```sh
+tools/dev.sh setup                  # once per clone
+tools/dev.sh test                   # everything CI runs
+tools/dev.sh check                  # just the fast checks, no browser
+```
+
+Or the same thing by hand:
+
+```sh
 python3 tests/static_checks.py      # no browser needed
 
 cd tests
@@ -26,6 +34,10 @@ npm ci
 npx playwright install chromium     # once
 npm test                            # behaviour + consent
 ```
+
+The whole local workflow — serving the site, rebuilding what is generated,
+pushing once it is green — is in
+[`docs/local-development.md`](../docs/local-development.md).
 
 Each browser suite serves the repository itself on an ephemeral port, so
 there is nothing to start first and no port to collide with. Set `BASE_URL`

@@ -12,6 +12,10 @@ HTML files.
 2. Run `python3 tools/build-lots.py --write`.
 3. Commit both the CSV and the changed HTML.
 
+Working from a clone instead of github.com — edit, preview the change in a
+browser, run the checks, push once it looks right — is described in
+[`docs/local-development.md`](../docs/local-development.md).
+
 If you edit the CSV and forget step 2, CI tells you and prints the command.
 If you edit the HTML by hand, CI tells you that too — your edit would be
 overwritten the next time anyone runs the build, so it belongs in the CSV.
