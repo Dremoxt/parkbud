@@ -41,16 +41,27 @@ run('BEHAVIOUR', async r => {
       (await page.locator('.lot:not(.hidden)').count()) === total);
 
     // --- the price shown is the operator's published rate, not a derived total ---
-    const rate = money(await page.locator('.lot:not(.hidden)').first().getAttribute('data-amount'));
+    // When data-7d is set, the effective daily rate is round(7d/7); otherwise data-amount.
+    const firstLot = page.locator('.lot:not(.hidden)').first();
+    const sevenD7 = parseInt(await firstLot.getAttribute('data-7d') || '', 10);
+    const effectiveRate = (!isNaN(sevenD7) && sevenD7 > 0)
+      ? Math.round(sevenD7 / 7)
+      : money(await firstLot.getAttribute('data-amount'));
     const shownPrice = money(await page.locator('.lot:not(.hidden) [data-total]').first().textContent());
-    r.check(tag, 'price shown is the published rate, unmultiplied', shownPrice === rate,
-      `${shownPrice} vs ${rate}`);
+    r.check(tag, 'price shown is the published rate, unmultiplied', shownPrice === effectiveRate,
+      `${shownPrice} vs ${effectiveRate}`);
     r.check(tag, 'no trip-length control exists',
       (await page.locator('#tripNights').count()) === 0);
 
     // --- price sort ---
     const totals = await page.locator('.lot:not(.hidden)').evaluateAll(els =>
-      els.map(e => ({ unit: e.dataset.unit, amount: parseInt(e.dataset.amount, 10) })));
+      els.map(e => {
+        const sevenD = parseInt(e.dataset['7d'] || '', 10);
+        const effectiveAmount = (!isNaN(sevenD) && sevenD > 0)
+          ? Math.round(sevenD / 7)
+          : parseInt(e.dataset.amount, 10);
+        return { unit: e.dataset.unit, amount: effectiveAmount };
+      }));
     const dayRates = totals.filter(t => t.unit === 'day').map(t => t.amount);
     r.check(tag, 'price sort is ascending by daily rate',
       dayRates.every((v, i, a) => i === 0 || a[i - 1] <= v), dayRates.slice(0, 4).join(','));

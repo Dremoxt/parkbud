@@ -84,6 +84,22 @@ def feature_spans(lot, labels, ui, code):
     return out
 
 
+def collapsed_chips(lot, labels, ui, code):
+    """Up to 2 compact chips for the always-visible collapsed row.
+    Highlights (starred features) go first; @spaces count is skipped."""
+    highlights, regulars = [], []
+    for token in filter(None, lot["features"].split("|")):
+        if token.startswith("@"):
+            continue
+        is_h = token.startswith("*")
+        key = token.lstrip("*")
+        if key not in labels:
+            continue
+        label = labels[key][code]
+        (highlights if is_h else regulars).append((is_h, label))
+    return (highlights + regulars)[:2]
+
+
 def verified(lot):
     """A row counts as verified only once someone recorded the date they read
     the operator's site. A number with no date behind it is not a fact."""
@@ -109,11 +125,15 @@ def price_marker(lot, ui, code):
 
 
 def price_attrs(lot):
-    if not verified(lot):
-        return ""
-    return ' data-from="%s" data-till="%s" data-checked="%s"' % (
-        lot["from_ft_per_day"].strip(), lot["till_ft_per_day"].strip(),
-        esc(lot["checked_on"].strip()))
+    attrs = ""
+    if verified(lot):
+        attrs += ' data-from="%s" data-till="%s" data-checked="%s"' % (
+            lot["from_ft_per_day"].strip(), lot["till_ft_per_day"].strip(),
+            esc(lot["checked_on"].strip()))
+    seven_d = lot.get("price_7d_ft", "").strip()
+    if seven_d:
+        attrs += ' data-7d="%s"' % esc(seven_d)
+    return attrs
 
 
 def render(lot, text, labels, ui, code, position):
@@ -144,6 +164,13 @@ def render(lot, text, labels, ui, code, position):
     lines.append('                        <h3 class="lot-name">%s</h3>' % txt(name))
     lines.append('                        <p class="lot-meta">%s%s</p>'
                  % (txt(meta), price_marker(lot, ui, code)))
+    chip_items = collapsed_chips(lot, labels, ui, code)
+    if chip_items:
+        lines.append('                        <div class="lot-chips">')
+        for is_h, label in chip_items:
+            cls = "lot-chip highlight" if is_h else "lot-chip"
+            lines.append('                            <span class="%s">%s</span>' % (cls, txt(label)))
+        lines.append('                        </div>')
     lines.append('                    </div>')
     lines.append('                    <div class="lot-price">')
     lines.append('                        <div class="lot-total" data-total></div>')

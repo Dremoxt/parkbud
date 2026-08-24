@@ -2116,6 +2116,9 @@
 
         .lot-toggle svg { transition: transform 0.2s ease; }
         .lot-toggle[aria-expanded="true"] svg { transform: rotate(90deg); }
+        .lot-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.35rem; }
+        .lot-chip { display: inline-flex; align-items: center; font-size: 0.68rem; font-weight: 500; color: var(--gray); background: var(--cloud); padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+        .lot-chip.highlight { color: var(--emerald); background: var(--emerald-light); }
         .lot-body { padding: 0 1rem 1rem; }
         .lot-body[hidden] { display: none; }
 
@@ -2661,6 +2664,10 @@
                         <span class="lot-tag official">Official</span>
                         <h3 class="lot-name">Premium Parking</h3>
                         <p class="lot-meta">0 km · at Terminal 2 (1 min walk)</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">✨ First 5 min FREE</span>
+                            <span class="lot-chip">🔒 CCTV 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2687,6 +2694,10 @@
                         <span class="lot-tag official">Official</span>
                         <h3 class="lot-name">Terminal Parking</h3>
                         <p class="lot-meta">0 km · at terminal (2-4 min walk)</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">⚡ EV Chargers</span>
+                            <span class="lot-chip">🔒 CCTV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2706,13 +2717,17 @@
                     <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Book on Official Site →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="city-break-parking" data-type="official" data-access="walking" data-features="24h,ev,covered" data-amount="8400" data-unit="day" data-approx="0" data-km="0.2"
+            <article class="lot" data-lot-id="city-break-parking" data-type="official" data-access="walking" data-features="24h,ev,covered" data-amount="8400" data-unit="day" data-approx="0" data-km="0.2" data-7d="20200"
                      data-search="city break parking 0.2 km · covered path (2-5 min walk) ⭐ popular choice ⚡ ev chargers 🏠 covered path perfect for weekend getaways. covered walkway protects from weather. good value for 2-5 day trips. book on official site →">
                 <div class="lot-row">
                     <div class="lot-main">
                         <span class="lot-tag official">Official</span>
                         <h3 class="lot-name">City Break Parking</h3>
                         <p class="lot-meta">0.2 km · covered path (2-5 min walk)</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">⭐ Popular Choice</span>
+                            <span class="lot-chip">⚡ EV Chargers</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2732,13 +2747,17 @@
                     <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Book on Official Site →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="holiday-parking" data-type="official" data-access="walking" data-features="24h,ev,covered" data-amount="8400" data-unit="day" data-approx="0" data-km="0.5"
+            <article class="lot" data-lot-id="holiday-parking" data-type="official" data-access="walking" data-features="24h,ev,covered" data-amount="8400" data-unit="day" data-approx="0" data-km="0.5" data-7d="19500"
                      data-search="holiday parking 0.5 km · covered path (4-9 min walk) 🗓️ best for long stays ⚡ ev chargers 🏠 covered path most economical official option for holidays. great for 1-2 week vacations with significant savings. book on official site →">
                 <div class="lot-row">
                     <div class="lot-main">
                         <span class="lot-tag official">Official</span>
                         <h3 class="lot-name">Holiday Parking</h3>
                         <p class="lot-meta">0.5 km · covered path (4-9 min walk)</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🗓️ Best for Long Stays</span>
+                            <span class="lot-chip">⚡ EV Chargers</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2758,13 +2777,17 @@
                     <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Book on Official Site →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="smart-parking" data-type="official" data-access="walking" data-features="24h,covered" data-amount="6700" data-unit="day" data-approx="1" data-km="0.8"
+            <article class="lot" data-lot-id="smart-parking" data-type="official" data-access="walking" data-features="24h,covered" data-amount="6700" data-unit="day" data-approx="1" data-km="0.8" data-7d="16100"
                      data-search="smart parking 0.8 km · covered path (8-10 min walk) 1,440 spaces 💰 cheapest official 🏠 covered path newest and largest official facility. only for full-day bookings. best rates for extended stays of a week or more. book on official site →">
                 <div class="lot-row">
                     <div class="lot-main">
                         <span class="lot-tag official">Official</span>
                         <h3 class="lot-name">Smart Parking</h3>
                         <p class="lot-meta">0.8 km · covered path (8-10 min walk)<span class="lot-est">est.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">💰 Cheapest Official</span>
+                            <span class="lot-chip">🏠 Covered Path</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2791,6 +2814,10 @@
                         <span class="lot-tag official">Official</span>
                         <h3 class="lot-name">Arrivals Pick-Up Area</h3>
                         <p class="lot-meta">0 km · at T2 Arrivals (5 min free)</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">✨ First 5 min FREE</span>
+                            <span class="lot-chip">🔒 CCTV 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2809,13 +2836,17 @@
                     <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Info on Official Site →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="best-parking-budapest" data-type="offsite" data-access="shuttle" data-features="24h,carwash" data-amount="7900" data-unit="day" data-approx="0" data-km="4.3"
+            <article class="lot" data-lot-id="best-parking-budapest" data-type="offsite" data-access="shuttle" data-features="24h,carwash" data-amount="7900" data-unit="day" data-approx="0" data-km="4.3" data-7d="13900"
                      data-search="best parking budapest 4.3 km from airport · vecsés, széchenyi u. 🚐 free shuttle 800 spaces 🕐 24/7 staff 🚿 car wash one of the largest private lots. free shuttle, terrace café, washroom facilities. child seats available on request. visit website →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Best Parking Budapest</h3>
                         <p class="lot-meta">4.3 km from airport · Vecsés, Széchenyi u.</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🕐 24/7 Staff</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2836,13 +2867,17 @@
                     <a href="https://www.bestparking.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Visit Website →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="mybud-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6000" data-unit="day" data-approx="0" data-km="2.9"
+            <article class="lot" data-lot-id="mybud-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6000" data-unit="day" data-approx="0" data-km="2.9" data-7d="11500"
                      data-search="mybud parking 2.9 km from airport · vecsés 🚐 free shuttle 🔒 fenced &amp; cctv 🔒 24/7 located next to mol gas station and mcdonald&#x27;s. fenced, camera-monitored area. convenient location near expressway. visit website →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">myBUD Parking</h3>
                         <p class="lot-meta">2.9 km from airport · Vecsés</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Fenced &amp; CCTV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2862,13 +2897,17 @@
                     <a href="https://en.mybudparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Visit Website →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="budcar-parking" data-type="offsite" data-access="shuttle" data-features="24h,carwash,covered" data-amount="8000" data-unit="day" data-approx="0" data-km="3.7"
+            <article class="lot" data-lot-id="budcar-parking" data-type="offsite" data-access="shuttle" data-features="24h,carwash,covered" data-amount="8000" data-unit="day" data-approx="0" data-km="3.7" data-7d="13500"
                      data-search="budcar parking 3.7 km from airport 🚐 free shuttle 🏠 covered garage 🚿 car wash secure parking behind stone walls. both outdoor and covered garage options. on-site car wash service available. visit website →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">BUDCAR Parking</h3>
                         <p class="lot-meta">3.7 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🏠 Covered Garage</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2888,13 +2927,17 @@
                     <a href="https://en.budcarparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Visit Website →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="repter-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,carwash" data-amount="9900" data-unit="day" data-approx="0" data-km="5.3"
+            <article class="lot" data-lot-id="repter-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,carwash" data-amount="9900" data-unit="day" data-approx="0" data-km="5.3" data-7d="15900"
                      data-search="reptér parkoló 5.3 km from airport 🏆 best value ✈️ flight tracking 💳 pay on arrival 🚿 car wash budget-friendly with reliable shuttle. technical assistance for battery/tire issues. flight monitoring included. visit website →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Reptér Parkoló</h3>
                         <p class="lot-meta">5.3 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🏆 Best Value</span>
+                            <span class="lot-chip">✈️ Flight Tracking</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2915,13 +2958,17 @@
                     <a href="https://www.budapestrepterparkolo.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Visit Website →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="safe-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6900" data-unit="day" data-approx="0" data-km="5"
+            <article class="lot" data-lot-id="safe-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6900" data-unit="day" data-approx="0" data-km="5" data-7d="12000"
                      data-search="safe parking 5 km from airport · vecsés, széchenyi u. 🚐 free shuttle 🔒 guarded 🔒 24/7 private car transfer between parking and terminals. both short and long-term options. pay on arrival or departure. visit website →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Safe Parking</h3>
                         <p class="lot-meta">5 km from airport · Vecsés, Széchenyi u.</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Guarded</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2941,13 +2988,17 @@
                     <a href="https://safeparking.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Visit Website →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="parkolo-mester" data-type="offsite" data-access="shuttle" data-features="24h,ev" data-amount="6900" data-unit="day" data-approx="0" data-km="3.7"
+            <article class="lot" data-lot-id="parkolo-mester" data-type="offsite" data-access="shuttle" data-features="24h,ev" data-amount="6900" data-unit="day" data-approx="0" data-km="3.7" data-7d="12400"
                      data-search="parkoló mester 3.7 km from airport 🚐 vip transfer ⚡ ev charging 🕐 24/7 guards premium vip transfers available (maserati, mercedes v-class). electric vehicle charging on-site. concrete, electrically fenced area. visit website →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Parkoló Mester</h3>
                         <p class="lot-meta">3.7 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 VIP Transfer</span>
+                            <span class="lot-chip">⚡ EV Charging</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2967,13 +3018,17 @@
                     <a href="http://www.en.parkolomester.com/" target="_blank" rel="noopener noreferrer" class="card-link">Visit Website →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="parkfly" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8000" data-unit="day" data-approx="0" data-km="3.3"
+            <article class="lot" data-lot-id="parkfly" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8000" data-unit="day" data-approx="0" data-km="3.3" data-7d="16000"
                      data-search="parkfly 3.3 km from airport · vecsés, üllői út 🚐 free shuttle 🕐 24/7 on-demand 🔒 guarded shuttle runs on-demand 24/7, not fixed schedule. 5-10 min transfer time. pickup within 10-20 min after landing. visit website →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">ParkFly</h3>
                         <p class="lot-meta">3.3 km from airport · Vecsés, Üllői út</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🕐 24/7 On-Demand</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3000,6 +3055,10 @@
                         
                         <h3 class="lot-name">Reptéri Parkoló Centrum</h3>
                         <p class="lot-meta">~3 km from airport · Vecsés, Almáskert út<span class="lot-est">est.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Guarded</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3019,13 +3078,17 @@
                     <a href="https://repteriparkolocentrum.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Visit Website →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="zoka-repteri-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7800" data-unit="day" data-approx="1" data-km="5"
+            <article class="lot" data-lot-id="zoka-repteri-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7800" data-unit="day" data-approx="1" data-km="5" data-7d="14300"
                      data-search="zoka reptéri parkoló 5 km from airport 🚐 free shuttle 🔒 secured secured parking with free shuttle service to airport terminals. book now →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Zoka Reptéri Parkoló</h3>
                         <p class="lot-meta">5 km from airport<span class="lot-est">est.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Secured</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3044,13 +3107,17 @@
                     <a href="https://zokarepteriparkolo.hu" target="_blank" rel="noopener noreferrer" class="card-link">Book Now →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="repteres-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8000" data-unit="day" data-approx="0" data-km="4.8"
+            <article class="lot" data-lot-id="repteres-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8000" data-unit="day" data-approx="0" data-km="4.8" data-7d="13400"
                      data-search="repteres parkoló 4.8 km from airport 🚐 free shuttle 🔒 24/7 cctv affordable parking with complimentary shuttle service. book now →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Repteres Parkoló</h3>
                         <p class="lot-meta">4.8 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 24/7 CCTV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3069,13 +3136,17 @@
                     <a href="https://repteresparkolo.hu" target="_blank" rel="noopener noreferrer" class="card-link">Book Now →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="pk-repter-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7500" data-unit="day" data-approx="0" data-km="5"
+            <article class="lot" data-lot-id="pk-repter-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7500" data-unit="day" data-approx="0" data-km="5" data-7d="13500"
                      data-search="pk reptér parkoló ~5 km from airport 🚐 free shuttle 🔒 secured quick drop-off experience with complimentary shuttle to terminal. book now →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">PK Reptér Parkoló</h3>
                         <p class="lot-meta">~5 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Secured</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3094,13 +3165,17 @@
                     <a href="https://pkrepterparkolo.com/" target="_blank" rel="noopener noreferrer" class="card-link">Book Now →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="noa-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="5998" data-unit="day" data-approx="0" data-km="5.4"
+            <article class="lot" data-lot-id="noa-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="5998" data-unit="day" data-approx="0" data-km="5.4" data-7d="11992"
                      data-search="noa parking 5.4 km from airport 🚐 free shuttle 🔒 monitored convenient parking with free shuttle transfer. book now →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">NOA Parking</h3>
                         <p class="lot-meta">5.4 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Monitored</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3119,13 +3194,17 @@
                     <a href="https://noaparking.hu" target="_blank" rel="noopener noreferrer" class="card-link">Book Now →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="ferihegy-airport-parking" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="8000" data-unit="day" data-approx="1" data-km="3"
+            <article class="lot" data-lot-id="ferihegy-airport-parking" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="8000" data-unit="day" data-approx="1" data-km="3" data-7d="14000"
                      data-search="ferihegy airport parking ~3 km from airport 🚐 free shuttle ☂️ covered 🔒 24/7 leading parking service since 2008. covered parking guaranteed. free modifications and cancellations. book now →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Ferihegy Airport Parking</h3>
                         <p class="lot-meta">~3 km from airport<span class="lot-est">est.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">☂️ Covered</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3145,13 +3224,17 @@
                     <a href="https://www.repterparkolo.hu" target="_blank" rel="noopener noreferrer" class="card-link">Book Now →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="budapest-airport-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7000" data-unit="day" data-approx="1" data-km="3.2"
+            <article class="lot" data-lot-id="budapest-airport-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7000" data-unit="day" data-approx="1" data-km="3.2" data-7d="13000"
                      data-search="budapest airport parking 3.2 km from airport 🚐 free shuttle 🔒 secured affordable parking near the airport with shuttle service. book now →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Budapest Airport Parking</h3>
                         <p class="lot-meta">3.2 km from airport<span class="lot-est">est.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Secured</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3177,6 +3260,10 @@
                         
                         <h3 class="lot-name">VIP Parking</h3>
                         <p class="lot-meta">~3 km from airport<span class="lot-est">est.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 VIP Transfer</span>
+                            <span class="lot-chip">☂️ Covered</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3196,13 +3283,17 @@
                     <a href="https://www.vip-parking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Book Now →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="sky-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7500" data-unit="day" data-approx="0" data-km="3"
+            <article class="lot" data-lot-id="sky-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7500" data-unit="day" data-approx="0" data-km="3" data-7d="14500"
                      data-search="sky parking 3 km from airport 🚐 free shuttle 🔒 secured affordable parking with shuttle service to terminals. book now →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Sky Parking</h3>
                         <p class="lot-meta">3 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Secured</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3228,6 +3319,10 @@
                         
                         <h3 class="lot-name">Reptéri Parkolás</h3>
                         <p class="lot-meta">~3 km from airport<span class="lot-est">est.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3253,6 +3348,10 @@
                         
                         <h3 class="lot-name">ABC Parking</h3>
                         <p class="lot-meta">~3 km from airport<span class="lot-est">est.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">📶 Free WiFi</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3272,13 +3371,17 @@
                     <a href="https://abcparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Book Now →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="park-central-airport" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6950" data-unit="day" data-approx="0" data-km="3.7"
+            <article class="lot" data-lot-id="park-central-airport" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6950" data-unit="day" data-approx="0" data-km="3.7" data-7d="14500"
                      data-search="park central airport 3.7 km from airport 🚐 free shuttle 🔒 24/7 centrally located parking with shuttle service. book now →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Park Central Airport</h3>
                         <p class="lot-meta">3.7 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3297,13 +3400,17 @@
                     <a href="https://parkcentralairport.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Book Now →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="dobro-car-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8500" data-unit="day" data-approx="0" data-km="6.2"
+            <article class="lot" data-lot-id="dobro-car-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8500" data-unit="day" data-approx="0" data-km="6.2" data-7d="14500"
                      data-search="dobro car parking 6.2 km from airport 🚐 free shuttle 🔒 24/7 affordable parking with free shuttle. book now →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Dobro Car Parking</h3>
                         <p class="lot-meta">6.2 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3322,13 +3429,17 @@
                     <a href="http://dobrocarparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Book Now →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="fap" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="7500" data-unit="day" data-approx="1" data-km="5.5"
+            <article class="lot" data-lot-id="fap" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="7500" data-unit="day" data-approx="1" data-km="5.5" data-7d="14000"
                      data-search="fap 5.5 km from airport 🚐 free shuttle ☂️ covered 🔒 secured covered parking option with shuttle service. book now →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">FAP</h3>
                         <p class="lot-meta">5.5 km from airport<span class="lot-est">est.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">☂️ Covered</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3348,13 +3459,17 @@
                     <a href="https://fedettrepterparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Book Now →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="repteri-parkolas-hu" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="2222" data-unit="day" data-approx="1" data-km="3"
+            <article class="lot" data-lot-id="repteri-parkolas-hu" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="2222" data-unit="day" data-approx="1" data-km="3" data-7d="9999"
                      data-search="repteri parkolas ~3 km from airport 🚐 free shuttle 🔒 24/7 budget-friendly parking near the airport. book now →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Repteri Parkolas</h3>
                         <p class="lot-meta">~3 km from airport<span class="lot-est">est.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3373,13 +3488,17 @@
                     <a href="http://repteri-parkolas.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Book Now →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="hungaria-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8900" data-unit="day" data-approx="0" data-km="5.2"
+            <article class="lot" data-lot-id="hungaria-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8900" data-unit="day" data-approx="0" data-km="5.2" data-7d="15300"
                      data-search="hungária parkoló 5.2 km from airport 🚐 free shuttle 🔒 secured reliable parking with shuttle service. book now →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Hungária Parkoló</h3>
                         <p class="lot-meta">5.2 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Secured</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3398,13 +3517,17 @@
                     <a href="http://hungariaparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Book Now →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="nemzeti-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="8900" data-unit="day" data-approx="0" data-km="6.3"
+            <article class="lot" data-lot-id="nemzeti-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="8900" data-unit="day" data-approx="0" data-km="6.3" data-7d="15300"
                      data-search="nemzeti parkoló 6.3 km from airport 🚐 free shuttle ☂️ covered 🔒 24/7 national parking service with transfer. book now →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Nemzeti Parkoló</h3>
                         <p class="lot-meta">6.3 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">☂️ Covered</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3431,6 +3554,10 @@
                         
                         <h3 class="lot-name">Őrzött Reptéri Parkoló</h3>
                         <p class="lot-meta">~3 km from airport<span class="lot-est">est.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Guarded</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3450,13 +3577,17 @@
                     <a href="https://orzottrepteriparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Book Now →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="europa-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,ev,covered" data-amount="8000" data-unit="day" data-approx="0" data-km="3.4"
+            <article class="lot" data-lot-id="europa-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,ev,covered" data-amount="8000" data-unit="day" data-approx="0" data-km="3.4" data-7d="18000"
                      data-search="európa parkoló 3.4 km from airport 🚐 free shuttle ⚡ ev charging ☂️ covered european standard parking with shuttle. book now →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Európa Parkoló</h3>
                         <p class="lot-meta">3.4 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">⚡ EV Charging</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3476,13 +3607,17 @@
                     <a href="http://www.europaparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Book Now →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="comfort-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="10000" data-unit="day" data-approx="0" data-km="4.1"
+            <article class="lot" data-lot-id="comfort-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="10000" data-unit="day" data-approx="0" data-km="4.1" data-7d="14000"
                      data-search="comfort parkoló 4.1 km from airport · vecsés, lőrinci u. 🚐 free shuttle ☂️ covered 🔒 24/7 comfortable parking experience with transfer. book now →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Comfort Parkoló</h3>
                         <p class="lot-meta">4.1 km from airport · Vecsés, Lőrinci u.</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">☂️ Covered</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3509,6 +3644,10 @@
                         
                         <h3 class="lot-name">Reptéri Parkoló.com</h3>
                         <p class="lot-meta">~3 km from airport<span class="lot-est">est.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Free Shuttle</span>
+                            <span class="lot-chip">💻 Online Booking</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3528,13 +3667,17 @@
                     <a href="https://www.repteriparkolo.com/" target="_blank" rel="noopener noreferrer" class="card-link">Book Now →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="hispania-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8000" data-unit="day" data-approx="0" data-km="3.4"
+            <article class="lot" data-lot-id="hispania-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8000" data-unit="day" data-approx="0" data-km="3.4" data-7d="14000"
                      data-search="hispania parking 3.4 km from airport · 3.4 km from airport 🚐 free shuttle 🔒 guarded 🔒 24/7 the highest-reviewed off-airport lot at budapest airport with over 4,100 ratings. free 24/7 shuttle, guarded site. check prices &amp; book →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Hispania Parking</h3>
                         <p class="lot-meta">3.4 km from airport · 3.4 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Guarded</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3554,13 +3697,17 @@
                     <a href="https://parkolow.hu" target="_blank" rel="noopener noreferrer" class="card-link">Check Prices &amp; Book →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="mopark-airport-parking" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="5990" data-unit="day" data-approx="0" data-km="4.2"
+            <article class="lot" data-lot-id="mopark-airport-parking" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="5990" data-unit="day" data-approx="0" data-km="4.2" data-7d="12990"
                      data-search="mopark airport parking 4.2 km from airport · 4.2 km from airport 🚐 free shuttle 🏠 covered garage 🔒 24/7 outdoor and covered indoor garage options with 24/7 shuttle. one of the best-rated off-airport lots near bud, with over 1,500 reviews. check prices &amp; book →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">MoPark Airport Parking</h3>
                         <p class="lot-meta">4.2 km from airport · 4.2 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🏠 Covered Garage</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3580,13 +3727,17 @@
                     <a href="https://parkolow.hu" target="_blank" rel="noopener noreferrer" class="card-link">Check Prices &amp; Book →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="airport-parking-hungary" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6900" data-unit="day" data-approx="0" data-km="5"
+            <article class="lot" data-lot-id="airport-parking-hungary" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6900" data-unit="day" data-approx="0" data-km="5" data-7d="12000"
                      data-search="airport parking hungary 5 km from airport · 5.0 km from airport 🚐 free shuttle 🔒 guarded 🔒 24/7 consistently top-rated on price comparison sites. guarded 24/7 with free shuttle service. best-rated lot on parkolow. check prices &amp; book →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Airport Parking Hungary</h3>
                         <p class="lot-meta">5 km from airport · 5.0 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Guarded</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3606,13 +3757,17 @@
                     <a href="https://parkolow.hu" target="_blank" rel="noopener noreferrer" class="card-link">Check Prices &amp; Book →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="park-and-bark" data-type="offsite" data-access="shuttle" data-features="24h,carwash,dog" data-amount="5800" data-unit="day" data-approx="1" data-km="7.3"
+            <article class="lot" data-lot-id="park-and-bark" data-type="offsite" data-access="shuttle" data-features="24h,carwash,dog" data-amount="5800" data-unit="day" data-approx="1" data-km="7.3" data-7d="11800"
                      data-search="park &amp; bark 7.3 km from airport · 7.3 km from airport 🐕 dog hotel 🚿 car wash 🚐 free shuttle the only parking near budapest airport with an on-site dog kennel (8,500 ft/dog/day). outdoor and indoor hall garage options. car wash service available. 5★ from over 1,200 reviews. see prices &amp; dog hotel →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Park &amp; Bark</h3>
                         <p class="lot-meta">7.3 km from airport · 7.3 km from airport<span class="lot-est">est.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🐕 Dog Hotel</span>
+                            <span class="lot-chip">🚿 Car Wash</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3632,13 +3787,17 @@
                     <a href="https://www.parkandbark.hu/" target="_blank" rel="noopener noreferrer" class="card-link">See Prices &amp; Dog Hotel →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="pocket-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7990" data-unit="day" data-approx="0" data-km="2.6"
+            <article class="lot" data-lot-id="pocket-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7990" data-unit="day" data-approx="0" data-km="2.6" data-7d="13990"
                      data-search="pocket parking 2.6 km from airport · 2.6 km — closest off-airport 🚐 free shuttle 🔒 guarded 🔒 24/7 the closest off-airport lot to the terminal. shuttle takes just 3–4 minutes. co-located with pocket rent-a-car. bookable from 1 day. check prices &amp; book →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Pocket Parking</h3>
                         <p class="lot-meta">2.6 km from airport · 2.6 km — closest off-airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Guarded</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3658,13 +3817,17 @@
                     <a href="https://parkolow.hu" target="_blank" rel="noopener noreferrer" class="card-link">Check Prices &amp; Book →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="abc-gold-parking" data-type="offsite" data-access="shuttle" data-features="24h,ev" data-amount="6000" data-unit="day" data-approx="0" data-km="3.6"
+            <article class="lot" data-lot-id="abc-gold-parking" data-type="offsite" data-access="shuttle" data-features="24h,ev" data-amount="6000" data-unit="day" data-approx="0" data-km="3.6" data-7d="11500"
                      data-search="abc gold parking 3.6 km from airport · 3.6 km from airport 🚐 free shuttle ⚡ ev charging 🔒 24/7 competitive pricing with ev charging (~200 ft/kwh) and complimentary coffee on return. best 4-day rate on the market. english-speaking staff. 4.8★ from 645 reviews. check prices &amp; book →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">ABC Gold Parking</h3>
                         <p class="lot-meta">3.6 km from airport · 3.6 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Free Shuttle</span>
+                            <span class="lot-chip">⚡ EV Charging</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3684,13 +3847,17 @@
                     <a href="https://parkolow.hu" target="_blank" rel="noopener noreferrer" class="card-link">Check Prices &amp; Book →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="ferihegy-top-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6500" data-unit="day" data-approx="0" data-km="5.4"
+            <article class="lot" data-lot-id="ferihegy-top-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6500" data-unit="day" data-approx="0" data-km="5.4" data-7d="12000"
                      data-search="ferihegy top parkoló 5.4 km from airport · 5.4 km from airport 🚐 free shuttle 🔒 monitored 🔒 24/7 free shuttle with modern minibuses and camera security. good value for longer stays. one of the cheaper 7-day options in the area. check prices &amp; book →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Ferihegy Top Parkoló</h3>
                         <p class="lot-meta">5.4 km from airport · 5.4 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Monitored</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3710,13 +3877,17 @@
                     <a href="https://parkolow.hu" target="_blank" rel="noopener noreferrer" class="card-link">Check Prices &amp; Book →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="star-park" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="5900" data-unit="day" data-approx="0" data-km="3"
+            <article class="lot" data-lot-id="star-park" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="5900" data-unit="day" data-approx="0" data-km="3" data-7d="11900"
                      data-search="star park 3 km from airport · 3.0 km from airport 🚐 free shuttle 🔒 monitored 🔒 24/7 opened in 2025. automatic barrier entry, cctv monitored, 24/7 operation, free shuttle in 4–5 minutes. modern facility with competitive daily rates. check prices &amp; book →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Star Park</h3>
                         <p class="lot-meta">3 km from airport · 3.0 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Monitored</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3736,13 +3907,17 @@
                     <a href="https://starpark.hu" target="_blank" rel="noopener noreferrer" class="card-link">Check Prices &amp; Book →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="hotel-ferihegy-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="4990" data-unit="day" data-approx="0" data-km="3.8"
+            <article class="lot" data-lot-id="hotel-ferihegy-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="4990" data-unit="day" data-approx="0" data-km="3.8" data-7d="11990"
                      data-search="hotel ferihegy parkoló 3.8 km from airport · 3.8 km from airport 🚐 free shuttle ☂️ covered 🔒 24/7 cheapest single-day price found at budapest airport (4,990 ft). hotel-operated covered lot with free shuttle service and park-and-fly packages. check prices &amp; book →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Hotel Ferihegy Parkoló</h3>
                         <p class="lot-meta">3.8 km from airport · 3.8 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Free Shuttle</span>
+                            <span class="lot-chip">☂️ Covered</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3762,13 +3937,17 @@
                     <a href="https://parkolow.hu" target="_blank" rel="noopener noreferrer" class="card-link">Check Prices &amp; Book →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="iq-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8400" data-unit="day" data-approx="0" data-km="4"
+            <article class="lot" data-lot-id="iq-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8400" data-unit="day" data-approx="0" data-km="4" data-7d="13900"
                      data-search="iq parking 4 km from airport · 4.0 km from airport 🚐 free shuttle 🔒 guarded 🔒 24/7 top-rated guarded parking with 24/7 shuttle service. flat rate applies for 1–2 days. 5★ rating from nearly 300 reviews. check prices &amp; book →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">IQ Parking</h3>
                         <p class="lot-meta">4 km from airport · 4.0 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Guarded</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3788,13 +3967,17 @@
                     <a href="https://parkolow.hu" target="_blank" rel="noopener noreferrer" class="card-link">Check Prices &amp; Book →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="zenparking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8213" data-unit="day" data-approx="0" data-km="3.3"
+            <article class="lot" data-lot-id="zenparking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8213" data-unit="day" data-approx="0" data-km="3.3" data-7d="14865"
                      data-search="zen parking 3.3 km from airport · 3.3 km from airport 🚐 free shuttle 🔒 guarded 🔒 24/7 well-reviewed guarded lot with 24/7 shuttle service. consistently 5-star rated from over 760 customers. check prices &amp; book →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">ZEN Parking</h3>
                         <p class="lot-meta">3.3 km from airport · 3.3 km from airport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Free Shuttle</span>
+                            <span class="lot-chip">🔒 Guarded</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -4496,7 +4679,7 @@
     (function (w, d) {
         'use strict';
 
-        var T = {"perDay": "/ day", "shortStay": "short-stay tariff", "byPrice": "{n} lots · cheapest first", "byDistance": "{n} lots · nearest first", "one": "1 lot", "transportShow": "Show Options", "transportHide": "Hide Options"};
+        var T = {"perDay": "/ day", "perDay7": "/ day · 7 nights", "shortStay": "short-stay tariff", "byPrice": "{n} lots · cheapest first", "byDistance": "{n} lots · nearest first", "one": "1 lot", "transportShow": "Show Options", "transportHide": "Hide Options"};
         var SEP = ',';
         var CARD_LIMIT_REMOVED = true;
 
@@ -4575,12 +4758,14 @@
             };
         }
 
-        /* The daily rate as the operator publishes it. Multiplying it out over
-           a trip would be a guess: several operators price in tiers, and this
-           site does not hold those tiers. Lots on a per-5-minute drop-off
-           tariff have no daily rate to compare at all. */
+        /* The sort key: 7-night effective per-day rate when available (the most
+           useful comparison for a typical airport trip), otherwise the verified
+           daily rate, otherwise the published list price. Short-stay lots that
+           only charge by the 5-minute block have no day rate and sort last. */
         function dailyRate(lot) {
             if (lot.dataset.unit !== 'day') return null;
+            var sevenD = parseInt(lot.dataset['7d'], 10);
+            if (!isNaN(sevenD) && sevenD > 0) return Math.round(sevenD / 7);
             var from = parseInt(lot.dataset.from, 10);
             if (lot.dataset.checked && !isNaN(from)) return from;
             return parseInt(lot.dataset.amount, 10) || 0;
@@ -4613,20 +4798,26 @@
             return lots.filter(function (lot) { return matchesFacets(lot) && matchesQuery(lot); });
         }
 
-        /* Where an operator's own site was read, show the spread between the
-           long-stay and one-day per-day rates. Anything unverified keeps the
-           single figure the page already published. */
+        /* Show the 7-night effective per-day rate when we have that data \u2014 it
+           is the most meaningful figure for a typical airport trip and makes
+           the list directly comparable. Lots without 7-night data fall back to
+           a verified daily range (from/till), then to the published list price.
+           Short-stay lots keep their "short-stay tariff" label. */
         function renderPrices() {
             lots.forEach(function (lot) {
                 var main = lot.querySelector('[data-total]');
                 var unit = lot.querySelector('[data-rate]');
                 var amount = parseInt(lot.dataset.amount, 10) || 0;
                 var approx = lot.dataset.approx === '1' ? '~' : '';
+                var sevenD = parseInt(lot.dataset['7d'], 10);
                 var from = parseInt(lot.dataset.from, 10);
                 var till = parseInt(lot.dataset.till, 10);
                 var hasRange = lot.dataset.checked && !isNaN(from) && !isNaN(till);
 
-                if (hasRange) {
+                if (!isNaN(sevenD) && sevenD > 0) {
+                    main.textContent = '~' + fmt(Math.round(sevenD / 7)) + ' Ft';
+                    unit.textContent = T.perDay7;
+                } else if (hasRange) {
                     main.textContent = from === till
                         ? fmt(from) + ' Ft'
                         : fmt(from) + '\u2013' + fmt(till) + ' Ft';

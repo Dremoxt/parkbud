@@ -2116,6 +2116,9 @@
 
         .lot-toggle svg { transition: transform 0.2s ease; }
         .lot-toggle[aria-expanded="true"] svg { transform: rotate(90deg); }
+        .lot-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.35rem; }
+        .lot-chip { display: inline-flex; align-items: center; font-size: 0.68rem; font-weight: 500; color: var(--gray); background: var(--cloud); padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+        .lot-chip.highlight { color: var(--emerald); background: var(--emerald-light); }
         .lot-body { padding: 0 1rem 1rem; }
         .lot-body[hidden] { display: none; }
 
@@ -2661,6 +2664,10 @@
                         <span class="lot-tag official">Oficial</span>
                         <h3 class="lot-name">Premium Parking</h3>
                         <p class="lot-meta">0 km · at Terminal 2 (1 min walk)</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">✨ Primele 5 min GRATUIT</span>
+                            <span class="lot-chip">🔒 CCTV non-stop</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2687,6 +2694,10 @@
                         <span class="lot-tag official">Oficial</span>
                         <h3 class="lot-name">Terminal Parking</h3>
                         <p class="lot-meta">0 km · at terminal (2-4 min walk)</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">⚡ Încărcătoare EV</span>
+                            <span class="lot-chip">🔒 CCTV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2706,13 +2717,17 @@
                     <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă pe site-ul oficial →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="city-break-parking" data-type="official" data-access="walking" data-features="24h,ev,covered" data-amount="8400" data-unit="day" data-approx="0" data-km="0.2"
+            <article class="lot" data-lot-id="city-break-parking" data-type="official" data-access="walking" data-features="24h,ev,covered" data-amount="8400" data-unit="day" data-approx="0" data-km="0.2" data-7d="20200"
                      data-search="city break parking 0.2 km · covered path (2-5 min walk) ⭐ alegere populară ⚡ încărcătoare ev 🏠 cale acoperită perfect pentru escapade de weekend. pasaj acoperit, protejat de vreme. raport bun calitate-preț pentru 2-5 zile. rezervă pe site-ul oficial →">
                 <div class="lot-row">
                     <div class="lot-main">
                         <span class="lot-tag official">Oficial</span>
                         <h3 class="lot-name">City Break Parking</h3>
                         <p class="lot-meta">0.2 km · covered path (2-5 min walk)</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">⭐ Alegere populară</span>
+                            <span class="lot-chip">⚡ Încărcătoare EV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2732,13 +2747,17 @@
                     <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă pe site-ul oficial →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="holiday-parking" data-type="official" data-access="walking" data-features="24h,ev,covered" data-amount="8400" data-unit="day" data-approx="0" data-km="0.5"
+            <article class="lot" data-lot-id="holiday-parking" data-type="official" data-access="walking" data-features="24h,ev,covered" data-amount="8400" data-unit="day" data-approx="0" data-km="0.5" data-7d="19500"
                      data-search="holiday parking 0.5 km · covered path (4-9 min walk) ⭐ ideal pentru sejur lung ⚡ încărcătoare ev 🏠 cale acoperită cea mai economică opțiune oficială pentru vacanțe. excelentă pentru concedii de 1-2 săptămâni cu economii semnificative. rezervă pe site-ul oficial →">
                 <div class="lot-row">
                     <div class="lot-main">
                         <span class="lot-tag official">Oficial</span>
                         <h3 class="lot-name">Holiday Parking</h3>
                         <p class="lot-meta">0.5 km · covered path (4-9 min walk)</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">⭐ Ideal pentru sejur lung</span>
+                            <span class="lot-chip">⚡ Încărcătoare EV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2758,13 +2777,17 @@
                     <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă pe site-ul oficial →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="smart-parking" data-type="official" data-access="walking" data-features="24h,covered" data-amount="6700" data-unit="day" data-approx="1" data-km="0.8"
+            <article class="lot" data-lot-id="smart-parking" data-type="official" data-access="walking" data-features="24h,covered" data-amount="6700" data-unit="day" data-approx="1" data-km="0.8" data-7d="16100"
                      data-search="smart parking 0.8 km · covered path (8-10 min walk) 1.440 locuri 💰 cea mai ieftină oficială 🏠 cale acoperită cea mai nouă și mai mare unitate oficială. numai pentru rezervări de zi întreagă. cele mai bune tarife pentru sejururi de o săptămână sau mai mult. rezervă pe site-ul oficial →">
                 <div class="lot-row">
                     <div class="lot-main">
                         <span class="lot-tag official">Oficial</span>
                         <h3 class="lot-name">Smart Parking</h3>
                         <p class="lot-meta">0.8 km · covered path (8-10 min walk)<span class="lot-est">aprox.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">💰 Cea mai ieftină oficială</span>
+                            <span class="lot-chip">🏠 Cale acoperită</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2791,6 +2814,10 @@
                         <span class="lot-tag official">Oficial</span>
                         <h3 class="lot-name">Zonă de preluare sosiri</h3>
                         <p class="lot-meta">0 km · la T2 Sosiri (5 min gratuit)</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">✨ Primele 5 min GRATUIT</span>
+                            <span class="lot-chip">🔒 CCTV non-stop</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2809,13 +2836,17 @@
                     <a href="https://parkolo.bud.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Info pe site-ul oficial →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="best-parking-budapest" data-type="offsite" data-access="shuttle" data-features="24h,carwash" data-amount="7900" data-unit="day" data-approx="0" data-km="4.3"
+            <article class="lot" data-lot-id="best-parking-budapest" data-type="offsite" data-access="shuttle" data-features="24h,carwash" data-amount="7900" data-unit="day" data-approx="0" data-km="4.3" data-7d="13900"
                      data-search="best parking budapest 4.3 km de la aeroport · vecsés, széchenyi u. 🚐 navetă gratuită 800 locuri 🕐 personal non-stop 🚿 spălătorie auto una dintre cele mai mari parcări private. navetă gratuită, terasă cafenea, grupuri sanitare. scaune pentru copii la cerere. vizitează site-ul →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Best Parking Budapest</h3>
                         <p class="lot-meta">4.3 km de la aeroport · Vecsés, Széchenyi u.</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🕐 Personal non-stop</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2836,13 +2867,17 @@
                     <a href="https://www.bestparking.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Vizitează site-ul →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="mybud-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6000" data-unit="day" data-approx="0" data-km="2.9"
+            <article class="lot" data-lot-id="mybud-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6000" data-unit="day" data-approx="0" data-km="2.9" data-7d="11500"
                      data-search="mybud parking 2.9 km de la aeroport · vecsés 🚐 navetă gratuită 🔒 împrejmuit &amp; cctv 🔒 24/7 lângă benzinăria mol și mcdonald&#x27;s. zonă împrejmuită, monitorizată video. locație convenabilă lângă autostradă. vizitează site-ul →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">myBUD Parking</h3>
                         <p class="lot-meta">2.9 km de la aeroport · Vecsés</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Împrejmuit &amp; CCTV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2862,13 +2897,17 @@
                     <a href="https://en.mybudparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Vizitează site-ul →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="budcar-parking" data-type="offsite" data-access="shuttle" data-features="24h,carwash,covered" data-amount="8000" data-unit="day" data-approx="0" data-km="3.7"
+            <article class="lot" data-lot-id="budcar-parking" data-type="offsite" data-access="shuttle" data-features="24h,carwash,covered" data-amount="8000" data-unit="day" data-approx="0" data-km="3.7" data-7d="13500"
                      data-search="budcar parking 3.7 km de la aeroport 🚐 navetă gratuită 🏠 garaj acoperit 🚿 spălătorie auto parcare securizată în spatele zidurilor. variante exterioare și garaj acoperit. serviciu de spălătorie auto pe loc. vizitează site-ul →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">BUDCAR Parking</h3>
                         <p class="lot-meta">3.7 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🏠 Garaj acoperit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2888,13 +2927,17 @@
                     <a href="https://en.budcarparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Vizitează site-ul →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="repter-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,carwash" data-amount="9900" data-unit="day" data-approx="0" data-km="5.3"
+            <article class="lot" data-lot-id="repter-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,carwash" data-amount="9900" data-unit="day" data-approx="0" data-km="5.3" data-7d="15900"
                      data-search="reptér parkoló 5.3 km de la aeroport 🏆 raport calitate-preț ✈️ urmărire zbor 💳 plată la sosire 🚿 spălătorie auto avantajos cu navetă fiabilă. asistență tehnică pentru baterie/pneuri. monitorizare zbor inclusă. vizitează site-ul →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Reptér Parkoló</h3>
                         <p class="lot-meta">5.3 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🏆 Raport calitate-preț</span>
+                            <span class="lot-chip">✈️ Urmărire zbor</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2915,13 +2958,17 @@
                     <a href="https://www.budapestrepterparkolo.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Vizitează site-ul →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="safe-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6900" data-unit="day" data-approx="0" data-km="5"
+            <article class="lot" data-lot-id="safe-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6900" data-unit="day" data-approx="0" data-km="5" data-7d="12000"
                      data-search="safe parking 5 km de la aeroport · vecsés, széchenyi u. 🚐 navetă gratuită 🔒 păzit 🔒 24/7 transfer privat între parcare și terminale. variante scurte și de durată lungă. plată la sosire sau plecare. vizitează site-ul →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Safe Parking</h3>
                         <p class="lot-meta">5 km de la aeroport · Vecsés, Széchenyi u.</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Păzit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2941,13 +2988,17 @@
                     <a href="https://safeparking.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Vizitează site-ul →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="parkolo-mester" data-type="offsite" data-access="shuttle" data-features="24h,ev" data-amount="6900" data-unit="day" data-approx="0" data-km="3.7"
+            <article class="lot" data-lot-id="parkolo-mester" data-type="offsite" data-access="shuttle" data-features="24h,ev" data-amount="6900" data-unit="day" data-approx="0" data-km="3.7" data-7d="12400"
                      data-search="parkoló mester 3.7 km de la aeroport 🚐 transfer vip ⚡ încărcare ev 🕐 pază non-stop transferuri vip premium disponibile (maserati, mercedes v-class). încărcare electrică pe loc. zonă betonată, împrejmuită electric. vizitează site-ul →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Parkoló Mester</h3>
                         <p class="lot-meta">3.7 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Transfer VIP</span>
+                            <span class="lot-chip">⚡ Încărcare EV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2967,13 +3018,17 @@
                     <a href="http://www.en.parkolomester.com/" target="_blank" rel="noopener noreferrer" class="card-link">Vizitează site-ul →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="parkfly" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8000" data-unit="day" data-approx="0" data-km="3.3"
+            <article class="lot" data-lot-id="parkfly" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8000" data-unit="day" data-approx="0" data-km="3.3" data-7d="16000"
                      data-search="parkfly 3.3 km de la aeroport · vecsés, üllői út 🚐 navetă gratuită 🕐 la cerere non-stop 🔒 păzit naveta funcționează la cerere 24/7, nu pe orar fix. transfer 5-10 min. preluare în 10-20 min după aterizare. vizitează site-ul →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">ParkFly</h3>
                         <p class="lot-meta">3.3 km de la aeroport · Vecsés, Üllői út</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🕐 La cerere non-stop</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3000,6 +3055,10 @@
                         
                         <h3 class="lot-name">Reptéri Parkoló Centrum</h3>
                         <p class="lot-meta">~3 km de la aeroport · Vecsés, Almáskert út<span class="lot-est">aprox.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Păzit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3019,13 +3078,17 @@
                     <a href="https://repteriparkolocentrum.hu/en/" target="_blank" rel="noopener noreferrer" class="card-link">Vizitează site-ul →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="zoka-repteri-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7800" data-unit="day" data-approx="1" data-km="5"
+            <article class="lot" data-lot-id="zoka-repteri-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7800" data-unit="day" data-approx="1" data-km="5" data-7d="14300"
                      data-search="zoka reptéri parkoló 5 km de la aeroport 🚐 navetă gratuită 🔒 securizat parcare securizată cu navetă gratuită spre terminalele aeroportului. rezervă acum →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Zoka Reptéri Parkoló</h3>
                         <p class="lot-meta">5 km de la aeroport<span class="lot-est">aprox.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Securizat</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3044,13 +3107,17 @@
                     <a href="https://zokarepteriparkolo.hu" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă acum →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="repteres-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8000" data-unit="day" data-approx="0" data-km="4.8"
+            <article class="lot" data-lot-id="repteres-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8000" data-unit="day" data-approx="0" data-km="4.8" data-7d="13400"
                      data-search="repteres parkoló 4.8 km de la aeroport 🚐 navetă gratuită 🔒 24/7 cctv parcare accesibilă cu navetă gratuită. rezervă acum →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Repteres Parkoló</h3>
                         <p class="lot-meta">4.8 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 24/7 CCTV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3069,13 +3136,17 @@
                     <a href="https://repteresparkolo.hu" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă acum →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="pk-repter-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7500" data-unit="day" data-approx="0" data-km="5"
+            <article class="lot" data-lot-id="pk-repter-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7500" data-unit="day" data-approx="0" data-km="5" data-7d="13500"
                      data-search="pk reptér parkoló ~5 km de la aeroport 🚐 navetă gratuită 🔒 securizat experiență de lăsare rapidă cu navetă gratuită până la terminal. rezervă acum →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">PK Reptér Parkoló</h3>
                         <p class="lot-meta">~5 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Securizat</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3094,13 +3165,17 @@
                     <a href="https://pkrepterparkolo.com/" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă acum →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="noa-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="5998" data-unit="day" data-approx="0" data-km="5.4"
+            <article class="lot" data-lot-id="noa-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="5998" data-unit="day" data-approx="0" data-km="5.4" data-7d="11992"
                      data-search="noa parking 5.4 km de la aeroport 🚐 navetă gratuită 🔒 monitorizat parcare convenabilă cu transfer gratuit cu naveta. rezervă acum →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">NOA Parking</h3>
                         <p class="lot-meta">5.4 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Monitorizat</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3119,13 +3194,17 @@
                     <a href="https://noaparking.hu" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă acum →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="ferihegy-airport-parking" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="8000" data-unit="day" data-approx="1" data-km="3"
+            <article class="lot" data-lot-id="ferihegy-airport-parking" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="8000" data-unit="day" data-approx="1" data-km="3" data-7d="14000"
                      data-search="ferihegy airport parking ~3 km de la aeroport 🚐 navetă gratuită ☂️ acoperit 🔒 24/7 serviciu de parcare de top din 2008. parcare acoperită garantată. modificări și anulări gratuite. rezervă acum →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Ferihegy Airport Parking</h3>
                         <p class="lot-meta">~3 km de la aeroport<span class="lot-est">aprox.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">☂️ Acoperit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3145,13 +3224,17 @@
                     <a href="https://www.repterparkolo.hu" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă acum →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="budapest-airport-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7000" data-unit="day" data-approx="1" data-km="3.2"
+            <article class="lot" data-lot-id="budapest-airport-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7000" data-unit="day" data-approx="1" data-km="3.2" data-7d="13000"
                      data-search="budapest airport parking 3.2 km de la aeroport 🚐 navetă gratuită 🔒 securizat parcare accesibilă lângă aeroport cu navetă. rezervă acum →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Budapest Airport Parking</h3>
                         <p class="lot-meta">3.2 km de la aeroport<span class="lot-est">aprox.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Securizat</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3177,6 +3260,10 @@
                         
                         <h3 class="lot-name">VIP Parking</h3>
                         <p class="lot-meta">~3 km de la aeroport<span class="lot-est">aprox.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Transfer VIP</span>
+                            <span class="lot-chip">☂️ Acoperit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3196,13 +3283,17 @@
                     <a href="https://www.vip-parking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă acum →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="sky-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7500" data-unit="day" data-approx="0" data-km="3"
+            <article class="lot" data-lot-id="sky-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7500" data-unit="day" data-approx="0" data-km="3" data-7d="14500"
                      data-search="sky parking 3 km de la aeroport 🚐 navetă gratuită 🔒 securizat parcare accesibilă cu navetă spre terminale. rezervă acum →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Sky Parking</h3>
                         <p class="lot-meta">3 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Securizat</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3228,6 +3319,10 @@
                         
                         <h3 class="lot-name">Reptéri Parkolás</h3>
                         <p class="lot-meta">~3 km de la aeroport<span class="lot-est">aprox.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3253,6 +3348,10 @@
                         
                         <h3 class="lot-name">ABC Parking</h3>
                         <p class="lot-meta">~3 km de la aeroport<span class="lot-est">aprox.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">📶 WiFi gratuit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3272,13 +3371,17 @@
                     <a href="https://abcparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă acum →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="park-central-airport" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6950" data-unit="day" data-approx="0" data-km="3.7"
+            <article class="lot" data-lot-id="park-central-airport" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6950" data-unit="day" data-approx="0" data-km="3.7" data-7d="14500"
                      data-search="park central airport 3.7 km de la aeroport 🚐 navetă gratuită 🔒 24/7 parcare cu locație centrală și navetă. rezervă acum →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Park Central Airport</h3>
                         <p class="lot-meta">3.7 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3297,13 +3400,17 @@
                     <a href="https://parkcentralairport.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă acum →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="dobro-car-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8500" data-unit="day" data-approx="0" data-km="6.2"
+            <article class="lot" data-lot-id="dobro-car-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8500" data-unit="day" data-approx="0" data-km="6.2" data-7d="14500"
                      data-search="dobro car parking 6.2 km de la aeroport 🚐 navetă gratuită 🔒 24/7 parcare accesibilă cu navetă gratuită. rezervă acum →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Dobro Car Parking</h3>
                         <p class="lot-meta">6.2 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3322,13 +3429,17 @@
                     <a href="http://dobrocarparking.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă acum →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="fap" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="7500" data-unit="day" data-approx="1" data-km="5.5"
+            <article class="lot" data-lot-id="fap" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="7500" data-unit="day" data-approx="1" data-km="5.5" data-7d="14000"
                      data-search="fap 5.5 km de la aeroport 🚐 navetă gratuită ☂️ acoperit 🔒 securizat opțiune de parcare acoperită cu navetă. rezervă acum →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">FAP</h3>
                         <p class="lot-meta">5.5 km de la aeroport<span class="lot-est">aprox.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">☂️ Acoperit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3348,13 +3459,17 @@
                     <a href="https://fedettrepterparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă acum →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="repteri-parkolas-hu" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="2222" data-unit="day" data-approx="1" data-km="3"
+            <article class="lot" data-lot-id="repteri-parkolas-hu" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="2222" data-unit="day" data-approx="1" data-km="3" data-7d="9999"
                      data-search="repteri parkolas ~3 km de la aeroport 🚐 navetă gratuită 🔒 24/7 parcare avantajoasă lângă aeroport. rezervă acum →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Repteri Parkolas</h3>
                         <p class="lot-meta">~3 km de la aeroport<span class="lot-est">aprox.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3373,13 +3488,17 @@
                     <a href="http://repteri-parkolas.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă acum →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="hungaria-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8900" data-unit="day" data-approx="0" data-km="5.2"
+            <article class="lot" data-lot-id="hungaria-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8900" data-unit="day" data-approx="0" data-km="5.2" data-7d="15300"
                      data-search="hungária parkoló 5.2 km de la aeroport 🚐 navetă gratuită 🔒 securizat parcare fiabilă cu navetă. rezervă acum →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Hungária Parkoló</h3>
                         <p class="lot-meta">5.2 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Securizat</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3398,13 +3517,17 @@
                     <a href="http://hungariaparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă acum →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="nemzeti-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="8900" data-unit="day" data-approx="0" data-km="6.3"
+            <article class="lot" data-lot-id="nemzeti-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="8900" data-unit="day" data-approx="0" data-km="6.3" data-7d="15300"
                      data-search="nemzeti parkoló 6.3 km de la aeroport 🚐 navetă gratuită ☂️ acoperit 🔒 24/7 serviciu național de parcare cu transfer. rezervă acum →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Nemzeti Parkoló</h3>
                         <p class="lot-meta">6.3 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">☂️ Acoperit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3431,6 +3554,10 @@
                         
                         <h3 class="lot-name">Őrzött Reptéri Parkoló</h3>
                         <p class="lot-meta">~3 km de la aeroport<span class="lot-est">aprox.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Păzit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3450,13 +3577,17 @@
                     <a href="https://orzottrepteriparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă acum →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="europa-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,ev,covered" data-amount="8000" data-unit="day" data-approx="0" data-km="3.4"
+            <article class="lot" data-lot-id="europa-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,ev,covered" data-amount="8000" data-unit="day" data-approx="0" data-km="3.4" data-7d="18000"
                      data-search="európa parkoló 3.4 km de la aeroport 🚐 navetă gratuită ⚡ încărcare ev ☂️ acoperit parcare la standard european cu navetă. rezervă acum →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Európa Parkoló</h3>
                         <p class="lot-meta">3.4 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">⚡ Încărcare EV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3476,13 +3607,17 @@
                     <a href="http://www.europaparkolo.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă acum →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="comfort-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="10000" data-unit="day" data-approx="0" data-km="4.1"
+            <article class="lot" data-lot-id="comfort-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="10000" data-unit="day" data-approx="0" data-km="4.1" data-7d="14000"
                      data-search="comfort parkoló 4.1 km de la aeroport · vecsés, lőrinci u. 🚐 navetă gratuită ☂️ acoperit 🔒 24/7 experiență confortabilă de parcare cu transfer. rezervă acum →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Comfort Parkoló</h3>
                         <p class="lot-meta">4.1 km de la aeroport · Vecsés, Lőrinci u.</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">☂️ Acoperit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3509,6 +3644,10 @@
                         
                         <h3 class="lot-name">Reptéri Parkoló.com</h3>
                         <p class="lot-meta">~3 km de la aeroport<span class="lot-est">aprox.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">💻 Rezervare online</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3528,13 +3667,17 @@
                     <a href="https://www.repteriparkolo.com/" target="_blank" rel="noopener noreferrer" class="card-link">Rezervă acum →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="hispania-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8000" data-unit="day" data-approx="0" data-km="3.4"
+            <article class="lot" data-lot-id="hispania-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8000" data-unit="day" data-approx="0" data-km="3.4" data-7d="14000"
                      data-search="hispania parking 3.4 km de la aeroport · 3,4 km de la aeroport 🚐 navetă gratuită 🔒 păzit 🔒 24/7 parcarea cu cele mai multe recenzii de lângă aeroportul din budapesta, cu peste 4.100 de aprecieri. navetă gratuită 24/7, parcare păzită. verifică prețuri &amp; rezervă →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Hispania Parking</h3>
                         <p class="lot-meta">3.4 km de la aeroport · 3,4 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Păzit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3554,13 +3697,17 @@
                     <a href="https://parkolow.hu" target="_blank" rel="noopener noreferrer" class="card-link">Verifică prețuri &amp; rezervă →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="mopark-airport-parking" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="5990" data-unit="day" data-approx="0" data-km="4.2"
+            <article class="lot" data-lot-id="mopark-airport-parking" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="5990" data-unit="day" data-approx="0" data-km="4.2" data-7d="12990"
                      data-search="mopark airport parking 4.2 km de la aeroport · 4,2 km de la aeroport 🚐 navetă gratuită 🏠 garaj acoperit 🔒 24/7 opțiuni de parcare exterioară și garaj acoperit cu navetă 24/7. unul dintre cele mai bine cotate parcări off-airport lângă bud, cu peste 1.500 recenzii. verifică prețuri &amp; rezervă →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">MoPark Airport Parking</h3>
                         <p class="lot-meta">4.2 km de la aeroport · 4,2 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🏠 Garaj acoperit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3580,13 +3727,17 @@
                     <a href="https://parkolow.hu" target="_blank" rel="noopener noreferrer" class="card-link">Verifică prețuri &amp; rezervă →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="airport-parking-hungary" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6900" data-unit="day" data-approx="0" data-km="5"
+            <article class="lot" data-lot-id="airport-parking-hungary" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6900" data-unit="day" data-approx="0" data-km="5" data-7d="12000"
                      data-search="airport parking hungary 5 km de la aeroport · 5,0 km de la aeroport 🚐 navetă gratuită 🔒 păzit 🔒 24/7 în mod constant cel mai bine cotat pe site-urile de comparare a prețurilor. păzit 24/7 cu navetă gratuită. verifică prețuri &amp; rezervă →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Airport Parking Hungary</h3>
                         <p class="lot-meta">5 km de la aeroport · 5,0 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Păzit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3606,13 +3757,17 @@
                     <a href="https://parkolow.hu" target="_blank" rel="noopener noreferrer" class="card-link">Verifică prețuri &amp; rezervă →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="park-and-bark" data-type="offsite" data-access="shuttle" data-features="24h,carwash,dog" data-amount="5800" data-unit="day" data-approx="1" data-km="7.3"
+            <article class="lot" data-lot-id="park-and-bark" data-type="offsite" data-access="shuttle" data-features="24h,carwash,dog" data-amount="5800" data-unit="day" data-approx="1" data-km="7.3" data-7d="11800"
                      data-search="park &amp; bark 7.3 km de la aeroport · 7,3 km de la aeroport 🐕 hotel câini 🚿 spălătorie auto 🚐 navetă gratuită singura parcare lângă aeroportul din budapesta cu hotel pentru câini pe loc (8.500 ft/câine/zi). opțiuni de parcare exterioară și hală acoperită. spălătorie auto disponibilă. 5★ din peste 1.200 recenzii. prețuri &amp; hotel câini →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Park &amp; Bark</h3>
                         <p class="lot-meta">7.3 km de la aeroport · 7,3 km de la aeroport<span class="lot-est">aprox.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🐕 Hotel câini</span>
+                            <span class="lot-chip">🚿 Spălătorie auto</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3632,13 +3787,17 @@
                     <a href="https://www.parkandbark.hu/" target="_blank" rel="noopener noreferrer" class="card-link">Prețuri &amp; Hotel câini →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="pocket-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7990" data-unit="day" data-approx="0" data-km="2.6"
+            <article class="lot" data-lot-id="pocket-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="7990" data-unit="day" data-approx="0" data-km="2.6" data-7d="13990"
                      data-search="pocket parking 2.6 km de la aeroport · 2,6 km — cel mai apropiat off-aeroport 🚐 navetă gratuită 🔒 păzit 🔒 24/7 cea mai apropiată parcare off-aeroport de terminal. naveta durează doar 3–4 minute. co-locată cu pocket rent-a-car. rezervabil de la 1 zi. verifică prețuri &amp; rezervă →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Pocket Parking</h3>
                         <p class="lot-meta">2.6 km de la aeroport · 2,6 km — cel mai apropiat off-aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Păzit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3658,13 +3817,17 @@
                     <a href="https://parkolow.hu" target="_blank" rel="noopener noreferrer" class="card-link">Verifică prețuri &amp; rezervă →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="abc-gold-parking" data-type="offsite" data-access="shuttle" data-features="24h,ev" data-amount="6000" data-unit="day" data-approx="0" data-km="3.6"
+            <article class="lot" data-lot-id="abc-gold-parking" data-type="offsite" data-access="shuttle" data-features="24h,ev" data-amount="6000" data-unit="day" data-approx="0" data-km="3.6" data-7d="11500"
                      data-search="abc gold parking 3.6 km de la aeroport · 3,6 km de la aeroport 🚐 navetă gratuită ⚡ încărcare ev 🔒 24/7 prețuri competitive cu încărcare ev (~200 ft/kwh) și cafea gratuită la întoarcere. cea mai bună rată de 4 zile de pe piață. personal vorbitor de engleză. 4,8★ din 645 recenzii. verifică prețuri &amp; rezervă →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">ABC Gold Parking</h3>
                         <p class="lot-meta">3.6 km de la aeroport · 3,6 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">⚡ Încărcare EV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3684,13 +3847,17 @@
                     <a href="https://parkolow.hu" target="_blank" rel="noopener noreferrer" class="card-link">Verifică prețuri &amp; rezervă →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="ferihegy-top-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6500" data-unit="day" data-approx="0" data-km="5.4"
+            <article class="lot" data-lot-id="ferihegy-top-parkolo" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="6500" data-unit="day" data-approx="0" data-km="5.4" data-7d="12000"
                      data-search="ferihegy top parkoló 5.4 km de la aeroport · 5,4 km de la aeroport 🚐 navetă gratuită 🔒 monitorizat 🔒 24/7 navetă gratuită cu microbuze moderne și securitate cu camere. raport bun calitate-preț pentru sejururi mai lungi. verifică prețuri &amp; rezervă →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Ferihegy Top Parkoló</h3>
                         <p class="lot-meta">5.4 km de la aeroport · 5,4 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Monitorizat</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3710,13 +3877,17 @@
                     <a href="https://parkolow.hu" target="_blank" rel="noopener noreferrer" class="card-link">Verifică prețuri &amp; rezervă →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="star-park" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="5900" data-unit="day" data-approx="0" data-km="3"
+            <article class="lot" data-lot-id="star-park" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="5900" data-unit="day" data-approx="0" data-km="3" data-7d="11900"
                      data-search="star park 3 km de la aeroport · 3,0 km de la aeroport 🚐 navetă gratuită 🔒 monitorizat 🔒 24/7 deschis în 2025. intrare cu barieră automată, monitorizare cctv, funcționare 24/7, navetă gratuită în 4–5 minute. facilitate modernă cu tarife zilnice competitive. verifică prețuri &amp; rezervă →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Star Park</h3>
                         <p class="lot-meta">3 km de la aeroport · 3,0 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Monitorizat</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3736,13 +3907,17 @@
                     <a href="https://starpark.hu" target="_blank" rel="noopener noreferrer" class="card-link">Verifică prețuri &amp; rezervă →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="hotel-ferihegy-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="4990" data-unit="day" data-approx="0" data-km="3.8"
+            <article class="lot" data-lot-id="hotel-ferihegy-parkolo" data-type="offsite" data-access="shuttle" data-features="24h,covered" data-amount="4990" data-unit="day" data-approx="0" data-km="3.8" data-7d="11990"
                      data-search="hotel ferihegy parkoló 3.8 km de la aeroport · 3,8 km de la aeroport 🚐 navetă gratuită ☂️ acoperit 🔒 24/7 cel mai ieftin preț pe o singură zi la aeroportul din budapesta (4.990 ft). parcare acoperită operată de hotel cu navetă gratuită și pachete park-and-fly. verifică prețuri &amp; rezervă →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">Hotel Ferihegy Parkoló</h3>
                         <p class="lot-meta">3.8 km de la aeroport · 3,8 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">☂️ Acoperit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3762,13 +3937,17 @@
                     <a href="https://parkolow.hu" target="_blank" rel="noopener noreferrer" class="card-link">Verifică prețuri &amp; rezervă →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="iq-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8400" data-unit="day" data-approx="0" data-km="4"
+            <article class="lot" data-lot-id="iq-parking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8400" data-unit="day" data-approx="0" data-km="4" data-7d="13900"
                      data-search="iq parking 4 km de la aeroport · 4,0 km de la aeroport 🚐 navetă gratuită 🔒 păzit 🔒 24/7 parcare păzită cu cele mai bune note și navetă 24/7. tarif fix pentru 1–2 zile. evaluare 5★ de la aproape 300 de recenzii. verifică prețuri &amp; rezervă →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">IQ Parking</h3>
                         <p class="lot-meta">4 km de la aeroport · 4,0 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Păzit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3788,13 +3967,17 @@
                     <a href="https://parkolow.hu" target="_blank" rel="noopener noreferrer" class="card-link">Verifică prețuri &amp; rezervă →</a>
                 </div>
             </article>
-            <article class="lot" data-lot-id="zenparking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8213" data-unit="day" data-approx="0" data-km="3.3"
+            <article class="lot" data-lot-id="zenparking" data-type="offsite" data-access="shuttle" data-features="24h" data-amount="8213" data-unit="day" data-approx="0" data-km="3.3" data-7d="14865"
                      data-search="zen parking 3.3 km de la aeroport · 3,3 km de la aeroport 🚐 navetă gratuită 🔒 păzit 🔒 24/7 parcare păzită bine cotată cu navetă 24/7. constant 5 stele de la peste 760 de clienți. verifică prețuri &amp; rezervă →">
                 <div class="lot-row">
                     <div class="lot-main">
                         
                         <h3 class="lot-name">ZEN Parking</h3>
                         <p class="lot-meta">3.3 km de la aeroport · 3,3 km de la aeroport</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Navetă gratuită</span>
+                            <span class="lot-chip">🔒 Păzit</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -4496,7 +4679,7 @@
     (function (w, d) {
         'use strict';
 
-        var T = {"perDay": "/ zi", "shortStay": "tarif de scurtă durată", "byPrice": "{n} parcări · cele mai ieftine primele", "byDistance": "{n} parcări · cele mai apropiate primele", "one": "1 parcare", "transportShow": "Afișează opțiunile", "transportHide": "Ascunde opțiunile"};
+        var T = {"perDay": "/ zi", "perDay7": "/ zi · 7 nopți", "shortStay": "tarif de scurtă durată", "byPrice": "{n} parcări · cele mai ieftine primele", "byDistance": "{n} parcări · cele mai apropiate primele", "one": "1 parcare", "transportShow": "Afișează opțiunile", "transportHide": "Ascunde opțiunile"};
         var SEP = ',';
         var CARD_LIMIT_REMOVED = true;
 
@@ -4575,12 +4758,14 @@
             };
         }
 
-        /* The daily rate as the operator publishes it. Multiplying it out over
-           a trip would be a guess: several operators price in tiers, and this
-           site does not hold those tiers. Lots on a per-5-minute drop-off
-           tariff have no daily rate to compare at all. */
+        /* The sort key: 7-night effective per-day rate when available (the most
+           useful comparison for a typical airport trip), otherwise the verified
+           daily rate, otherwise the published list price. Short-stay lots that
+           only charge by the 5-minute block have no day rate and sort last. */
         function dailyRate(lot) {
             if (lot.dataset.unit !== 'day') return null;
+            var sevenD = parseInt(lot.dataset['7d'], 10);
+            if (!isNaN(sevenD) && sevenD > 0) return Math.round(sevenD / 7);
             var from = parseInt(lot.dataset.from, 10);
             if (lot.dataset.checked && !isNaN(from)) return from;
             return parseInt(lot.dataset.amount, 10) || 0;
@@ -4613,23 +4798,29 @@
             return lots.filter(function (lot) { return matchesFacets(lot) && matchesQuery(lot); });
         }
 
-        /* Where an operator's own site was read, show the spread between the
-           long-stay and one-day per-day rates. Anything unverified keeps the
-           single figure the page already published. */
+        /* Show the 7-night effective per-day rate when we have that data — it
+           is the most meaningful figure for a typical airport trip and makes
+           the list directly comparable. Lots without 7-night data fall back to
+           a verified daily range (from/till), then to the published list price.
+           Short-stay lots keep their "short-stay tariff" label. */
         function renderPrices() {
             lots.forEach(function (lot) {
                 var main = lot.querySelector('[data-total]');
                 var unit = lot.querySelector('[data-rate]');
                 var amount = parseInt(lot.dataset.amount, 10) || 0;
                 var approx = lot.dataset.approx === '1' ? '~' : '';
+                var sevenD = parseInt(lot.dataset['7d'], 10);
                 var from = parseInt(lot.dataset.from, 10);
                 var till = parseInt(lot.dataset.till, 10);
                 var hasRange = lot.dataset.checked && !isNaN(from) && !isNaN(till);
 
-                if (hasRange) {
+                if (!isNaN(sevenD) && sevenD > 0) {
+                    main.textContent = '~' + fmt(Math.round(sevenD / 7)) + ' Ft';
+                    unit.textContent = T.perDay7;
+                } else if (hasRange) {
                     main.textContent = from === till
                         ? fmt(from) + ' Ft'
-                        : fmt(from) + '\u2013' + fmt(till) + ' Ft';
+                        : fmt(from) + '–' + fmt(till) + ' Ft';
                     unit.textContent = T.perDay;
                     lot.setAttribute('data-range', from === till ? 'single' : 'range');
                 } else if (lot.dataset.checked && !isNaN(from)) {
