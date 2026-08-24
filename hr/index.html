@@ -2116,6 +2116,9 @@
 
         .lot-toggle svg { transition: transform 0.2s ease; }
         .lot-toggle[aria-expanded="true"] svg { transform: rotate(90deg); }
+        .lot-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.35rem; }
+        .lot-chip { display: inline-flex; align-items: center; font-size: 0.68rem; font-weight: 500; color: var(--gray); background: var(--cloud); padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+        .lot-chip.highlight { color: var(--emerald); background: var(--emerald-light); }
         .lot-body { padding: 0 1rem 1rem; }
         .lot-body[hidden] { display: none; }
 
@@ -2661,6 +2664,10 @@
                         <span class="lot-tag official">Službeno</span>
                         <h3 class="lot-name">Premium Parking</h3>
                         <p class="lot-meta">0 km · at Terminal 2 (1 min walk)</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">✨ Prvih 5 min BESPLATNO</span>
+                            <span class="lot-chip">🔒 CCTV 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2687,6 +2694,10 @@
                         <span class="lot-tag official">Službeno</span>
                         <h3 class="lot-name">Terminal Parking</h3>
                         <p class="lot-meta">0 km · at terminal (2-4 min walk)</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">⚡ Punjači EV</span>
+                            <span class="lot-chip">🔒 CCTV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2713,6 +2724,10 @@
                         <span class="lot-tag official">Službeno</span>
                         <h3 class="lot-name">City Break Parking</h3>
                         <p class="lot-meta">0.2 km · covered path (2-5 min walk)</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">⭐ Popularan izbor</span>
+                            <span class="lot-chip">⚡ Punjači EV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2739,6 +2754,10 @@
                         <span class="lot-tag official">Službeno</span>
                         <h3 class="lot-name">Holiday Parking</h3>
                         <p class="lot-meta">0.5 km · covered path (4-9 min walk)</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">⭐ Za duže boravke</span>
+                            <span class="lot-chip">⚡ Punjači EV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2765,6 +2784,10 @@
                         <span class="lot-tag official">Službeno</span>
                         <h3 class="lot-name">Smart Parking</h3>
                         <p class="lot-meta">0.8 km · covered path (8-10 min walk)<span class="lot-est">pribl.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">💰 Najjeftinije službeno</span>
+                            <span class="lot-chip">🏠 Natkrivena staza</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2791,6 +2814,10 @@
                         <span class="lot-tag official">Službeno</span>
                         <h3 class="lot-name">Zona preuzimanja na dolasku</h3>
                         <p class="lot-meta">0 km · T2 Dolasci (5 min besplatno)</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">✨ Prvih 5 min BESPLATNO</span>
+                            <span class="lot-chip">🔒 CCTV 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2816,6 +2843,10 @@
                         
                         <h3 class="lot-name">Best Parking Budapest</h3>
                         <p class="lot-meta">4.3 km od zračne luke · Vecsés, Széchenyi u.</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🕐 Osoblje 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2843,6 +2874,10 @@
                         
                         <h3 class="lot-name">myBUD Parking</h3>
                         <p class="lot-meta">2.9 km od zračne luke · Vecsés</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Ograđeno i CCTV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2869,6 +2904,10 @@
                         
                         <h3 class="lot-name">BUDCAR Parking</h3>
                         <p class="lot-meta">3.7 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🏠 Natkrivena garaža</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2895,6 +2934,10 @@
                         
                         <h3 class="lot-name">Reptér Parkoló</h3>
                         <p class="lot-meta">5.3 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🏆 Najbolja vrijednost</span>
+                            <span class="lot-chip">✈️ Praćenje leta</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2922,6 +2965,10 @@
                         
                         <h3 class="lot-name">Safe Parking</h3>
                         <p class="lot-meta">5 km od zračne luke · Vecsés, Széchenyi u.</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Pod zaštitom</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2948,6 +2995,10 @@
                         
                         <h3 class="lot-name">Parkoló Mester</h3>
                         <p class="lot-meta">3.7 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 VIP transfer</span>
+                            <span class="lot-chip">⚡ Punjenje EV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -2974,6 +3025,10 @@
                         
                         <h3 class="lot-name">ParkFly</h3>
                         <p class="lot-meta">3.3 km od zračne luke · Vecsés, Üllői út</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🕐 24/7 na zahtjev</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3000,6 +3055,10 @@
                         
                         <h3 class="lot-name">Reptéri Parkoló Centrum</h3>
                         <p class="lot-meta">~3 km od zračne luke · Vecsés, Almáskert út<span class="lot-est">pribl.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Pod zaštitom</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3026,6 +3085,10 @@
                         
                         <h3 class="lot-name">Zoka Reptéri Parkoló</h3>
                         <p class="lot-meta">5 km od zračne luke<span class="lot-est">pribl.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Osigurano</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3051,6 +3114,10 @@
                         
                         <h3 class="lot-name">Repteres Parkoló</h3>
                         <p class="lot-meta">4.8 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 24/7 CCTV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3076,6 +3143,10 @@
                         
                         <h3 class="lot-name">PK Reptér Parkoló</h3>
                         <p class="lot-meta">~5 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Osigurano</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3101,6 +3172,10 @@
                         
                         <h3 class="lot-name">NOA Parking</h3>
                         <p class="lot-meta">5.4 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Nadzirano</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3126,6 +3201,10 @@
                         
                         <h3 class="lot-name">Ferihegy Airport Parking</h3>
                         <p class="lot-meta">~3 km od zračne luke<span class="lot-est">pribl.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">☂️ Natkriveno</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3152,6 +3231,10 @@
                         
                         <h3 class="lot-name">Budapest Airport Parking</h3>
                         <p class="lot-meta">3.2 km od zračne luke<span class="lot-est">pribl.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Osigurano</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3177,6 +3260,10 @@
                         
                         <h3 class="lot-name">VIP Parking</h3>
                         <p class="lot-meta">~3 km od zračne luke<span class="lot-est">pribl.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 VIP transfer</span>
+                            <span class="lot-chip">☂️ Natkriveno</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3203,6 +3290,10 @@
                         
                         <h3 class="lot-name">Sky Parking</h3>
                         <p class="lot-meta">3 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Osigurano</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3228,6 +3319,10 @@
                         
                         <h3 class="lot-name">Reptéri Parkolás</h3>
                         <p class="lot-meta">~3 km od zračne luke<span class="lot-est">pribl.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3253,6 +3348,10 @@
                         
                         <h3 class="lot-name">ABC Parking</h3>
                         <p class="lot-meta">~3 km od zračne luke<span class="lot-est">pribl.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">📶 Besplatni WiFi</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3279,6 +3378,10 @@
                         
                         <h3 class="lot-name">Park Central Airport</h3>
                         <p class="lot-meta">3.7 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3304,6 +3407,10 @@
                         
                         <h3 class="lot-name">Dobro Car Parking</h3>
                         <p class="lot-meta">6.2 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3329,6 +3436,10 @@
                         
                         <h3 class="lot-name">FAP</h3>
                         <p class="lot-meta">5.5 km od zračne luke<span class="lot-est">pribl.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">☂️ Natkriveno</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3355,6 +3466,10 @@
                         
                         <h3 class="lot-name">Repteri Parkolas</h3>
                         <p class="lot-meta">~3 km od zračne luke<span class="lot-est">pribl.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 24/7</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3380,6 +3495,10 @@
                         
                         <h3 class="lot-name">Hungária Parkoló</h3>
                         <p class="lot-meta">5.2 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Osigurano</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3405,6 +3524,10 @@
                         
                         <h3 class="lot-name">Nemzeti Parkoló</h3>
                         <p class="lot-meta">6.3 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">☂️ Natkriveno</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3431,6 +3554,10 @@
                         
                         <h3 class="lot-name">Őrzött Reptéri Parkoló</h3>
                         <p class="lot-meta">~3 km od zračne luke<span class="lot-est">pribl.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Pod zaštitom</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3457,6 +3584,10 @@
                         
                         <h3 class="lot-name">Európa Parkoló</h3>
                         <p class="lot-meta">3.4 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">⚡ Punjenje EV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3483,6 +3614,10 @@
                         
                         <h3 class="lot-name">Comfort Parkoló</h3>
                         <p class="lot-meta">4.1 km od zračne luke · Vecsés, Lőrinci u.</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">☂️ Natkriveno</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3509,6 +3644,10 @@
                         
                         <h3 class="lot-name">Reptéri Parkoló.com</h3>
                         <p class="lot-meta">~3 km od zračne luke<span class="lot-est">pribl.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">💻 Online rezervacija</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3535,6 +3674,10 @@
                         
                         <h3 class="lot-name">Hispania Parking</h3>
                         <p class="lot-meta">3.4 km od zračne luke · 3,4 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Pod zaštitom</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3561,6 +3704,10 @@
                         
                         <h3 class="lot-name">MoPark Airport Parking</h3>
                         <p class="lot-meta">4.2 km od zračne luke · 4,2 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🏠 Natkrivena garaža</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3587,6 +3734,10 @@
                         
                         <h3 class="lot-name">Airport Parking Hungary</h3>
                         <p class="lot-meta">5 km od zračne luke · 5,0 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Pod zaštitom</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3613,6 +3764,10 @@
                         
                         <h3 class="lot-name">Park &amp; Bark</h3>
                         <p class="lot-meta">7.3 km od zračne luke · 7,3 km od zračne luke<span class="lot-est">pribl.</span></p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🐕 Hotel za pse</span>
+                            <span class="lot-chip">🚿 Autopraonica</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3639,6 +3794,10 @@
                         
                         <h3 class="lot-name">Pocket Parking</h3>
                         <p class="lot-meta">2.6 km od zračne luke · 2,6 km — najbliže van aerodroma</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Pod zaštitom</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3665,6 +3824,10 @@
                         
                         <h3 class="lot-name">ABC Gold Parking</h3>
                         <p class="lot-meta">3.6 km od zračne luke · 3,6 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">⚡ Punjenje EV</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3691,6 +3854,10 @@
                         
                         <h3 class="lot-name">Ferihegy Top Parkoló</h3>
                         <p class="lot-meta">5.4 km od zračne luke · 5,4 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Nadzirano</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3717,6 +3884,10 @@
                         
                         <h3 class="lot-name">Star Park</h3>
                         <p class="lot-meta">3 km od zračne luke · 3,0 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Nadzirano</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3743,6 +3914,10 @@
                         
                         <h3 class="lot-name">Hotel Ferihegy Parkoló</h3>
                         <p class="lot-meta">3.8 km od zračne luke · 3,8 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">☂️ Natkriveno</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3769,6 +3944,10 @@
                         
                         <h3 class="lot-name">IQ Parking</h3>
                         <p class="lot-meta">4 km od zračne luke · 4,0 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Pod zaštitom</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>
@@ -3795,6 +3974,10 @@
                         
                         <h3 class="lot-name">ZEN Parking</h3>
                         <p class="lot-meta">3.3 km od zračne luke · 3,3 km od zračne luke</p>
+                        <div class="lot-chips">
+                            <span class="lot-chip highlight">🚐 Besplatni prijevoz</span>
+                            <span class="lot-chip">🔒 Pod zaštitom</span>
+                        </div>
                     </div>
                     <div class="lot-price">
                         <div class="lot-total" data-total></div>

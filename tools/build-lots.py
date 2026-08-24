@@ -84,6 +84,22 @@ def feature_spans(lot, labels, ui, code):
     return out
 
 
+def collapsed_chips(lot, labels, ui, code):
+    """Up to 2 compact chips for the always-visible collapsed row.
+    Highlights (starred features) go first; @spaces count is skipped."""
+    highlights, regulars = [], []
+    for token in filter(None, lot["features"].split("|")):
+        if token.startswith("@"):
+            continue
+        is_h = token.startswith("*")
+        key = token.lstrip("*")
+        if key not in labels:
+            continue
+        label = labels[key][code]
+        (highlights if is_h else regulars).append((is_h, label))
+    return (highlights + regulars)[:2]
+
+
 def verified(lot):
     """A row counts as verified only once someone recorded the date they read
     the operator's site. A number with no date behind it is not a fact."""
@@ -144,6 +160,13 @@ def render(lot, text, labels, ui, code, position):
     lines.append('                        <h3 class="lot-name">%s</h3>' % txt(name))
     lines.append('                        <p class="lot-meta">%s%s</p>'
                  % (txt(meta), price_marker(lot, ui, code)))
+    chip_items = collapsed_chips(lot, labels, ui, code)
+    if chip_items:
+        lines.append('                        <div class="lot-chips">')
+        for is_h, label in chip_items:
+            cls = "lot-chip highlight" if is_h else "lot-chip"
+            lines.append('                            <span class="%s">%s</span>' % (cls, txt(label)))
+        lines.append('                        </div>')
     lines.append('                    </div>')
     lines.append('                    <div class="lot-price">')
     lines.append('                        <div class="lot-total" data-total></div>')
