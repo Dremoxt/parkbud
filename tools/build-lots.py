@@ -125,11 +125,15 @@ def price_marker(lot, ui, code):
 
 
 def price_attrs(lot):
-    if not verified(lot):
-        return ""
-    return ' data-from="%s" data-till="%s" data-checked="%s"' % (
-        lot["from_ft_per_day"].strip(), lot["till_ft_per_day"].strip(),
-        esc(lot["checked_on"].strip()))
+    attrs = ""
+    if verified(lot):
+        attrs += ' data-from="%s" data-till="%s" data-checked="%s"' % (
+            lot["from_ft_per_day"].strip(), lot["till_ft_per_day"].strip(),
+            esc(lot["checked_on"].strip()))
+    seven_d = lot.get("price_7d_ft", "").strip()
+    if seven_d:
+        attrs += ' data-7d="%s"' % esc(seven_d)
+    return attrs
 
 
 def render(lot, text, labels, ui, code, position):
